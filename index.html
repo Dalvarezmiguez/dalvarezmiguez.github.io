@@ -5,6 +5,7 @@
   <title>Portfolio Data Analytics – Daniel Álvarez Míguez</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
+    /* Estilos generales */
     body {
       font-family: 'Roboto', Arial, sans-serif;
       margin: 0;
@@ -118,6 +119,7 @@
       margin: 15px 0;
     }
 
+    /* Botones */
     .btn {
       display: inline-block;
       padding: 10px 20px;
@@ -134,7 +136,13 @@
       background: #1c5980;
     }
 
-    /* Estilo de enlaces */
+    /* Reset para botones visitados y activos */
+    .btn:visited, .btn:active {
+      color: #ffffff;
+      background: #2980b9;
+    }
+
+    /* Enlaces generales */
     a {
       color: #2980b9;
       text-decoration: none;
@@ -181,104 +189,104 @@
   </section>
 
   <!-- PROYECTOS -->
-<section id="projects">
-  <h2>Proyectos</h2>
+  <section id="projects">
+    <h2>Proyectos</h2>
 
-  <div class="project-card">
-    <h3>Análisis de Ventas – Adventure Works</h3>
-    <p><strong>Demo interactiva:</strong> Ventas</p>
-    <ul>
-      <li>El 20 % de los productos generan el 60 % de las ventas.</li>
-      <li>El canal online crece al doble que el offline.</li>
-      <li>4 comerciales concentran más del 50 % de la cartera.</li>
-      <li>El stock actual cubre 4 semanas de ventas.</li>
-    </ul>
-    <img src="img/Dashboard_Ventas.gif" alt="Dashboard Ventas">
-    <a class="btn" href="proyectos/adventureworks.html">Ver proyecto</a>
-    <a class="btn" href="https://github.com/Dalvarezmiguez/adventureworks" target="_blank">Código en GitHub</a>
-  </div>
+    <div class="project-card">
+      <h3>Análisis de Ventas – Adventure Works</h3>
+      <p><strong>Demo interactiva:</strong> Ventas</p>
+      <ul>
+        <li>El 20 % de los productos generan el 60 % de las ventas.</li>
+        <li>El canal online crece al doble que el offline.</li>
+        <li>4 comerciales concentran más del 50 % de la cartera.</li>
+        <li>El stock actual cubre 4 semanas de ventas.</li>
+      </ul>
+      <img src="img/Dashboard_Ventas.gif" alt="Dashboard Ventas">
+      <a class="btn" href="proyectos/adventureworks.html">Ver proyecto</a>
+      <a class="btn" href="https://github.com/Dalvarezmiguez/adventureworks" target="_blank">Código en GitHub</a>
+    </div>
 
-  <div class="project-card">
-    <h3>Análisis de Churn – Telco Customer (Python)</h3>
-    <p><strong>Demo interactiva:</strong> Telco</p>
-    <ul>
-      <li>El 75,34 % de los clientes seguirán activos, representando el 84,31 % de la facturación.</li>
-      <li>El 65 % de los clientes tienen un riesgo bajo de abandono.</li>
-      <li>Variables clave: tipo de contrato, facturación, servicios contratados, presencia de líneas adicionales.</li>
-      <li>Modelos aplicados: Logistic Regression, Random Forest y XGBoost, con interpretabilidad SHAP.</li>
-    </ul>
-    <img src="img/Dashboard_Telco.gif" alt="Dashboard Telco">
-    <a class="btn" href="proyectos/telco.html">Ver proyecto</a>
-    <a class="btn" href="https://github.com/Dalvarezmiguez/telecomunicaciones" target="_blank">Código en GitHub</a>
-  </div>
+    <div class="project-card">
+      <h3>Análisis de Churn – Telco Customer (Python)</h3>
+      <p><strong>Demo interactiva:</strong> Telco</p>
+      <ul>
+        <li>El 75,34 % de los clientes seguirán activos, representando el 84,31 % de la facturación.</li>
+        <li>El 65 % de los clientes tienen un riesgo bajo de abandono.</li>
+        <li>Variables clave: tipo de contrato, facturación, servicios contratados, presencia de líneas adicionales.</li>
+        <li>Modelos aplicados: Logistic Regression, Random Forest y XGBoost, con interpretabilidad SHAP.</li>
+      </ul>
+      <img src="img/Dashboard_Telco.gif" alt="Dashboard Telco">
+      <a class="btn" href="proyectos/telco.html">Ver proyecto</a>
+      <a class="btn" href="https://github.com/Dalvarezmiguez/telecomunicaciones" target="_blank">Código en GitHub</a>
+    </div>
 
-  <div class="project-card">
-    <h3>Análisis de Airbnb – Madrid (Python)</h3>
-    <p><strong>Dashboard:</strong> Airbnb</p>
-    <ul>
-      <li>El 68,29 % de los alquileres corresponde a pisos enteros.</li>
-      <li>Precio medio de vivienda completa: 126,97 €; habitación: 140,60 €.</li>
-      <li>Número de reseñas no correlacionado con el precio.</li>
-      <li>En Madrid hay 18.792 pisos, con un precio medio de 104,85 €.</li>
-      <li>El 80,79 % de las viviendas no cuentan con licencia.</li>
-    </ul>
-    <img src="img/Dashboard_Airbnb.gif" alt="Dashboard Airbnb">
-    <a class="btn" href="proyectos/airbnb.html">Ver proyecto</a>
-    <a class="btn" href="https://github.com/Dalvarezmiguez/airbnb" target="_blank">Código en GitHub</a>
-  </div>
+    <div class="project-card">
+      <h3>Análisis de Airbnb – Madrid (Python)</h3>
+      <p><strong>Dashboard:</strong> Airbnb</p>
+      <ul>
+        <li>El 68,29 % de los alquileres corresponde a pisos enteros.</li>
+        <li>Precio medio de vivienda completa: 126,97 €; habitación: 140,60 €.</li>
+        <li>Número de reseñas no correlacionado con el precio.</li>
+        <li>En Madrid hay 18.792 pisos, con un precio medio de 104,85 €.</li>
+        <li>El 80,79 % de las viviendas no cuentan con licencia.</li>
+      </ul>
+      <img src="img/Dashboard_Airbnb.gif" alt="Dashboard Airbnb">
+      <a class="btn" href="proyectos/airbnb.html">Ver proyecto</a>
+      <a class="btn" href="https://github.com/Dalvarezmiguez/airbnb" target="_blank">Código en GitHub</a>
+    </div>
 
-  <div class="project-card">
-    <h3>Análisis de Compras</h3>
-    <p><strong>Dashboard:</strong> Compras</p>
-    <ul>
-      <li>10 proveedores concentran más del 64 % de las cantidades totales compradas.</li>
-      <li>Optimización: renegociar contratos de alto volumen.</li>
-    </ul>
-    <img src="img/Dashboard_Compras.gif" alt="Dashboard Compras">
-    <a class="btn" href="proyectos/compras.html">Ver proyecto</a>
-    <a class="btn" href="https://github.com/Dalvarezmiguez/compras" target="_blank">Código en GitHub</a>
-  </div>
+    <div class="project-card">
+      <h3>Análisis de Compras</h3>
+      <p><strong>Dashboard:</strong> Compras</p>
+      <ul>
+        <li>10 proveedores concentran más del 64 % de las cantidades totales compradas.</li>
+        <li>Optimización: renegociar contratos de alto volumen.</li>
+      </ul>
+      <img src="img/Dashboard_Compras.gif" alt="Dashboard Compras">
+      <a class="btn" href="proyectos/compras.html">Ver proyecto</a>
+      <a class="btn" href="https://github.com/Dalvarezmiguez/compras" target="_blank">Código en GitHub</a>
+    </div>
 
-  <div class="project-card">
-    <h3>Presupuesto Generalitat de Catalunya (1999–2023)</h3>
-    <p><strong>Dashboard:</strong> Generalitat</p>
-    <ul>
-      <li>En 2023, los presupuestos crecieron +5,7 %.</li>
-      <li>Gastos de personal subieron un 11,8 %, con mayor peso relativo en el presupuesto.</li>
-      <li>Dataset público analizado con visualizaciones avanzadas (treemap, cintas, matrices).</li>
-    </ul>
-    <img src="img/Dashboard_Cataluña.gif" alt="Dashboard Generalitat">
-    <a class="btn" href="proyectos/generalitat.html">Ver proyecto</a>
-    <a class="btn" href="https://github.com/Dalvarezmiguez/generalitat" target="_blank">Código en GitHub</a>
-  </div>
+    <div class="project-card">
+      <h3>Presupuesto Generalitat de Catalunya (1999–2023)</h3>
+      <p><strong>Dashboard:</strong> Generalitat</p>
+      <ul>
+        <li>En 2023, los presupuestos crecieron +5,7 %.</li>
+        <li>Gastos de personal subieron un 11,8 %, con mayor peso relativo en el presupuesto.</li>
+        <li>Dataset público analizado con visualizaciones avanzadas (treemap, cintas, matrices).</li>
+      </ul>
+      <img src="img/Dashboard_Cataluña.gif" alt="Dashboard Generalitat">
+      <a class="btn" href="proyectos/generalitat.html">Ver proyecto</a>
+      <a class="btn" href="https://github.com/Dalvarezmiguez/generalitat" target="_blank">Código en GitHub</a>
+    </div>
 
-  <div class="project-card">
-    <h3>Análisis Financiero y Operativo – Inditex (2023–2024)</h3>
-    <p><strong>Dashboard:</strong> Inditex</p>
-    <ul>
-      <li>Crecimiento de ventas de un 7,47 % con -2,3 % en número de tiendas.</li>
-      <li>Incluye cuenta de resultados y visualización geográfica de tiendas.</li>
-      <li>Aperturas y cierres estratégicos durante el periodo.</li>
-    </ul>
-    <img src="img/Dashboard_Inditex.gif" alt="Dashboard Inditex">
-    <a class="btn" href="proyectos/inditex.html">Ver proyecto</a>
-    <a class="btn" href="https://github.com/Dalvarezmiguez/inditex" target="_blank">Código en GitHub</a>
-  </div>
+    <div class="project-card">
+      <h3>Análisis Financiero y Operativo – Inditex (2023–2024)</h3>
+      <p><strong>Dashboard:</strong> Inditex</p>
+      <ul>
+        <li>Crecimiento de ventas de un 7,47 % con -2,3 % en número de tiendas.</li>
+        <li>Incluye cuenta de resultados y visualización geográfica de tiendas.</li>
+        <li>Aperturas y cierres estratégicos durante el periodo.</li>
+      </ul>
+      <img src="img/Dashboard_Inditex.gif" alt="Dashboard Inditex">
+      <a class="btn" href="proyectos/inditex.html">Ver proyecto</a>
+      <a class="btn" href="https://github.com/Dalvarezmiguez/inditex" target="_blank">Código en GitHub</a>
+    </div>
 
-  <div class="project-card">
-    <h3>Análisis de LaLiga</h3>
-    <p><strong>Dashboard:</strong> LaLiga</p>
-    <ul>
-      <li>Barcelona lidera la clasificación histórica de los últimos 10 años por puntos y posición media.</li>
-      <li>Diferencias claras entre ranking por puntos y por posición media.</li>
-      <li>Villarreal: equipo menos goleado en la última década.</li>
-    </ul>
-    <img src="img/Dashboard_LaLiga.gif" alt="Dashboard LaLiga">
-    <a class="btn" href="proyectos/laliga.html">Ver proyecto</a>
-    <a class="btn" href="https://github.com/Dalvarezmiguez/laliga" target="_blank">Código en GitHub</a>
-  </div>
+    <div class="project-card">
+      <h3>Análisis de LaLiga</h3>
+      <p><strong>Dashboard:</strong> LaLiga</p>
+      <ul>
+        <li>Barcelona lidera la clasificación histórica de los últimos 10 años por puntos y posición media.</li>
+        <li>Diferencias claras entre ranking por puntos y por posición media.</li>
+        <li>Villarreal: equipo menos goleado en la última década.</li>
+      </ul>
+      <img src="img/Dashboard_LaLiga.gif" alt="Dashboard LaLiga">
+      <a class="btn" href="proyectos/laliga.html">Ver proyecto</a>
+      <a class="btn" href="https://github.com/Dalvarezmiguez/laliga" target="_blank">Código en GitHub</a>
+    </div>
 
-</section>
+  </section>
 
   <!-- CONTACTO -->
   <section id="contact">
