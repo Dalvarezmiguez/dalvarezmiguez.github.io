@@ -6,16 +6,21 @@
   <style>
     body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f5f6fa; color: #2c3e50; }
     header { background: #2c3e50; color: white; padding: 30px; text-align: center; }
-    nav { background: #34495e; padding: 10px; text-align: center; }
-    nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
-    nav a:hover { text-decoration: underline; }
-    section { padding: 40px; max-width: 1000px; margin: auto; }
+    nav { background: #34495e; display: flex; justify-content: center; }
+    nav button {
+      background: none; border: none; color: white; padding: 15px 25px;
+      cursor: pointer; font-size: 16px; font-weight: bold;
+    }
+    nav button.active { border-bottom: 3px solid #2980b9; }
+    nav button:hover { color: #2980b9; }
+    section { display: none; padding: 40px; max-width: 1000px; margin: auto; }
+    section.active { display: block; }
     h2 { border-bottom: 2px solid #ddd; padding-bottom: 10px; }
     .project-card {
       background: white; padding: 20px; margin: 20px 0; border-radius: 8px;
       box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     }
-    .btn { display: inline-block; padding: 8px 15px; border-radius: 4px; background: #2980b9; color: white; text-decoration: none; font-weight: bold; }
+    .btn { display: inline-block; padding: 8px 15px; border-radius: 4px; background: #2980b9; color: white; text-decoration: none; font-weight: bold; margin-top: 10px; }
     .btn:hover { background: #1c5980; }
     footer { background: #2c3e50; color: white; text-align: center; padding: 15px; margin-top: 30px; }
   </style>
@@ -27,25 +32,21 @@
   </header>
 
   <nav>
-    <a href="#about">Sobre mí</a>
-    <a href="#cv">CV</a>
-    <a href="#projects">Proyectos</a>
-    <a href="#contact">Contacto</a>
+    <button class="tab-btn active" data-target="about">Sobre mí</button>
+    <button class="tab-btn" data-target="projects">Proyectos</button>
+    <button class="tab-btn" data-target="contact">Contacto</button>
   </nav>
 
-  <section id="about">
+  <!-- SOBRE MÍ -->
+  <section id="about" class="active">
     <h2>👋 Sobre mí</h2>
-    <p>Soy analista de datos con experiencia en Power BI, SQL y Python. Me encanta transformar datos en conocimiento accionable.</p>
-  </section>
-
-  <section id="cv">
-    <h2>📄 Curriculum Vitae</h2>
-    <p><strong>Formación:</strong> Bootcamp en Data Analytics & Big Data, Campus Dual TIC (2025).</p>
-    <p><strong>Habilidades:</strong> Power BI (modelo, DAX, visualizaciones), SQL, Python, Excel avanzado, etc.</p>
-    <p><strong>Experiencia:</strong> análisis contable, gestión de equipos y planificación comercial.</p>
+    <p>Hola, soy Daniel Álvarez Míguez. Soy profesional en Finanzas y Control de Gestión con experiencia en análisis contable, reporting y optimización de márgenes, combinado con formación avanzada en Data Analytics & Big Data.</p>
+    <p>He trabajado en Decathlon y Leroy Merlin, liderando equipos, gestionando KPIs y desarrollando dashboards para apoyar la toma de decisiones estratégicas. Domino SQL, Python y Power BI, y me apasiona transformar datos complejos en información clara y útil para el negocio.</p>
+    <p>Actualmente busco aportar valor como Controller Financiero o Analista de Datos, combinando visión financiera y analítica para mejorar eficiencia y resultados.</p>
     <p>👉 <a class="btn" href="CV_DalvarezMiguez.pdf" target="_blank">Descargar CV (PDF)</a></p>
   </section>
 
+  <!-- PROYECTOS -->
   <section id="projects">
     <h2>🚀 Proyectos</h2>
 
@@ -53,32 +54,51 @@
       <h3>📈 Análisis de Ventas – AdventureWorks</h3>
       <p>Dashboard en Power BI con segmentación por país, provincia y continente, plus KPIs relevantes.</p>
       <a class="btn" href="proyectos/adventureworks.html">Ver proyecto</a>
+      <a class="btn" href="https://github.com/Dalvarezmiguez/adventureworks" target="_blank">Código en GitHub</a>
     </div>
 
     <div class="project-card">
       <h3>📡 Análisis de Clientes – Telecomunicaciones</h3>
       <p>Estudio de churn y segmentación de clientes con visualizaciones dinámicas.</p>
       <a class="btn" href="proyectos/telecomunicaciones.html">Ver proyecto</a>
+      <a class="btn" href="https://github.com/Dalvarezmiguez/telecomunicaciones" target="_blank">Código en GitHub</a>
     </div>
 
     <div class="project-card">
       <h3>⚽ Análisis Deportivo – Fútbol</h3>
       <p>KPIs y métricas de rendimiento deportivo con comparativas entre equipos/jugadores.</p>
       <a class="btn" href="proyectos/futbol.html">Ver proyecto</a>
+      <a class="btn" href="https://github.com/Dalvarezmiguez/futbol" target="_blank">Código en GitHub</a>
     </div>
-
-    <!-- Si tienes más proyectos, añade más project-card aquí -->
   </section>
 
+  <!-- CONTACTO -->
   <section id="contact">
     <h2>📬 Contacto</h2>
     <p>📧 Email: tuemail@ejemplo.com</p>
-    <p>🔗 LinkedIn: <a href="https://www.linkedin.com/" target="_blank">Tu Perfil</a></p>
+    <p>🔗 LinkedIn: <a href="https://www.linkedin.com/in/daniel-alvarez-miguez" target="_blank">Tu Perfil</a></p>
     <p>💻 GitHub: <a href="https://github.com/Dalvarezmiguez" target="_blank">Repositorio</a></p>
   </section>
 
   <footer>
     <p>© 2025 Dalvarez Miguez | Portfolio Data Analytics</p>
   </footer>
+
+  <script>
+    const tabs = document.querySelectorAll('.tab-btn');
+    const sections = document.querySelectorAll('section');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        // Remover clase active de botones y secciones
+        tabs.forEach(btn => btn.classList.remove('active'));
+        sections.forEach(sec => sec.classList.remove('active'));
+
+        // Activar la pestaña y sección seleccionada
+        tab.classList.add('active');
+        document.getElementById(tab.dataset.target).classList.add('active');
+      });
+    });
+  </script>
 </body>
 </html>
