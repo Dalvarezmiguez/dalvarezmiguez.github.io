@@ -2,33 +2,141 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Portfolio Data Analytics – Dalvarez Miguez</title>
+  <title>Portfolio Data Analytics – Daniel Álvarez Míguez</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f5f6fa; color: #2c3e50; }
-    header { background: #2c3e50; color: white; padding: 30px; text-align: center; }
-    nav { background: #34495e; display: flex; justify-content: center; }
+    /* Estilos generales */
+    body {
+      font-family: 'Roboto', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f8f9fa;
+      color: #2c3e50;
+    }
+
+    header {
+      background: #1f2a38;
+      color: #ffffff;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-weight: 700;
+      font-size: 2em;
+    }
+
+    header p {
+      margin-top: 10px;
+      font-weight: 400;
+      font-size: 1em;
+      color: #bdc3c7;
+    }
+
+    nav {
+      background: #2c3e50;
+      display: flex;
+      justify-content: center;
+      border-bottom: 2px solid #1f2a38;
+    }
+
     nav button {
-      background: none; border: none; color: white; padding: 15px 25px;
-      cursor: pointer; font-size: 16px; font-weight: bold;
+      background: none;
+      border: none;
+      color: #ecf0f1;
+      padding: 15px 30px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 500;
+      transition: color 0.3s, border-bottom 0.3s;
     }
-    nav button.active { border-bottom: 3px solid #2980b9; }
-    nav button:hover { color: #2980b9; }
-    section { display: none; padding: 40px; max-width: 1000px; margin: auto; }
-    section.active { display: block; }
-    h2 { border-bottom: 2px solid #ddd; padding-bottom: 10px; }
+
+    nav button.active {
+      border-bottom: 3px solid #2980b9;
+      color: #2980b9;
+    }
+
+    nav button:hover {
+      color: #2980b9;
+    }
+
+    section {
+      display: none;
+      padding: 50px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    section.active {
+      display: block;
+    }
+
+    h2 {
+      font-weight: 700;
+      font-size: 1.8em;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #bdc3c7;
+      padding-bottom: 10px;
+    }
+
+    p {
+      line-height: 1.7;
+      margin-bottom: 15px;
+    }
+
+    /* Tarjetas de proyectos */
     .project-card {
-      background: white; padding: 20px; margin: 20px 0; border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      background: #ffffff;
+      padding: 25px;
+      margin: 25px 0;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
     }
-    .btn { display: inline-block; padding: 8px 15px; border-radius: 4px; background: #2980b9; color: white; text-decoration: none; font-weight: bold; margin-top: 10px; }
-    .btn:hover { background: #1c5980; }
-    footer { background: #2c3e50; color: white; text-align: center; padding: 15px; margin-top: 30px; }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+
+    .project-card h3 {
+      margin-top: 0;
+      font-size: 1.4em;
+      font-weight: 500;
+      color: #34495e;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 5px;
+      background: #2980b9;
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 500;
+      margin-top: 10px;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #1c5980;
+    }
+
+    footer {
+      background: #1f2a38;
+      color: #ffffff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      font-size: 0.9em;
+    }
   </style>
 </head>
 <body>
   <header>
-    <h1>📊 Portfolio de Data Analytics</h1>
-    <p>Dalvarez Miguez – Power BI | SQL | Python</p>
+    <h1>Portfolio Data Analytics</h1>
+    <p>Daniel Álvarez Míguez – Power BI | SQL | Python</p>
   </header>
 
   <nav>
@@ -39,33 +147,33 @@
 
   <!-- SOBRE MÍ -->
   <section id="about" class="active">
-    <h2>👋 Sobre mí</h2>
-    <p>Hola, soy Daniel Álvarez Míguez. Soy profesional en Finanzas y Control de Gestión con experiencia en análisis contable, reporting y optimización de márgenes, combinado con formación avanzada en Data Analytics & Big Data.</p>
+    <h2>Sobre mí</h2>
+    <p>Soy profesional en Finanzas y Control de Gestión con experiencia en análisis contable, reporting y optimización de márgenes, complementado con formación avanzada en Data Analytics & Big Data.</p>
     <p>He trabajado en Decathlon y Leroy Merlin, liderando equipos, gestionando KPIs y desarrollando dashboards para apoyar la toma de decisiones estratégicas. Domino SQL, Python y Power BI, y me apasiona transformar datos complejos en información clara y útil para el negocio.</p>
     <p>Actualmente busco aportar valor como Controller Financiero o Analista de Datos, combinando visión financiera y analítica para mejorar eficiencia y resultados.</p>
-    <p>👉 <a class="btn" href="CV_DalvarezMiguez.pdf" target="_blank">Descargar CV (PDF)</a></p>
+    <p><a class="btn" href="CV/CV_DalvarezMiguez.pdf" download>Descargar CV (PDF)</a></p>
   </section>
 
   <!-- PROYECTOS -->
   <section id="projects">
-    <h2>🚀 Proyectos</h2>
+    <h2>Proyectos</h2>
 
     <div class="project-card">
-      <h3>📈 Análisis de Ventas – AdventureWorks</h3>
-      <p>Dashboard en Power BI con segmentación por país, provincia y continente, plus KPIs relevantes.</p>
+      <h3>Análisis de Ventas – AdventureWorks</h3>
+      <p>Dashboard en Power BI con segmentación por país, provincia y continente, más KPIs relevantes.</p>
       <a class="btn" href="proyectos/adventureworks.html">Ver proyecto</a>
       <a class="btn" href="https://github.com/Dalvarezmiguez/adventureworks" target="_blank">Código en GitHub</a>
     </div>
 
     <div class="project-card">
-      <h3>📡 Análisis de Clientes – Telecomunicaciones</h3>
+      <h3>Análisis de Clientes – Telecomunicaciones</h3>
       <p>Estudio de churn y segmentación de clientes con visualizaciones dinámicas.</p>
       <a class="btn" href="proyectos/telecomunicaciones.html">Ver proyecto</a>
       <a class="btn" href="https://github.com/Dalvarezmiguez/telecomunicaciones" target="_blank">Código en GitHub</a>
     </div>
 
     <div class="project-card">
-      <h3>⚽ Análisis Deportivo – Fútbol</h3>
+      <h3>Análisis Deportivo – Fútbol</h3>
       <p>KPIs y métricas de rendimiento deportivo con comparativas entre equipos/jugadores.</p>
       <a class="btn" href="proyectos/futbol.html">Ver proyecto</a>
       <a class="btn" href="https://github.com/Dalvarezmiguez/futbol" target="_blank">Código en GitHub</a>
@@ -74,14 +182,14 @@
 
   <!-- CONTACTO -->
   <section id="contact">
-    <h2>📬 Contacto</h2>
-    <p>📧 Email: tuemail@ejemplo.com</p>
-    <p>🔗 LinkedIn: <a href="https://www.linkedin.com/in/daniel-alvarez-miguez" target="_blank">Tu Perfil</a></p>
-    <p>💻 GitHub: <a href="https://github.com/Dalvarezmiguez" target="_blank">Repositorio</a></p>
+    <h2>Contacto</h2>
+    <p>Email: tuemail@ejemplo.com</p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/daniel-alvarez-miguez" target="_blank">Perfil LinkedIn</a></p>
+    <p>GitHub: <a href="https://github.com/Dalvarezmiguez" target="_blank">Repositorio GitHub</a></p>
   </section>
 
   <footer>
-    <p>© 2025 Dalvarez Miguez | Portfolio Data Analytics</p>
+    <p>© 2025 Daniel Álvarez Míguez | Portfolio Data Analytics</p>
   </footer>
 
   <script>
@@ -90,11 +198,8 @@
 
     tabs.forEach(tab => {
       tab.addEventListener('click', () => {
-        // Remover clase active de botones y secciones
         tabs.forEach(btn => btn.classList.remove('active'));
         sections.forEach(sec => sec.classList.remove('active'));
-
-        // Activar la pestaña y sección seleccionada
         tab.classList.add('active');
         document.getElementById(tab.dataset.target).classList.add('active');
       });
