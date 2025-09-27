@@ -12,33 +12,28 @@
       background: #f8f9fa;
       color: #2c3e50;
     }
-
     header {
       background: #1f2a38;
       color: #ffffff;
       padding: 30px 20px;
       text-align: center;
     }
-
     header h1 {
       margin: 0;
       font-weight: 700;
       font-size: 2em;
     }
-
     header p {
       margin-top: 5px;
       font-weight: 400;
       font-size: 1em;
       color: #bdc3c7;
     }
-
     main {
       max-width: 900px;
       margin: 40px auto;
       padding: 0 20px;
     }
-
     h2 {
       font-size: 1.8em;
       font-weight: 700;
@@ -46,52 +41,64 @@
       padding-bottom: 10px;
       margin-bottom: 20px;
     }
-
     h3 {
       font-size: 1.3em;
       font-weight: 500;
       margin-top: 25px;
     }
-
     p, li {
       line-height: 1.7;
       margin-bottom: 10px;
     }
-
     ul {
       margin-left: 20px;
     }
-
     a {
-      color: #2980b9;
       text-decoration: none;
+      transition: color 0.3s;
+      color: inherit;
     }
-
     a:hover {
       color: #1c5980;
     }
-
-    /* Evitar que el enlace cambie de color al pulsarlo */
-    a:visited, a:active {
-      color: #2980b9;
+    a:visited {
+      color: inherit;
     }
-
-    .btn {
+    .btn, .btn-github {
       display: inline-block;
-      padding: 10px 20px;
+      padding: 12px 25px;
       border-radius: 5px;
-      background: #2980b9;
-      color: #ffffff;
-      text-decoration: none;
       font-weight: 500;
       margin: 10px 10px 0 0;
-      transition: background 0.3s;
+      text-align: center;
+      text-decoration: none;
+      transition: background 0.3s, color 0.3s;
     }
-
+    .btn {
+      background: #2980b9;
+      color: #ffffff; 
+    }
     .btn:hover {
       background: #1c5980;
+      color: #ffffff;
     }
-
+    .btn-github {
+      background: #bdc3c7;
+      color: #2c3e50; 
+    }
+    .btn-github:hover {
+      background: #95a5a6;
+      color: #ffffff;
+    }
+    .btn-container {
+      margin-top: 20px;
+    }
+    img {
+      max-width: 100%;
+      display: block;
+      margin: 20px 0;
+      border-radius: 5px;
+    }
     footer {
       background: #1f2a38;
       color: #ffffff;
@@ -104,13 +111,13 @@
 </head>
 <body>
   <header>
-    <h1>Análisis de LaLiga – 10 Años</h1>
-    <p>Power BI</p>
+    <h1>Análisis de LaLiga – Power BI</h1>
+    <p>Clasificaciones históricas y rendimiento de equipos</p>
   </header>
 
   <main>
     <h2>Contexto</h2>
-    <p>Dataset de las clasificaciones históricas de LaLiga, la primera división española, incluyendo información de los últimos 10 años.  
+    <p>Dataset de las clasificaciones históricas de LaLiga, incluyendo información de los últimos 10 años.  
     Objetivo: analizar la evolución de los equipos, sus puntos, goles y posiciones para obtener insights sobre rendimiento histórico y tendencias.</p>
 
     <h2>Objetivos del análisis</h2>
@@ -124,33 +131,50 @@
     <h2>Estructura del Dashboard</h2>
     <ul>
       <li><strong>Resumen por año:</strong> filtro por temporada, escudo del campeón, máximo goleador, equipo menos goleado y 3 descendidos.</li>
-      <li><strong>Clasificación histórica por puntos:</strong> suma de indicadores de los últimos 10 años, con gráfico de líneas por año.</li>
-      <li><strong>Clasificación histórica por posición media:</strong> posición media, goles a favor/en contra, puntos promedio y tooltip año por año.</li>
-      <li><strong>Tabla de clasificaciones anuales:</strong> filtrar por temporada y ver la clasificación final.</li>
+      <li><strong>Clasificación histórica por puntos:</strong> suma de todos los indicadores de los últimos 10 años, con tooltip de evolución anual.</li>
+      <li><strong>Clasificación histórica por posición media:</strong> posición media, goles a favor y en contra, puntos promedio y tooltip de evolución anual.</li>
+      <li><strong>Tabla de clasificaciones anuales:</strong> permite filtrar por temporada y ver la clasificación final de cualquier año.</li>
     </ul>
 
     <h2>Técnicas y herramientas</h2>
     <ul>
-      <li>Power BI: dashboards interactivos con filtros y tooltips.</li>
-      <li>DAX: medidas para cálculos de puntos totales, promedio de goles y posición media.</li>
-      <li>Power Query: limpieza y transformación de datos.</li>
+      <li><strong>Power BI:</strong> dashboards interactivos con filtros y tooltips.</li>
+      <li><strong>DAX:</strong> cálculos de puntos totales, promedio de goles y posición media.</li>
+      <li><strong>Power Query:</strong> limpieza y transformación de datos.</li>
     </ul>
 
     <h2>Dataset</h2>
     <p>Fuente: <a href="https://www.transfermarkt.es/" target="_blank">Transfermarkt - LaLiga</a></p>
+    <p>Incluye clasificaciones, goles a favor, goles en contra, puntos y posiciones de los últimos 10 años.</p>
 
     <h2>Principales insights</h2>
     <ul>
-      <li>Barcelona lidera ambas clasificaciones históricas, 12 puntos sobre Real Madrid, diferencia de 0,11 en posición media.</li>
-      <li>Villarreal es el equipo menos goleado en la última década.</li>
-      <li>Clasificación histórica por puntos y posición media no siempre coincide.</li>
-      <li>Equipos como Sporting o Málaga solo han estado 1-2 temporadas en primera división en los últimos 10 años.</li>
-      <li>Evolución de puntos y posiciones permite identificar equipos consistentes frente a rendimientos fluctuantes.</li>
+      <li><strong>Barcelona</strong> lidera ambas clasificaciones históricas, con 12 puntos sobre el Real Madrid y diferencia de 0,11 en posición media.</li>
+      <li>El Villarreal es el equipo menos goleado en la última década.</li>
+      <li>Posiciones de clasificación histórica por puntos y posición media no siempre coinciden, mostrando irregularidad de algunos equipos.</li>
+      <li>Equipos como <strong>Sporting</strong> o <strong>Málaga</strong> solo han estado 1 o 2 temporadas en primera división en la última década.</li>
+      <li>Evolución de puntos y posiciones permite identificar equipos consistentes frente a equipos con rendimientos fluctuantes.</li>
     </ul>
+
+    <h2>Visualizaciones</h2>
+    <h3>Página 1 – Palmarés</h3>
+    <img src="./Img/Palmarés.PNG" alt="Palmarés">
+
+    <h3>Página 2 – Resumen por año</h3>
+    <img src="./Img/Resumen_por_año.PNG" alt="Resumen por año">
+
+    <h3>Página 3 – Clasificación histórica por puntos</h3>
+    <img src="./Img/Histórica_por_puntos.PNG" alt="Histórica por puntos">
+
+    <h3>Página 4 – Clasificación histórica por posición media</h3>
+    <img src="./Img/Histórica_por_posición_media.PNG" alt="Histórica por posición media">
+
+    <h3>Página 5 – Clasificación anual filtrable</h3>
+    <img src="./Img/Clasificación_anual.PNG" alt="Clasificación anual">
 
     <div class="btn-container">
       <a class="btn" href="../index.html#projects">Volver a Proyectos</a>
-      <a class="btn" href="https://github.com/Dalvarezmiguez/Portfolio-Power-Bi/tree/main" target="_blank">Más detalles en GitHub</a>
+      <a class="btn-github" href="../Proyecto_LaLiga/" target="_blank">Más detalles en Proyecto LaLiga</a>
     </div>
   </main>
 
