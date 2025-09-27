@@ -85,6 +85,7 @@
       margin-bottom: 15px;
     }
 
+    /* Tarjetas de proyectos */
     .project-card {
       background: #ffffff;
       padding: 25px;
@@ -126,6 +127,7 @@
       margin: 15px 0;
     }
 
+    /* Botones */
     .btn {
       display: inline-block;
       padding: 10px 20px;
@@ -142,6 +144,23 @@
       background: #1c5980;
     }
 
+    .btn-github {
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 5px;
+      background: #bdc3c7;
+      color: #2c3e50;
+      font-weight: 500;
+      margin: 10px 10px 0 0;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .btn-github:hover {
+      background: #95a5a6;
+      color: #ffffff;
+    }
+
+    /* Enlaces */
     a {
       color: #2980b9;
       text-decoration: none;
@@ -150,6 +169,10 @@
 
     a:hover {
       color: #1c5980;
+    }
+
+    a:visited {
+      color: #2980b9;
     }
 
     footer {
@@ -186,6 +209,7 @@
   <!-- PROYECTOS -->
   <section id="projects">
     <h2>Proyectos</h2>
+
     <div class="project-card">
       <h3>Análisis de Ventas – Adventure Works</h3>
       <p class="objective"><strong>Objetivo:</strong> Analizar las ventas para identificar productos clave, canales de mayor rendimiento y optimizar la estrategia comercial.</p>
@@ -193,7 +217,54 @@
       <img src="img/Dashboard_Ventas.gif" alt="Dashboard Ventas">
       <a class="btn" href="proyectos/adventureworks.html">Ver proyecto</a>
     </div>
-    <!-- Puedes mantener las demás tarjetas de proyectos aquí -->
+
+    <div class="project-card">
+      <h3>Análisis de Churn – Telco Customer (Python)</h3>
+      <p class="objective"><strong>Objetivo:</strong> Evaluar la probabilidad de abandono de clientes y segmentarlos para aplicar estrategias de retención efectivas.</p>
+      <p class="demo">Demo interactiva</p>
+      <img src="img/Dashboard_Telco.gif" alt="Dashboard Telco">
+      <a class="btn" href="proyectos/telco.html">Ver proyecto</a>
+    </div>
+
+    <div class="project-card">
+      <h3>Análisis de Airbnb – Madrid (Python)</h3>
+      <p class="objective"><strong>Objetivo:</strong> Analizar el mercado de alquiler de Airbnb en Madrid para comprender la distribución de tipos de vivienda, precios y regulación de licencias.</p>
+      <p class="demo">Demo interactiva</p>
+      <img src="img/Dashboard_Airbnb.gif" alt="Dashboard Airbnb">
+      <a class="btn" href="proyectos/airbnb.html">Ver proyecto</a>
+    </div>
+
+    <div class="project-card">
+      <h3>Análisis de Compras</h3>
+      <p class="objective"><strong>Objetivo:</strong> Identificar proveedores estratégicos y oportunidades de optimización de compras para reducir costos y concentrar esfuerzos en proveedores clave.</p>
+      <p class="demo">Demo interactiva</p>
+      <img src="img/Dashboard_Compras.gif" alt="Dashboard Compras">
+      <a class="btn" href="proyectos/compras.html">Ver proyecto</a>
+    </div>
+
+    <div class="project-card">
+      <h3>Presupuesto Generalitat de Catalunya (1999–2023)</h3>
+      <p class="objective"><strong>Objetivo:</strong> Analizar la evolución de los presupuestos de la Generalitat, identificando tendencias y áreas de gasto prioritarias a lo largo del tiempo.</p>
+      <p class="demo">Demo interactiva</p>
+      <img src="img/Dashboard_Cataluña.gif" alt="Dashboard Generalitat">
+      <a class="btn" href="proyectos/generalitat.html">Ver proyecto</a>
+    </div>
+
+    <div class="project-card">
+      <h3>Análisis Financiero y Operativo – Inditex (2023–2024)</h3>
+      <p class="objective"><strong>Objetivo:</strong> Evaluar el desempeño financiero y operativo de Inditex, incluyendo ventas, apertura/cierre de tiendas y cuenta de resultados, para apoyar decisiones estratégicas.</p>
+      <p class="demo">Demo interactiva</p>
+      <img src="img/Dashboard_Inditex.gif" alt="Dashboard Inditex">
+      <a class="btn" href="proyectos/inditex.html">Ver proyecto</a>
+    </div>
+
+    <div class="project-card">
+      <h3>Análisis de LaLiga</h3>
+      <p class="objective"><strong>Objetivo:</strong> Analizar el rendimiento histórico de los equipos de LaLiga para identificar tendencias, diferencias de ranking y equipos destacados en distintas métricas.</p>
+      <p class="demo">Demo interactiva</p>
+      <img src="img/Dashboard_LaLiga.gif" alt="Dashboard LaLiga">
+      <a class="btn" href="proyectos/laliga.html">Ver proyecto</a>
+    </div>
   </section>
 
   <!-- CONTACTO -->
@@ -221,10 +292,10 @@
         if(tab && section) {
           tab.classList.add('active');
           section.classList.add('active');
+          section.scrollIntoView({behavior: "smooth"});
         }
       }
 
-      // Activar tab al hacer click
       tabs.forEach(tab => {
         tab.addEventListener('click', () => {
           activateTab(tab.dataset.target);
@@ -232,14 +303,12 @@
         });
       });
 
-      // Activar tab según hash al cargar la página
+      // Activar sección según hash al cargar
       const hash = window.location.hash.replace('#', '');
       if(hash && document.getElementById(hash)) {
         activateTab(hash);
-        // Hacer scroll al inicio de la sección
-        document.getElementById(hash).scrollIntoView();
       } else {
-        activateTab('about'); // Tab por defecto
+        activateTab('about'); // sección por defecto
       }
     });
   </script>
