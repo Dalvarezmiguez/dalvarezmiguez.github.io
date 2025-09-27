@@ -63,25 +63,16 @@
     }
 
     a {
-      color: #2980b9;
       text-decoration: none;
     }
 
-    a:hover {
-      color: #1c5980;
-    }
-
-    a:visited, a:active {
-      color: #2980b9;
-    }
-
+    /* Botón azul principal */
     .btn {
       display: inline-block;
       padding: 12px 25px;
       border-radius: 5px;
       background: #2980b9;
       color: #ffffff;
-      text-decoration: none;
       font-weight: 500;
       margin: 10px 10px 0 0;
       transition: background 0.3s;
@@ -91,6 +82,24 @@
     .btn:hover {
       background: #1c5980;
       color: #ffffff;
+    }
+
+    /* Botón GitHub gris */
+    .btn-github {
+      display: inline-block;
+      padding: 12px 25px;
+      border-radius: 5px;
+      background: #bdc3c7; /* gris claro */
+      color: #2c3e50; /* texto oscuro */
+      font-weight: 500;
+      margin: 10px 10px 0 0;
+      transition: background 0.3s, color 0.3s;
+      text-align: center;
+    }
+
+    .btn-github:hover {
+      background: #95a5a6; /* gris más oscuro al hover */
+      color: #ffffff; /* opcional */
     }
 
     .btn-container {
@@ -121,12 +130,10 @@
   </header>
 
   <main>
-    <!-- Contexto -->
     <h2>Contexto</h2>
     <p>Dataset de ventas de retail, incluyendo información de productos, comerciales, canales y registros históricos.  
     Objetivo: generar insights accionables para decisiones comerciales estratégicas y realizar proyecciones de ventas.</p>
 
-    <!-- Objetivos -->
     <h2>Objetivos del análisis</h2>
     <ul>
       <li>Analizar la evolución de ventas y márgenes por producto y categoría.</li>
@@ -135,30 +142,6 @@
       <li>Realizar proyecciones de ventas basadas en histórico.</li>
     </ul>
 
-    <!-- Estructura del Dashboard -->
-    <h2>Estructura del Dashboard</h2>
-    <ul>
-      <li><strong>Ventas generales:</strong> KPIs, evolución mensual y por categoría.</li>
-      <li><strong>Ventas por canal:</strong> comparativa entre canales y rentabilidad.</li>
-      <li><strong>Ventas por comercial:</strong> ranking y cartera estratégica.</li>
-      <li><strong>Proyección de ventas:</strong> forecast y gráficos de tendencias.</li>
-    </ul>
-
-    <!-- Técnicas y herramientas -->
-    <h2>Técnicas y herramientas</h2>
-    <ul>
-      <li><strong>Power BI:</strong> dashboards interactivos, segmentaciones y KPIs.</li>
-      <li><strong>SQL:</strong> extracción de datos, JOINs y agregaciones.</li>
-      <li><strong>DAX:</strong> cálculos de margen, crecimiento y proyecciones.</li>
-      <li><strong>Power Query:</strong> limpieza y transformación de datos.</li>
-    </ul>
-
-    <!-- Dataset -->
-    <h2>Dataset</h2>
-    <p>Fuente: <strong>AdventureWorks 2022</strong> (SQL Server sample database)<br>
-    <a href="https://github.com/Microsoft/sql-server-samples/releases/tag/adventureworks" target="_blank">Más información y descarga</a></p>
-
-    <!-- Insights -->
     <h2>Principales insights</h2>
     <ul>
       <li>El 20% de los productos genera el 60% de las ventas.</li>
@@ -167,27 +150,25 @@
       <li>Stock suficiente para las ventas de las próximas 4 semanas según proyecciones.</li>
     </ul>
 
-    <!-- Visualizaciones -->
     <h2>Principales visualizaciones</h2>
     <h3>Informe Resumen</h3>
-    <img src="./img/Informe_Resumen.png" alt="Informe Resumen">
+    <img src="./img/informe_resumen.png" alt="Informe Resumen">
 
     <h3>Detalle Por Canal</h3>
-    <img src="./img/Detalle_Por_Canal.png" alt="Detalle Por Canal">
+    <img src="./img/detalle_por_canal.png" alt="Detalle Por Canal">
 
     <h3>Detalle Comerciales</h3>
-    <img src="./img/Detalle_Comerciales.png" alt="Detalle Comerciales">
+    <img src="./img/detalle_comerciales.png" alt="Detalle Comerciales">
 
     <h3>Proyección Ventas</h3>
-    <img src="./img/Proyección_Ventas.png" alt="Proyección Ventas">
+    <img src="./img/proyeccion_ventas.png" alt="Proyección Ventas">
 
     <h3>Detalle Ventas Diarias</h3>
-    <img src="./img/Detalle_ventas_diarias.png" alt="Detalle Ventas Diarias">
+    <img src="./img/detalle_ventas_diarias.png" alt="Detalle Ventas Diarias">
 
-    <!-- Botones -->
     <div class="btn-container">
       <a class="btn" href="index.html#projects">Volver a Proyectos</a>
-      <a class="btn" href="https://github.com/Dalvarezmiguez/Portfolio-Power-Bi/tree/main" target="_blank">Más detalles en GitHub</a>
+      <a class="btn-github" href="https://github.com/Dalvarezmiguez/Portfolio-Power-Bi/tree/main" target="_blank">Más detalles en GitHub</a>
     </div>
   </main>
 
