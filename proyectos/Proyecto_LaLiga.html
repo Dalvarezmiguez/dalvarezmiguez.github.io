@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Proyecto – Análisis Financiero Inditex</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f8f9fa;
+      color: #2c3e50;
+    }
+
+    header {
+      background: #1f2a38;
+      color: #ffffff;
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-weight: 700;
+      font-size: 2em;
+    }
+
+    header p {
+      margin-top: 5px;
+      font-weight: 400;
+      font-size: 1em;
+      color: #bdc3c7;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    h2 {
+      font-size: 1.8em;
+      font-weight: 700;
+      border-bottom: 2px solid #bdc3c7;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      font-size: 1.3em;
+      font-weight: 500;
+      margin-top: 25px;
+    }
+
+    p, li {
+      line-height: 1.7;
+      margin-bottom: 10px;
+    }
+
+    ul {
+      margin-left: 20px;
+    }
+
+    a {
+      color: #2980b9;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #1c5980;
+    }
+
+    /* Evitar que el enlace cambie de color al pulsarlo */
+    a:visited, a:active {
+      color: #2980b9;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 5px;
+      background: #2980b9;
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 500;
+      margin: 10px 10px 0 0;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #1c5980;
+    }
+
+    footer {
+      background: #1f2a38;
+      color: #ffffff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Análisis Financiero y Operativo – Inditex</h1>
+    <p>Power BI – 2023/2024</p>
+  </header>
+
+  <main>
+    <h2>Contexto</h2>
+    <p>Análisis de los resultados financieros consolidados de Inditex para los ejercicios 2023 y 2024, incluyendo evolución de ventas y gestión de la red de tiendas.  
+    Objetivo: generar insights financieros y operativos a partir de los informes oficiales mediante un dashboard interactivo en Power BI.</p>
+
+    <h2>Objetivos del análisis</h2>
+    <ul>
+      <li>Analizar la evolución de las ventas y el resultado antes de impuestos.</li>
+      <li>Identificar tendencias trimestrales y estacionalidad en el negocio.</li>
+      <li>Evaluar la red de tiendas (aperturas, cierres y variación neta).</li>
+      <li>Detectar los países con mayor peso en la operativa (top 3 por número de tiendas).</li>
+    </ul>
+
+    <h2>Estructura del Dashboard</h2>
+    <ul>
+      <li><strong>Resumen financiero:</strong> KPIs, tabla de cuenta de resultados, gráficos de barras y líneas.</li>
+      <li><strong>Red de tiendas:</strong> mapas interactivos por país, KPIs y ranking top 3.</li>
+      <li><strong>Comparativa interanual:</strong> evolución de ventas e ingresos por trimestre, KPI de crecimiento YoY.</li>
+      <li><strong>Versión móvil:</strong> dashboard adaptado para dispositivos móviles.</li>
+    </ul>
+
+    <h2>Técnicas y herramientas</h2>
+    <ul>
+      <li>Power BI: dashboards interactivos.</li>
+      <li>DAX: medidas de ventas totales, resultado antes de impuestos, variación de tiendas y crecimiento interanual.</li>
+      <li>Power Query: extracción y transformación de datos desde PDFs oficiales.</li>
+      <li>Datos financieros y operativos combinados en un modelo analítico.</li>
+    </ul>
+
+    <h2>Dataset</h2>
+    <ul>
+      <li><a href="https://www.inditex.com/itxcomweb/api/media/687bf434-a22b-4526-a288-97cbb5e0701a/AnexoResultadosAnuales2024.pdf?t=1742212240729" target="_blank">Resultados Anuales 2024 (PDF)</a></li>
+      <li><a href="https://static.inditex.com/annual_report_2023/es/Cuentas_Anuales_Consolidadas_2023.pdf" target="_blank">Cuentas Anuales Consolidadas 2023 (PDF)</a></li>
+    </ul>
+
+    <h2>Principales insights</h2>
+    <ul>
+      <li>Resultado antes de impuestos creció +10,29%, ventas +7,47% respecto al año anterior.</li>
+      <li>Estacionalidad de ventas estable en ambos ejercicios.</li>
+      <li>Top 3 países en número de tiendas: España, México e Italia.</li>
+      <li>Países con más aperturas: Kazajistán, Uzbekistán y Baréin (total 7).</li>
+      <li>España lidera los cierres, con 70 tiendas menos en el periodo analizado.</li>
+    </ul>
+
+    <div class="btn-container">
+      <a class="btn" href="../index.html#projects">Volver a Proyectos</a>
+      <a class="btn" href="https://github.com/Dalvarezmiguez/Portfolio-Power-Bi/tree/main" target="_blank">Más detalles en GitHub</a>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 Daniel Álvarez Míguez | Portfolio Data Analytics</p>
+  </footer>
+</body>
+</html>
