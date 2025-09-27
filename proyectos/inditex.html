@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Proyecto – Análisis Financiero Inditex</title>
+  <title>Proyecto – Análisis Financiero y Operativo – Inditex</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
     body {
@@ -63,33 +63,60 @@
     }
 
     a {
-      color: #2980b9;
       text-decoration: none;
+      transition: color 0.3s;
+      color: inherit;
     }
 
     a:hover {
       color: #1c5980;
     }
 
-    /* Evitar que el enlace cambie de color al pulsarlo */
-    a:visited, a:active {
-      color: #2980b9;
+    a:visited {
+      color: inherit;
+    }
+
+    /* Botones */
+    .btn, .btn-github {
+      display: inline-block;
+      padding: 12px 25px;
+      border-radius: 5px;
+      font-weight: 500;
+      margin: 10px 10px 0 0;
+      text-align: center;
+      text-decoration: none;
+      transition: background 0.3s, color 0.3s;
     }
 
     .btn {
-      display: inline-block;
-      padding: 10px 20px;
-      border-radius: 5px;
       background: #2980b9;
-      color: #ffffff;
-      text-decoration: none;
-      font-weight: 500;
-      margin: 10px 10px 0 0;
-      transition: background 0.3s;
+      color: #ffffff; 
     }
 
     .btn:hover {
       background: #1c5980;
+      color: #ffffff;
+    }
+
+    .btn-github {
+      background: #bdc3c7;
+      color: #2c3e50; 
+    }
+
+    .btn-github:hover {
+      background: #95a5a6;
+      color: #ffffff;
+    }
+
+    .btn-container {
+      margin-top: 20px;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+      margin: 20px 0;
+      border-radius: 5px;
     }
 
     footer {
@@ -104,14 +131,14 @@
 </head>
 <body>
   <header>
-    <h1>Análisis Financiero y Operativo – Inditex</h1>
-    <p>Power BI – 2023/2024</p>
+    <h1>Análisis Financiero y Operativo – Inditex (2023–2024)</h1>
+    <p>Power BI + PDF Oficiales</p>
   </header>
 
   <main>
     <h2>Contexto</h2>
-    <p>Análisis de los resultados financieros consolidados de Inditex para los ejercicios 2023 y 2024, incluyendo evolución de ventas y gestión de la red de tiendas.  
-    Objetivo: generar insights financieros y operativos a partir de los informes oficiales mediante un dashboard interactivo en Power BI.</p>
+    <p>Análisis de los <strong>resultados financieros consolidados de Inditex</strong> para los ejercicios <strong>2023 y 2024</strong>, incluyendo evolución de ventas y gestión de la red de tiendas.  
+    Objetivo: generar insights financieros y operativos mediante un <strong>dashboard interactivo en Power BI</strong>.</p>
 
     <h2>Objetivos del análisis</h2>
     <ul>
@@ -123,38 +150,57 @@
 
     <h2>Estructura del Dashboard</h2>
     <ul>
-      <li><strong>Resumen financiero:</strong> KPIs, tabla de cuenta de resultados, gráficos de barras y líneas.</li>
-      <li><strong>Red de tiendas:</strong> mapas interactivos por país, KPIs y ranking top 3.</li>
-      <li><strong>Comparativa interanual:</strong> evolución de ventas e ingresos por trimestre, KPI de crecimiento YoY.</li>
-      <li><strong>Versión móvil:</strong> dashboard adaptado para dispositivos móviles.</li>
+      <li><strong>Resumen financiero:</strong> KPIs: ventas totales, crecimiento %, resultado antes de impuestos. Tabla de cuenta de resultados y balance. Gráficos de barras y líneas.</li>
+      <li><strong>Red de tiendas:</strong> Mapas interactivos por país, aperturas y cierres. KPIs: total de tiendas 2023 vs 2024, variación neta. Top 3 países en número de tiendas.</li>
+      <li><strong>Comparativa interanual:</strong> Evolución de ventas e ingresos por trimestre. KPI de crecimiento YoY.</li>
+      <li><strong>Versión móvil:</strong> Dashboard adaptado para visualización en dispositivos móviles.</li>
     </ul>
 
     <h2>Técnicas y herramientas</h2>
     <ul>
-      <li>Power BI: dashboards interactivos.</li>
-      <li>DAX: medidas de ventas totales, resultado antes de impuestos, variación de tiendas y crecimiento interanual.</li>
-      <li>Power Query: extracción y transformación de datos desde PDFs oficiales.</li>
-      <li>Datos financieros y operativos combinados en un modelo analítico.</li>
+      <li><strong>Power BI:</strong> dashboard interactivo.</li>
+      <li><strong>DAX:</strong> medidas de ventas totales, resultado antes de impuestos, variación de tiendas y crecimiento interanual.</li>
+      <li><strong>Power Query:</strong> extracción y transformación de datos desde PDFs oficiales.</li>
+      <li><strong>Datos financieros y operativos:</strong> combinados en un solo modelo analítico.</li>
     </ul>
 
     <h2>Dataset</h2>
     <ul>
+      <li>Fuente: Informes oficiales de Inditex</li>
       <li><a href="https://www.inditex.com/itxcomweb/api/media/687bf434-a22b-4526-a288-97cbb5e0701a/AnexoResultadosAnuales2024.pdf?t=1742212240729" target="_blank">Resultados Anuales 2024 (PDF)</a></li>
       <li><a href="https://static.inditex.com/annual_report_2023/es/Cuentas_Anuales_Consolidadas_2023.pdf" target="_blank">Cuentas Anuales Consolidadas 2023 (PDF)</a></li>
     </ul>
 
     <h2>Principales insights</h2>
     <ul>
-      <li>Resultado antes de impuestos creció +10,29%, ventas +7,47% respecto al año anterior.</li>
-      <li>Estacionalidad de ventas estable en ambos ejercicios.</li>
+      <li>Resultado antes de impuestos creció +10,29% y ventas aumentaron +7,47% respecto al año anterior.</li>
+      <li>Estacionalidad de las ventas estable en ambos ejercicios.</li>
       <li>Top 3 países en número de tiendas: España, México e Italia.</li>
       <li>Países con más aperturas: Kazajistán, Uzbekistán y Baréin (total 7).</li>
       <li>España lidera los cierres, con 70 tiendas menos en el periodo analizado.</li>
     </ul>
 
+    <h2>Valor añadido del proyecto</h2>
+    <ul>
+      <li>Integración de datos financieros y operativos desde PDFs oficiales con transformación en Power Query.</li>
+      <li>Creación de medidas DAX avanzadas para análisis financiero y operativo.</li>
+      <li>Dashboard con KPIs, mapas y gráficos dinámicos por país y por año.</li>
+      <li>Ejemplo práctico de aplicación de Power BI en análisis corporativo real.</li>
+    </ul>
+
+    <h2>Dashboard – Ejemplo de visualizaciones</h2>
+    <h3>Demo interactiva</h3>
+    <img src="../Img/Dashboard_Inditex.gif" alt="Demo interactiva">
+
+    <h3>Página 1 – Resumen financiero</h3>
+    <img src="../Img/Resumen_Financiero.PNG" alt="Resumen financiero">
+
+    <h3>Página 2 – Red de tiendas y aperturas/cierres</h3>
+    <img src="../Img/Detalle_Tiendas.PNG" alt="Mapa de tiendas">
+
     <div class="btn-container">
       <a class="btn" href="../index.html#projects">Volver a Proyectos</a>
-      <a class="btn" href="https://github.com/Dalvarezmiguez/Portfolio-Power-Bi/tree/main" target="_blank">Más detalles en GitHub</a>
+      <a class="btn-github" href="https://github.com/Dalvarezmiguez/Portfolio-Power-Bi/tree/main" target="_blank">Más detalles en GitHub</a>
     </div>
   </main>
 
