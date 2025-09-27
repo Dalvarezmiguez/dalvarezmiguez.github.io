@@ -144,6 +144,15 @@
       background: #1c5980;
     }
 
+    /* Asegura que los botones mantengan el color del texto */
+    .btn,
+    .btn:visited,
+    .btn:active,
+    .btn:focus {
+      color: #ffffff;
+      text-decoration: none;
+    }
+
     .btn-github {
       display: inline-block;
       padding: 10px 20px;
@@ -160,17 +169,8 @@
       color: #ffffff;
     }
 
-    a {
-      color: #2980b9;
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-
-    a:hover {
-      color: #1c5980;
-    }
-
-    a:visited {
+    /* Enlaces normales */
+    a:not(.btn):visited {
       color: #2980b9;
     }
 
