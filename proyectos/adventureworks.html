@@ -63,7 +63,6 @@
     }
 
     a {
-      color: #2980b9;
       text-decoration: none;
       transition: color 0.3s;
     }
@@ -76,38 +75,36 @@
       color: #2980b9;
     }
 
-    .btn {
+    /* Botones */
+    .btn, .btn-github {
       display: inline-block;
       padding: 12px 25px;
       border-radius: 5px;
-      background: #2980b9;
-      color: #ffffff;
       font-weight: 500;
       margin: 10px 10px 0 0;
-      transition: background 0.3s;
       text-align: center;
+      text-decoration: none;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .btn {
+      background: #2980b9;
+      color: #ffffff !important; /* fuerza que se vea */
     }
 
     .btn:hover {
       background: #1c5980;
-      color: #ffffff;
+      color: #ffffff !important;
     }
 
     .btn-github {
-      display: inline-block;
-      padding: 12px 25px;
-      border-radius: 5px;
       background: #bdc3c7;
-      color: #2c3e50;
-      font-weight: 500;
-      margin: 10px 10px 0 0;
-      transition: background 0.3s, color 0.3s;
-      text-align: center;
+      color: #2c3e50 !important; /* fuerza que se vea */
     }
 
     .btn-github:hover {
       background: #95a5a6;
-      color: #ffffff;
+      color: #ffffff !important;
     }
 
     .btn-container {
@@ -180,7 +177,7 @@
 
     <h2>Principales visualizaciones</h2>
     <h3>Informe Resumen</h3>
-    <img src="../img/Informe_Resumen.PNG" alt="Informe Resumen">
+    <img src="img/Informe_Resumen.PNG" alt="Informe Resumen">
 
     <h3>Detalle Por Canal</h3>
     <img src="img/Detalle_Por_Canal.PNG" alt="Detalle Por Canal">
