@@ -5,7 +5,6 @@
   <title>Portfolio Data Analytics – Daniel Álvarez Míguez</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
-    /* Estilos generales */
     body {
       font-family: 'Roboto', Arial, sans-serif;
       margin: 0;
@@ -21,18 +20,8 @@
       text-align: center;
     }
 
-    header h1 {
-      margin: 0;
-      font-weight: 700;
-      font-size: 2em;
-    }
-
-    header p {
-      margin-top: 10px;
-      font-weight: 400;
-      font-size: 1em;
-      color: #bdc3c7;
-    }
+    header h1 { margin: 0; font-weight: 700; font-size: 2em; }
+    header p { margin-top: 10px; font-weight: 400; font-size: 1em; color: #bdc3c7; }
 
     nav {
       background: #2c3e50;
@@ -50,42 +39,17 @@
       font-size: 16px;
       font-weight: 500;
       transition: color 0.3s, border-bottom 0.3s;
+      outline: none;
     }
 
-    nav button.active {
-      border-bottom: 3px solid #2980b9;
-      color: #2980b9;
-    }
+    nav button.active { border-bottom: 3px solid #2980b9; color: #2980b9; }
+    nav button:hover { color: #2980b9; }
 
-    nav button:hover {
-      color: #2980b9;
-    }
+    section { display: none; padding: 50px 20px; max-width: 900px; margin: auto; }
+    section.active { display: block; }
 
-    section {
-      display: none;
-      padding: 50px 20px;
-      max-width: 900px;
-      margin: auto;
-    }
+    h2 { font-weight: 700; font-size: 1.8em; margin-bottom: 20px; border-bottom: 2px solid #bdc3c7; padding-bottom: 10px; }
 
-    section.active {
-      display: block;
-    }
-
-    h2 {
-      font-weight: 700;
-      font-size: 1.8em;
-      margin-bottom: 20px;
-      border-bottom: 2px solid #bdc3c7;
-      padding-bottom: 10px;
-    }
-
-    p {
-      line-height: 1.7;
-      margin-bottom: 15px;
-    }
-
-    /* Tarjetas de proyectos */
     .project-card {
       background: #ffffff;
       padding: 25px;
@@ -100,11 +64,15 @@
       box-shadow: 0 10px 25px rgba(0,0,0,0.15);
     }
 
-    .project-card h3 {
-      margin-top: 0;
-      font-size: 1.4em;
-      font-weight: 500;
-      color: #34495e;
+    .project-card h3 { margin-top: 0; font-size: 1.4em; font-weight: 500; color: #34495e; }
+    .project-card p { margin-bottom: 10px; }
+    
+    .project-card img {
+      width: 100%;
+      max-height: 300px;
+      object-fit: contain;
+      border-radius: 5px;
+      margin-bottom: 15px;
     }
 
     .btn {
@@ -119,9 +87,8 @@
       transition: background 0.3s;
     }
 
-    .btn:hover {
-      background: #1c5980;
-    }
+    .btn:hover { background: #1c5980; }
+    .btn:focus { outline: none; }
 
     footer {
       background: #1f2a38;
@@ -130,12 +97,6 @@
       padding: 20px;
       margin-top: 40px;
       font-size: 0.9em;
-    }
-
-    img {
-      width: 100%;
-      border-radius: 8px;
-      margin: 20px 0;
     }
   </style>
 </head>
@@ -168,57 +129,63 @@
       <h3>Análisis de Ventas – AdventureWorks</h3>
       <p>Objetivo: generar insights accionables para decisiones comerciales estratégicas y realizar proyecciones de ventas.</p>
       <p>Demo interactiva Ventas</p>
-      <a class="btn" href="proyectos/adventureworks.html">Ver proyecto</a>
+      <img src="img/Dashboard_Ventas.gif" alt="Dashboard Ventas">
+      <a class="btn" href="proyectos/Proyecto_Ventas_ADW2022.html">Ver proyecto</a>
     </div>
 
     <div class="project-card">
       <h3>Análisis de Churn – Telco Customer</h3>
       <p>Objetivo: predecir qué clientes tienen mayor probabilidad de darse de baja y analizar los factores que influyen en su churn.</p>
       <p>Demo interactiva Telco</p>
-      <a class="btn" href="proyectos/telco.html">Ver proyecto</a>
+      <img src="img/Dashboard_Telco.gif" alt="Dashboard Telco">
+      <a class="btn" href="proyectos/Proyecto_Telco_Customer.html">Ver proyecto</a>
     </div>
 
     <div class="project-card">
       <h3>Análisis de Airbnb – Madrid</h3>
-      <p>Objetivo: analizar precios, tipos de alojamiento y disponibilidad en Madrid para insights de mercado.</p>
-      <p>Demo interactiva Airbnb</p>
-      <a class="btn" href="proyectos/airbnb.html">Ver proyecto</a>
+      <p>Objetivo: analizar los alquileres en Madrid, precios medios, reseñas y licencias de vivienda.</p>
+      <p>Dashboard Airbnb</p>
+      <img src="img/Dashboard_Airbnb.gif" alt="Dashboard Airbnb">
+      <a class="btn" href="proyectos/Proyecto_Airbnb.html">Ver proyecto</a>
     </div>
 
     <div class="project-card">
       <h3>Análisis de Compras</h3>
-      <p>Objetivo: optimizar proveedores y contratos para reducir costes y mejorar eficiencia.</p>
-      <p>Demo interactiva Compras</p>
-      <a class="btn" href="proyectos/compras.html">Ver proyecto</a>
+      <p>Objetivo: identificar los proveedores con mayor volumen y optimizar los contratos de compras.</p>
+      <p>Dashboard Compras</p>
+      <img src="img/Dashboard_Compras.gif" alt="Dashboard Compras">
+      <a class="btn" href="proyectos/Proyecto_Compras.html">Ver proyecto</a>
     </div>
 
     <div class="project-card">
       <h3>Presupuesto Generalitat de Catalunya (1999–2023)</h3>
-      <p>Objetivo: analizar evolución presupuestaria y gasto por partidas para toma de decisiones financieras.</p>
-      <p>Demo interactiva Generalitat</p>
-      <a class="btn" href="proyectos/generalitat.html">Ver proyecto</a>
+      <p>Objetivo: analizar la evolución de presupuestos y gastos de personal a lo largo de los años.</p>
+      <p>Dashboard Generalitat</p>
+      <img src="img/Dashboard_Cataluña.gif" alt="Dashboard Generalitat">
+      <a class="btn" href="proyectos/Proyecto_Catalunya.html">Ver proyecto</a>
     </div>
 
     <div class="project-card">
       <h3>Análisis Financiero y Operativo – Inditex (2023–2024)</h3>
-      <p>Objetivo: evaluar crecimiento, márgenes y desempeño operativo de la compañía.</p>
-      <p>Demo interactiva Inditex</p>
-      <a class="btn" href="proyectos/inditex.html">Ver proyecto</a>
+      <p>Objetivo: analizar la evolución de ventas, resultado antes de impuestos y red de tiendas de Inditex.</p>
+      <p>Dashboard Inditex</p>
+      <img src="img/Dashboard_Inditex.gif" alt="Dashboard Inditex">
+      <a class="btn" href="proyectos/Proyecto_Inditex.html">Ver proyecto</a>
     </div>
 
     <div class="project-card">
       <h3>Análisis de LaLiga</h3>
-      <p>Objetivo: analizar evolución histórica de equipos, puntos, goles y posiciones de LaLiga.</p>
-      <p>Demo interactiva LaLiga</p>
-      <a class="btn" href="proyectos/laliga.html">Ver proyecto</a>
+      <p>Objetivo: analizar la evolución de los equipos de LaLiga, puntos, goles y posiciones históricas de los últimos 10 años.</p>
+      <p>Dashboard LaLiga</p>
+      <img src="img/Dashboard_LaLiga.gif" alt="Dashboard LaLiga">
+      <a class="btn" href="proyectos/Proyecto_LaLiga.html">Ver proyecto</a>
     </div>
-
   </section>
 
   <!-- CONTACTO -->
   <section id="contact">
     <h2>Contacto</h2>
-    <p>Email: dalvarezmiguez@gmail.com</p>
+    <p>Email: <a href="mailto:dalvarezmiguez@gmail.com">dalvarezmiguez@gmail.com</a></p>
     <p>LinkedIn: <a href="https://www.linkedin.com/in/danielalvarezmiguez/" target="_blank">Perfil LinkedIn</a></p>
     <p>GitHub: <a href="https://github.com/Dalvarezmiguez" target="_blank">Repositorio GitHub</a></p>
   </section>
@@ -231,24 +198,14 @@
     const tabs = document.querySelectorAll('.tab-btn');
     const sections = document.querySelectorAll('section');
 
-    function activateTab(tabName) {
-      tabs.forEach(btn => btn.classList.remove('active'));
-      sections.forEach(sec => sec.classList.remove('active'));
-      const targetTab = document.querySelector(`.tab-btn[data-target="${tabName}"]`);
-      const targetSection = document.getElementById(tabName);
-      if(targetTab && targetSection) {
-        targetTab.classList.add('active');
-        targetSection.classList.add('active');
-      }
-    }
-
     tabs.forEach(tab => {
-      tab.addEventListener('click', () => activateTab(tab.dataset.target));
-    });
-
-    window.addEventListener('load', () => {
-      const hash = window.location.hash.replace('#', '');
-      if(hash) activateTab(hash);
+      tab.addEventListener('click', () => {
+        tabs.forEach(btn => btn.classList.remove('active'));
+        sections.forEach(sec => sec.classList.remove('active'));
+        tab.classList.add('active');
+        document.getElementById(tab.dataset.target).classList.add('active');
+        tab.blur(); // evita que el botón quede marcado
+      });
     });
   </script>
 </body>
