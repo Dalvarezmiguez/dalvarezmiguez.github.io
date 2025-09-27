@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Proyecto – Presupuesto Generalitat de Catalunya</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f8f9fa;
+      color: #2c3e50;
+    }
+    header {
+      background: #1f2a38;
+      color: #ffffff;
+      padding: 30px 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-weight: 700;
+      font-size: 2em;
+    }
+    header p {
+      margin-top: 5px;
+      font-weight: 400;
+      font-size: 1em;
+      color: #bdc3c7;
+    }
+    main {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    h2 {
+      font-size: 1.8em;
+      font-weight: 700;
+      border-bottom: 2px solid #bdc3c7;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+    h3 {
+      font-size: 1.3em;
+      font-weight: 500;
+      margin-top: 25px;
+    }
+    p, li {
+      line-height: 1.7;
+      margin-bottom: 10px;
+    }
+    ul {
+      margin-left: 20px;
+    }
+    a {
+      text-decoration: none;
+      transition: color 0.3s;
+      color: inherit;
+    }
+    a:hover {
+      color: #1c5980;
+    }
+    a:visited {
+      color: inherit;
+    }
+    .btn, .btn-github {
+      display: inline-block;
+      padding: 12px 25px;
+      border-radius: 5px;
+      font-weight: 500;
+      margin: 10px 10px 0 0;
+      text-align: center;
+      text-decoration: none;
+      transition: background 0.3s, color 0.3s;
+    }
+    .btn {
+      background: #2980b9;
+      color: #ffffff; 
+    }
+    .btn:hover {
+      background: #1c5980;
+      color: #ffffff;
+    }
+    .btn-github {
+      background: #bdc3c7;
+      color: #2c3e50; 
+    }
+    .btn-github:hover {
+      background: #95a5a6;
+      color: #ffffff;
+    }
+    .btn-container {
+      margin-top: 20px;
+    }
+    img {
+      max-width: 100%;
+      display: block;
+      margin: 20px 0;
+      border-radius: 5px;
+    }
+    footer {
+      background: #1f2a38;
+      color: #ffffff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Análisis del Presupuesto de la Generalitat de Catalunya</h1>
+    <p>1999–2023 – Power BI</p>
+  </header>
+
+  <main>
+    <h2>Contexto</h2>
+    <p>Dataset histórico de los presupuestos de la Generalitat de Catalunya desde 1999 hasta 2023, con algunas ausencias de datos.  
+    Objetivo: analizar y comparar la evolución de ingresos y gastos, identificar principales variaciones y evaluar la estructura presupuestaria mediante un dashboard interactivo en Power BI.</p>
+
+    <h2>Objetivos del análisis</h2>
+    <ul>
+      <li>Analizar la evolución histórica de ingresos y gastos públicos.</li>
+      <li>Identificar variaciones interanuales (absolutas y porcentuales).</li>
+      <li>Evaluar la composición del gasto (personal, capital, transferencias, etc.).</li>
+      <li>Medir la dependencia de transferencias corrientes y su impacto en la sostenibilidad presupuestaria.</li>
+    </ul>
+
+    <h2>Estructura del Dashboard</h2>
+    <ul>
+      <li><strong>Resumen financiero:</strong> KPIs de ingresos totales, gastos totales y variación interanual, con gráficos de líneas y barras.</li>
+      <li><strong>Ingresos:</strong> gráficos circulares/anillos por tipo de ingreso y evolución de impuestos y transferencias.</li>
+      <li><strong>Gastos:</strong> treemap y gráficos de cintas para distribución de gasto y evolución de gastos de personal, transferencias e inversión.</li>
+      <li><strong>Comparativa interanual:</strong> matriz con diferencias absolutas y porcentuales, KPI de crecimiento YoY.</li>
+    </ul>
+
+    <h2>Técnicas y herramientas</h2>
+    <ul>
+      <li><strong>Power BI:</strong> dashboard interactivo con segmentaciones por año y tipo de operación.</li>
+      <li><strong>DAX:</strong> medidas de gastos e ingresos, diferencias interanuales y time intelligence.</li>
+      <li><strong>Power Query:</strong> limpieza, normalización y modelado de datos.</li>
+      <li><strong>Datos abiertos:</strong> extracción desde portal oficial Idescat.</li>
+    </ul>
+
+    <h2>Dataset</h2>
+    <p>Fuente: <a href="https://www.idescat.cat/indicadors/?id=aec&lang=es&n=15638&utm_source" target="_blank">Idescat – Presupuestos de la Generalitat de Catalunya</a></p>
+    <p>Formatos tabular y plano, procesados en Power Query.</p>
+
+    <h2>Principales insights</h2>
+    <ul>
+      <li>Los ingresos crecieron un +5,7% respecto a 2022, impulsados por impuestos directos e indirectos.</li>
+      <li>Los gastos de personal aumentaron un +11,8%, reflejando un mayor esfuerzo en recursos humanos.</li>
+      <li>Las transferencias de capital cayeron un -33,6%, reduciendo la inversión en infraestructuras.</li>
+      <li>La dependencia de transferencias corrientes sigue siendo elevada (≈48% del gasto total).</li>
+    </ul>
+
+    <h2>Visualizaciones</h2>
+    <h3>Página 1 – Resumen financiero</h3>
+    <img src="./Img/Cataluña.PNG" alt="Resumen financiero">
+
+    <div class="btn-container">
+      <a class="btn" href="../index.html#projects">Volver a Proyectos</a>
+      <a class="btn-github" href="../Proyecto_Cataluña/" target="_blank">Más detalles en Proyecto Cataluña</a>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 Daniel Álvarez Míguez | Portfolio Data Analytics</p>
+  </footer>
+</body>
+</html>
