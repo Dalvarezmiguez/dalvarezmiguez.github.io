@@ -5,6 +5,7 @@
   <title>Portfolio Data Analytics – Daniel Álvarez Míguez</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
+    /* Estilos generales */
     body {
       font-family: 'Roboto', Arial, sans-serif;
       margin: 0;
@@ -20,8 +21,18 @@
       text-align: center;
     }
 
-    header h1 { margin: 0; font-weight: 700; font-size: 2em; }
-    header p { margin-top: 10px; font-weight: 400; font-size: 1em; color: #bdc3c7; }
+    header h1 {
+      margin: 0;
+      font-weight: 700;
+      font-size: 2em;
+    }
+
+    header p {
+      margin-top: 10px;
+      font-weight: 400;
+      font-size: 1em;
+      color: #bdc3c7;
+    }
 
     nav {
       background: #2c3e50;
@@ -39,17 +50,42 @@
       font-size: 16px;
       font-weight: 500;
       transition: color 0.3s, border-bottom 0.3s;
-      outline: none;
     }
 
-    nav button.active { border-bottom: 3px solid #2980b9; color: #2980b9; }
-    nav button:hover { color: #2980b9; }
+    nav button.active {
+      border-bottom: 3px solid #2980b9;
+      color: #2980b9;
+    }
 
-    section { display: none; padding: 50px 20px; max-width: 900px; margin: auto; }
-    section.active { display: block; }
+    nav button:hover {
+      color: #2980b9;
+    }
 
-    h2 { font-weight: 700; font-size: 1.8em; margin-bottom: 20px; border-bottom: 2px solid #bdc3c7; padding-bottom: 10px; }
+    section {
+      display: none;
+      padding: 50px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
 
+    section.active {
+      display: block;
+    }
+
+    h2 {
+      font-weight: 700;
+      font-size: 1.8em;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #bdc3c7;
+      padding-bottom: 10px;
+    }
+
+    p {
+      line-height: 1.7;
+      margin-bottom: 15px;
+    }
+
+    /* Tarjetas de proyectos */
     .project-card {
       background: #ffffff;
       padding: 25px;
@@ -64,17 +100,27 @@
       box-shadow: 0 10px 25px rgba(0,0,0,0.15);
     }
 
-    .project-card h3 { margin-top: 0; font-size: 1.4em; font-weight: 500; color: #34495e; }
-    .project-card p { margin-bottom: 10px; }
-    
-    .project-card img {
-      width: 100%;
-      max-height: 300px;
-      object-fit: contain;
-      border-radius: 5px;
+    .project-card h3 {
+      margin-top: 0;
+      font-size: 1.4em;
+      font-weight: 500;
+      color: #34495e;
+    }
+
+    .project-card p.objective {
+      font-style: italic;
       margin-bottom: 15px;
     }
 
+    .project-card img {
+      width: 100%;
+      max-height: 400px;
+      object-fit: contain; /* se ve completo sin recorte */
+      border-radius: 8px;
+      margin: 15px 0;
+    }
+
+    /* Botones */
     .btn {
       display: inline-block;
       padding: 10px 20px;
@@ -83,12 +129,34 @@
       color: #ffffff;
       text-decoration: none;
       font-weight: 500;
-      margin-top: 10px;
+      margin: 10px 10px 0 0;
       transition: background 0.3s;
     }
 
-    .btn:hover { background: #1c5980; }
-    .btn:focus { outline: none; }
+    .btn:hover {
+      background: #1c5980;
+    }
+
+    /* Reset para botones visitados y activos */
+    .btn:visited, .btn:active {
+      color: #ffffff;
+      background: #2980b9;
+    }
+
+    /* Enlaces generales */
+    a {
+      color: #2980b9;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    a:hover {
+      color: #1c5980;
+    }
+
+    a:visited {
+      color: #2980b9;
+    }
 
     footer {
       background: #1f2a38;
@@ -126,60 +194,61 @@
     <h2>Proyectos</h2>
 
     <div class="project-card">
-      <h3>Análisis de Ventas – AdventureWorks</h3>
-      <p>Objetivo: generar insights accionables para decisiones comerciales estratégicas y realizar proyecciones de ventas.</p>
-      <p>Demo interactiva Ventas</p>
+      <h3>Análisis de Ventas – Adventure Works</h3>
+      <p class="objective"><strong>Objetivo:</strong> Analizar las ventas para identificar productos clave, canales de mayor rendimiento y optimizar la estrategia comercial.</p>
       <img src="img/Dashboard_Ventas.gif" alt="Dashboard Ventas">
-      <a class="btn" href="proyectos/Proyecto_Ventas_ADW2022.html">Ver proyecto</a>
+      <a class="btn" href="proyectos/adventureworks.html">Ver proyecto</a>
+      <a class="btn" href="https://github.com/Dalvarezmiguez/adventureworks" target="_blank">Código en GitHub</a>
     </div>
 
     <div class="project-card">
-      <h3>Análisis de Churn – Telco Customer</h3>
-      <p>Objetivo: predecir qué clientes tienen mayor probabilidad de darse de baja y analizar los factores que influyen en su churn.</p>
-      <p>Demo interactiva Telco</p>
+      <h3>Análisis de Churn – Telco Customer (Python)</h3>
+      <p class="objective"><strong>Objetivo:</strong> Evaluar la probabilidad de abandono de clientes y segmentarlos para aplicar estrategias de retención efectivas.</p>
       <img src="img/Dashboard_Telco.gif" alt="Dashboard Telco">
-      <a class="btn" href="proyectos/Proyecto_Telco_Customer.html">Ver proyecto</a>
+      <a class="btn" href="proyectos/telco.html">Ver proyecto</a>
+      <a class="btn" href="https://github.com/Dalvarezmiguez/telecomunicaciones" target="_blank">Código en GitHub</a>
     </div>
 
     <div class="project-card">
-      <h3>Análisis de Airbnb – Madrid</h3>
-      <p>Objetivo: analizar los alquileres en Madrid, precios medios, reseñas y licencias de vivienda.</p>
-      <p>Dashboard Airbnb</p>
+      <h3>Análisis de Airbnb – Madrid (Python)</h3>
+      <p class="objective"><strong>Objetivo:</strong> Analizar el mercado de alquiler de Airbnb en Madrid para comprender la distribución de tipos de vivienda, precios y regulación de licencias.</p>
       <img src="img/Dashboard_Airbnb.gif" alt="Dashboard Airbnb">
-      <a class="btn" href="proyectos/Proyecto_Airbnb.html">Ver proyecto</a>
+      <a class="btn" href="proyectos/airbnb.html">Ver proyecto</a>
+      <a class="btn" href="https://github.com/Dalvarezmiguez/airbnb" target="_blank">Código en GitHub</a>
     </div>
 
     <div class="project-card">
       <h3>Análisis de Compras</h3>
-      <p>Objetivo: identificar los proveedores con mayor volumen y optimizar los contratos de compras.</p>
-      <p>Dashboard Compras</p>
+      <p class="objective"><strong>Objetivo:</strong> Identificar proveedores estratégicos y oportunidades de optimización de compras para reducir costos y concentrar esfuerzos en proveedores clave.</p>
       <img src="img/Dashboard_Compras.gif" alt="Dashboard Compras">
-      <a class="btn" href="proyectos/Proyecto_Compras.html">Ver proyecto</a>
+      <a class="btn" href="proyectos/compras.html">Ver proyecto</a>
+      <a class="btn" href="https://github.com/Dalvarezmiguez/compras" target="_blank">Código en GitHub</a>
     </div>
 
     <div class="project-card">
       <h3>Presupuesto Generalitat de Catalunya (1999–2023)</h3>
-      <p>Objetivo: analizar la evolución de presupuestos y gastos de personal a lo largo de los años.</p>
-      <p>Dashboard Generalitat</p>
+      <p class="objective"><strong>Objetivo:</strong> Analizar la evolución de los presupuestos de la Generalitat, identificando tendencias y áreas de gasto prioritarias a lo largo del tiempo.</p>
       <img src="img/Dashboard_Cataluña.gif" alt="Dashboard Generalitat">
-      <a class="btn" href="proyectos/Proyecto_Catalunya.html">Ver proyecto</a>
+      <a class="btn" href="proyectos/generalitat.html">Ver proyecto</a>
+      <a class="btn" href="https://github.com/Dalvarezmiguez/generalitat" target="_blank">Código en GitHub</a>
     </div>
 
     <div class="project-card">
       <h3>Análisis Financiero y Operativo – Inditex (2023–2024)</h3>
-      <p>Objetivo: analizar la evolución de ventas, resultado antes de impuestos y red de tiendas de Inditex.</p>
-      <p>Dashboard Inditex</p>
+      <p class="objective"><strong>Objetivo:</strong> Evaluar el desempeño financiero y operativo de Inditex, incluyendo ventas, apertura/cierre de tiendas y cuenta de resultados, para apoyar decisiones estratégicas.</p>
       <img src="img/Dashboard_Inditex.gif" alt="Dashboard Inditex">
-      <a class="btn" href="proyectos/Proyecto_Inditex.html">Ver proyecto</a>
+      <a class="btn" href="proyectos/inditex.html">Ver proyecto</a>
+      <a class="btn" href="https://github.com/Dalvarezmiguez/inditex" target="_blank">Código en GitHub</a>
     </div>
 
     <div class="project-card">
       <h3>Análisis de LaLiga</h3>
-      <p>Objetivo: analizar la evolución de los equipos de LaLiga, puntos, goles y posiciones históricas de los últimos 10 años.</p>
-      <p>Dashboard LaLiga</p>
+      <p class="objective"><strong>Objetivo:</strong> Analizar el rendimiento histórico de los equipos de LaLiga para identificar tendencias, diferencias de ranking y equipos destacados en distintas métricas.</p>
       <img src="img/Dashboard_LaLiga.gif" alt="Dashboard LaLiga">
-      <a class="btn" href="proyectos/Proyecto_LaLiga.html">Ver proyecto</a>
+      <a class="btn" href="proyectos/laliga.html">Ver proyecto</a>
+      <a class="btn" href="https://github.com/Dalvarezmiguez/laliga" target="_blank">Código en GitHub</a>
     </div>
+
   </section>
 
   <!-- CONTACTO -->
@@ -204,7 +273,6 @@
         sections.forEach(sec => sec.classList.remove('active'));
         tab.classList.add('active');
         document.getElementById(tab.dataset.target).classList.add('active');
-        tab.blur(); // evita que el botón quede marcado
       });
     });
   </script>
