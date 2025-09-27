@@ -1,29 +1,91 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Adventure Works - Portfolio Data Analytics</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin:40px; background:#f5f6fa; color:#2c3e50; }
-    h1 { color:#2c3e50; }
-    .btn { display:inline-block; padding:8px 15px; border-radius:4px; background:#2980b9; color:white; text-decoration:none; font-weight:bold; }
-    .btn:hover { background:#1c5980; }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Análisis de Ventas – Adventure Works</title>
+  <link rel="stylesheet" href="../styles.css" />
 </head>
 <body>
-  <h1>📈 Proyecto: Adventure Works</h1>
-  <p>Este proyecto consiste en el análisis de las ventas de la empresa ficticia Adventure Works utilizando Power BI.</p>
-  <h2>📊 Objetivos</h2>
-  <ul>
-    <li>Analizar ventas por país, provincia y continente.</li>
-    <li>Identificar productos más rentables.</li>
-    <li>Medir KPIs clave como ingresos, margen y rentabilidad.</li>
-  </ul>
-  <h2>🖼️ Vista previa del dashboard</h2>
-  <img src="../img/adventureworks_dashboard.png" alt="Dashboard Adventure Works" width="600">
-  <h2>✅ Resultados</h2>
-  <p>El análisis permitió identificar los mercados más rentables y las líneas de producto con mayor crecimiento.</p>
-  <p>👉 <a class="btn" href="https://github.com/Dalvarezmiguez/Portfolio-Power-Bi/tree/main/AdventureWorks" target="_blank">Ver más detalles en GitHub</a></p>
-  <p><a href="../index.html">⬅️ Volver al portfolio</a></p>
+  <header>
+    <h1>Análisis de Ventas – Adventure Works</h1>
+  </header>
+
+  <main>
+    <section>
+      <h2>Contexto</h2>
+      <p>Dataset de ventas de retail, incluyendo información de productos, comerciales, canales y registros históricos. Objetivo: generar insights accionables para decisiones comerciales estratégicas y realizar proyecciones de ventas.</p>
+    </section>
+
+    <section>
+      <h2>Objetivos del análisis</h2>
+      <ul>
+        <li>Analizar la evolución de ventas y márgenes por producto y categoría.</li>
+        <li>Evaluar la performance por canal de venta.</li>
+        <li>Analizar la contribución de cada comercial y su cartera.</li>
+        <li>Realizar proyecciones de ventas basadas en histórico.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Estructura del Dashboard</h2>
+      <ol>
+        <li><strong>Ventas generales:</strong> KPIs, evolución mensual y categorías.</li>
+        <li><strong>Ventas por canal:</strong> comparativa y rentabilidad.</li>
+        <li><strong>Ventas por comercial:</strong> ranking y cartera.</li>
+        <li><strong>Proyección de ventas:</strong> forecast y tendencias.</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>Técnicas y herramientas</h2>
+      <ul>
+        <li>Power BI: dashboards interactivos, segmentaciones y KPIs.</li>
+        <li>SQL: extracción de datos, JOINs y agregaciones.</li>
+        <li>DAX: medidas de margen, crecimiento y proyecciones.</li>
+        <li>Power Query: limpieza y transformación.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Dataset</h2>
+      <p>Fuente: <strong>AdventureWorks 2022</strong> (SQL Server sample database)</p>
+      <p><a href="https://github.com/Microsoft/sql-server-samples/releases/tag/adventureworks" target="_blank">Más información y descarga</a></p>
+    </section>
+
+    <section>
+      <h2>Principales insights</h2>
+      <ul>
+        <li>El 20% de los productos genera el 60% de las ventas.</li>
+        <li>El canal online crece al doble del ritmo del offline.</li>
+        <li>Cuatro comerciales concentran más del 50% de la cartera de clientes.</li>
+        <li>El stock actual cubre 4 semanas de ventas proyectadas.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Dashboard – Ejemplo de visualizaciones</h2>
+      <img src="../img/Dashboard_Ventas.gif" alt="Demo interactiva" />
+      <h3>Informe Resumen</h3>
+      <img src="../img/Informe_Resumen.PNG" alt="Informe Resumen" />
+      <h3>Detalle Por Canal</h3>
+      <img src="../img/Detalle_Por_Canal.PNG" alt="Detalle Por Canal" />
+      <h3>Detalle Comerciales</h3>
+      <img src="../img/Detalle_Comerciales.PNG" alt="Detalle Comerciales" />
+      <h3>Proyección Ventas</h3>
+      <img src="../img/Proyección_Ventas.PNG" alt="Proyección Ventas" />
+      <h3>Detalle Ventas Diarias</h3>
+      <img src="../img/Detalle_ventas_diarias.PNG" alt="Detalle Ventas Diarias" />
+    </section>
+
+    <div class="buttons">
+      <a href="../index.html#projects" class="btn">Volver a Proyectos</a>
+      <a href="https://github.com/Dalvarezmiguez/Portfolio-Power-Bi/tree/main" target="_blank" class="btn">Más Detalles en GitHub</a>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Daniel Álvarez Míguez</p>
+  </footer>
 </body>
 </html>
