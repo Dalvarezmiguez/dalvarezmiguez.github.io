@@ -5,6 +5,7 @@
   <title>Portfolio Data Analytics – Daniel Álvarez Míguez</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
+    /* Estilos generales */
     body {
       font-family: 'Roboto', Arial, sans-serif;
       margin: 0;
@@ -60,10 +61,6 @@
       color: #2980b9;
     }
 
-    nav button:focus {
-      outline: none;
-    }
-
     section {
       display: none;
       padding: 50px 20px;
@@ -88,6 +85,7 @@
       margin-bottom: 15px;
     }
 
+    /* Tarjetas de proyectos */
     .project-card {
       background: #ffffff;
       padding: 25px;
@@ -111,6 +109,13 @@
 
     .project-card p.objective {
       font-style: italic;
+      margin-bottom: 10px;
+    }
+
+    .project-card .demo {
+      font-weight: 500;
+      font-style: normal;
+      color: #2980b9;
       margin-bottom: 15px;
     }
 
@@ -122,6 +127,7 @@
       margin: 15px 0;
     }
 
+    /* Botones */
     .btn {
       display: inline-block;
       padding: 10px 20px;
@@ -138,14 +144,16 @@
       background: #1c5980;
     }
 
+    /* Reset para botones visitados y activos */
     .btn:visited,
     .btn:active,
     .btn:focus {
       color: #ffffff;
       background: #2980b9;
-      outline: none;
+      text-decoration: none;
     }
 
+    /* Enlaces generales */
     a {
       color: #2980b9;
       text-decoration: none;
@@ -156,9 +164,12 @@
       color: #1c5980;
     }
 
+    /* Forzar color consistente en todos los estados */
     a:visited,
-    a:active {
+    a:active,
+    a:focus {
       color: #2980b9;
+      text-decoration: none;
     }
 
     footer {
@@ -183,6 +194,7 @@
     <button class="tab-btn" data-target="contact">Contacto</button>
   </nav>
 
+  <!-- SOBRE MÍ -->
   <section id="about" class="active">
     <h2>Sobre mí</h2>
     <p>Soy profesional en Finanzas y Control de Gestión con experiencia en análisis contable, reporting y optimización de márgenes, complementado con formación avanzada en Data Analytics & Big Data.</p>
@@ -191,53 +203,69 @@
     <p><a class="btn" href="cv/Daniel_Alvarez_Miguez.pdf" download>Descargar CV (PDF)</a></p>
   </section>
 
+  <!-- PROYECTOS -->
   <section id="projects">
     <h2>Proyectos</h2>
 
     <div class="project-card">
       <h3>Análisis de Ventas – Adventure Works</h3>
       <p class="objective"><strong>Objetivo:</strong> Analizar las ventas para identificar productos clave, canales de mayor rendimiento y optimizar la estrategia comercial.</p>
-      <a class="btn" href="proyectos/Proyecto_Ventas.html">Ver proyecto</a>
+      <p class="demo">Demo interactiva</p>
+      <img src="img/Dashboard_Ventas.gif" alt="Dashboard Ventas">
+      <a class="btn" href="proyectos/adventureworks.html">Ver proyecto</a>
     </div>
 
     <div class="project-card">
       <h3>Análisis de Churn – Telco Customer (Python)</h3>
       <p class="objective"><strong>Objetivo:</strong> Evaluar la probabilidad de abandono de clientes y segmentarlos para aplicar estrategias de retención efectivas.</p>
-      <a class="btn" href="proyectos/Proyecto_Telco.html">Ver proyecto</a>
+      <p class="demo">Demo interactiva</p>
+      <img src="img/Dashboard_Telco.gif" alt="Dashboard Telco">
+      <a class="btn" href="proyectos/telco.html">Ver proyecto</a>
     </div>
 
     <div class="project-card">
       <h3>Análisis de Airbnb – Madrid (Python)</h3>
       <p class="objective"><strong>Objetivo:</strong> Analizar el mercado de alquiler de Airbnb en Madrid para comprender la distribución de tipos de vivienda, precios y regulación de licencias.</p>
-      <a class="btn" href="proyectos/Proyecto_Airbnb.html">Ver proyecto</a>
+      <p class="demo">Demo interactiva</p>
+      <img src="img/Dashboard_Airbnb.gif" alt="Dashboard Airbnb">
+      <a class="btn" href="proyectos/airbnb.html">Ver proyecto</a>
     </div>
 
     <div class="project-card">
       <h3>Análisis de Compras</h3>
       <p class="objective"><strong>Objetivo:</strong> Identificar proveedores estratégicos y oportunidades de optimización de compras para reducir costos y concentrar esfuerzos en proveedores clave.</p>
-      <a class="btn" href="proyectos/Proyecto_Compras.html">Ver proyecto</a>
+      <p class="demo">Demo interactiva</p>
+      <img src="img/Dashboard_Compras.gif" alt="Dashboard Compras">
+      <a class="btn" href="proyectos/compras.html">Ver proyecto</a>
     </div>
 
     <div class="project-card">
       <h3>Presupuesto Generalitat de Catalunya (1999–2023)</h3>
       <p class="objective"><strong>Objetivo:</strong> Analizar la evolución de los presupuestos de la Generalitat, identificando tendencias y áreas de gasto prioritarias a lo largo del tiempo.</p>
-      <a class="btn" href="proyectos/Proyecto_Generalitat.html">Ver proyecto</a>
+      <p class="demo">Demo interactiva</p>
+      <img src="img/Dashboard_Cataluña.gif" alt="Dashboard Generalitat">
+      <a class="btn" href="proyectos/generalitat.html">Ver proyecto</a>
     </div>
 
     <div class="project-card">
       <h3>Análisis Financiero y Operativo – Inditex (2023–2024)</h3>
       <p class="objective"><strong>Objetivo:</strong> Evaluar el desempeño financiero y operativo de Inditex, incluyendo ventas, apertura/cierre de tiendas y cuenta de resultados, para apoyar decisiones estratégicas.</p>
-      <a class="btn" href="proyectos/Proyecto_Inditex.html">Ver proyecto</a>
+      <p class="demo">Demo interactiva</p>
+      <img src="img/Dashboard_Inditex.gif" alt="Dashboard Inditex">
+      <a class="btn" href="proyectos/inditex.html">Ver proyecto</a>
     </div>
 
     <div class="project-card">
       <h3>Análisis de LaLiga</h3>
       <p class="objective"><strong>Objetivo:</strong> Analizar el rendimiento histórico de los equipos de LaLiga para identificar tendencias, diferencias de ranking y equipos destacados en distintas métricas.</p>
-      <a class="btn" href="proyectos/Proyecto_LaLiga.html">Ver proyecto</a>
+      <p class="demo">Demo interactiva</p>
+      <img src="img/Dashboard_LaLiga.gif" alt="Dashboard LaLiga">
+      <a class="btn" href="proyectos/laliga.html">Ver proyecto</a>
     </div>
 
   </section>
 
+  <!-- CONTACTO -->
   <section id="contact">
     <h2>Contacto</h2>
     <p>Email: <a href="mailto:dalvarezmiguez@gmail.com">dalvarezmiguez@gmail.com</a></p>
@@ -259,13 +287,7 @@
         sections.forEach(sec => sec.classList.remove('active'));
         tab.classList.add('active');
         document.getElementById(tab.dataset.target).classList.add('active');
-        tab.blur();
       });
-    });
-
-    const projectBtns = document.querySelectorAll('.btn');
-    projectBtns.forEach(btn => {
-      btn.addEventListener('click', () => btn.blur());
     });
   </script>
 </body>
