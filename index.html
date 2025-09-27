@@ -133,24 +133,23 @@
       padding: 10px 20px;
       border-radius: 5px;
       background: #2980b9;
-      color: #ffffff;
+      color: #ffffff !important;
       text-decoration: none;
       font-weight: 500;
       margin: 10px 10px 0 0;
-      transition: background 0.3s;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .btn:hover,
+    .btn:focus,
+    .btn:active,
+    .btn:visited {
+      color: #ffffff !important;
+      text-decoration: none;
     }
 
     .btn:hover {
       background: #1c5980;
-    }
-
-    /* Asegura que los botones mantengan el color del texto */
-    .btn,
-    .btn:visited,
-    .btn:active,
-    .btn:focus {
-      color: #ffffff;
-      text-decoration: none;
     }
 
     .btn-github {
@@ -158,19 +157,37 @@
       padding: 10px 20px;
       border-radius: 5px;
       background: #bdc3c7;
-      color: #2c3e50;
+      color: #2c3e50 !important;
       font-weight: 500;
       margin: 10px 10px 0 0;
       transition: background 0.3s, color 0.3s;
+      text-decoration: none;
+    }
+
+    .btn-github:hover,
+    .btn-github:focus,
+    .btn-github:active,
+    .btn-github:visited {
+      color: #ffffff !important;
+      text-decoration: none;
     }
 
     .btn-github:hover {
       background: #95a5a6;
-      color: #ffffff;
     }
 
-    /* Enlaces normales */
-    a:not(.btn):visited {
+    /* Enlaces generales */
+    a {
+      color: #2980b9;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    a:hover {
+      color: #1c5980;
+    }
+
+    a:visited {
       color: #2980b9;
     }
 
@@ -191,13 +208,13 @@
   </header>
 
   <nav>
-    <button class="tab-btn" data-target="about">Sobre mí</button>
+    <button class="tab-btn active" data-target="about">Sobre mí</button>
     <button class="tab-btn" data-target="projects">Proyectos</button>
     <button class="tab-btn" data-target="contact">Contacto</button>
   </nav>
 
   <!-- SOBRE MÍ -->
-  <section id="about">
+  <section id="about" class="active">
     <h2>Sobre mí</h2>
     <p>Soy profesional en Finanzas y Control de Gestión con experiencia en análisis contable, reporting y optimización de márgenes, complementado con formación avanzada en Data Analytics & Big Data.</p>
     <p>He trabajado en Decathlon y Leroy Merlin, liderando equipos, gestionando KPIs y desarrollando dashboards para apoyar la toma de decisiones estratégicas. Domino SQL, Python y Power BI, y me apasiona transformar datos complejos en información clara y útil para el negocio.</p>
