@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Análisis de Churn – Telco Customer</title>
+  <title>Proyecto – Análisis de Churn Telco</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
     body {
@@ -22,68 +22,69 @@
 
     header h1 {
       margin: 0;
-      font-size: 2em;
       font-weight: 700;
+      font-size: 2em;
     }
 
     header p {
-      margin-top: 10px;
+      margin-top: 5px;
       font-weight: 400;
       font-size: 1em;
       color: #bdc3c7;
     }
 
-    section {
-      max-width: 1000px;
+    main {
+      max-width: 900px;
       margin: 40px auto;
-      padding: 30px;
-      background: #ffffff;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      padding: 0 20px;
     }
 
     h2 {
-      font-size: 1.6em;
-      margin-top: 0;
-      border-bottom: 2px solid #ddd;
-      padding-bottom: 8px;
+      font-size: 1.8em;
+      font-weight: 700;
+      border-bottom: 2px solid #bdc3c7;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
     }
 
     h3 {
-      margin-top: 25px;
       font-size: 1.3em;
-      color: #34495e;
+      font-weight: 500;
+      margin-top: 25px;
     }
 
     p, li {
-      line-height: 1.6;
+      line-height: 1.7;
+      margin-bottom: 10px;
     }
 
     ul {
-      margin: 10px 0 20px 20px;
+      margin-left: 20px;
     }
 
-    img {
-      width: 100%;
-      border-radius: 8px;
-      margin: 20px 0;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    a {
+      color: #2980b9;
+      text-decoration: none;
     }
 
-    .btn-container {
-      margin-top: 30px;
-      text-align: center;
+    a:hover {
+      color: #1c5980;
+    }
+
+    /* Evitar que el enlace cambie de color al pulsarlo */
+    a:visited, a:active {
+      color: #2980b9;
     }
 
     .btn {
       display: inline-block;
-      padding: 12px 25px;
-      margin: 10px;
+      padding: 10px 20px;
       border-radius: 5px;
       background: #2980b9;
       color: #ffffff;
       text-decoration: none;
       font-weight: 500;
+      margin: 10px 10px 0 0;
       transition: background 0.3s;
     }
 
@@ -96,7 +97,7 @@
       color: #ffffff;
       text-align: center;
       padding: 20px;
-      margin-top: 50px;
+      margin-top: 40px;
       font-size: 0.9em;
     }
   </style>
@@ -104,10 +105,10 @@
 <body>
   <header>
     <h1>Análisis de Churn – Telco Customer</h1>
-    <p>Proyecto desarrollado con Python y Machine Learning</p>
+    <p>Python + Machine Learning</p>
   </header>
 
-  <section>
+  <main>
     <h2>Contexto</h2>
     <p>Dataset de clientes de una compañía Telco, con información de perfil, servicios contratados, facturación y churn (bajas de clientes).  
     Objetivo: predecir qué clientes tienen mayor probabilidad de darse de baja y analizar los factores que influyen en su churn.</p>
@@ -123,32 +124,11 @@
     </ul>
 
     <h2>Estructura del análisis</h2>
-    <h3>EDA en Python</h3>
     <ul>
-      <li>Limpieza de datos, detección de outliers y análisis descriptivo.</li>
-      <li>Visualización de variables categóricas y numéricas.</li>
-      <li>Proporción de género, tipo de contrato, servicios contratados y distribución de facturación.</li>
-    </ul>
-
-    <h3>Modelado</h3>
-    <ul>
-      <li>Separación de variables independientes (X) y target (y).</li>
-      <li>Escalado de variables y codificación de categóricas.</li>
-      <li>Entrenamiento de modelos: Logistic Regression, Random Forest, XGBoost.</li>
-      <li>Evaluación de modelos: accuracy, ROC-AUC, matriz de confusión.</li>
-    </ul>
-
-    <h3>Interpretabilidad</h3>
-    <ul>
-      <li>Importancia de variables con Random Forest.</li>
-      <li>SHAP para XGBoost y análisis de contribución de cada feature.</li>
-    </ul>
-
-    <h3>Predicciones y análisis final</h3>
-    <ul>
-      <li>Probabilidad de churn (Churn_Prob) y predicción final (Churn_Pred).</li>
-      <li>Impacto sobre la cartera y facturación.</li>
-      <li>Segmentación de clientes según riesgo de abandono: bajo, medio o alto.</li>
+      <li><strong>EDA en Python:</strong> limpieza de datos, detección de outliers, análisis descriptivo y visualización de variables.</li>
+      <li><strong>Modelado:</strong> separación de variables, codificación, escalado, entrenamiento de modelos y evaluación.</li>
+      <li><strong>Interpretabilidad:</strong> importancia de variables con Random Forest y SHAP.</li>
+      <li><strong>Predicciones y análisis final:</strong> probabilidad de churn, segmentación y análisis de impacto.</li>
     </ul>
 
     <h2>Técnicas y herramientas</h2>
@@ -160,21 +140,17 @@
 
     <h2>Principales insights</h2>
     <ul>
-      <li>Proporción de género equilibrada: 3.488 mujeres y 3.555 hombres.</li>
-      <li>Predicción de churn: 75,34 % de clientes seguirán activos, representando 84,31 % de la facturación.</li>
-      <li>El 65 % de clientes tienen riesgo bajo de abandonar.</li>
-      <li>Variables más importantes: tipo de contrato, facturación, servicios contratados, presencia de líneas adicionales.</li>
+      <li>Proporción de género: 3.488 mujeres y 3.555 hombres.</li>
+      <li>Predicción de churn: 75,34% de clientes seguirán activos, representando el 84,31% de la facturación.</li>
+      <li>Riesgo de abandono: 65% de clientes con riesgo bajo; clientes con contrato mensual 57,29% riesgo.</li>
+      <li>Variables más importantes: tipo de contrato, facturación, servicios contratados, líneas adicionales.</li>
     </ul>
-
-    <h2>Ejemplo de visualizaciones</h2>
-    <img src="../img/Predicción.PNG" alt="Predicción">
-    <img src="../img/Detalle.PNG" alt="Detalle análisis">
 
     <div class="btn-container">
       <a class="btn" href="../index.html#projects">Volver a Proyectos</a>
       <a class="btn" href="https://github.com/Dalvarezmiguez/Portfolio-Power-Bi/tree/main" target="_blank">Más detalles en GitHub</a>
     </div>
-  </section>
+  </main>
 
   <footer>
     <p>© 2025 Daniel Álvarez Míguez | Portfolio Data Analytics</p>
