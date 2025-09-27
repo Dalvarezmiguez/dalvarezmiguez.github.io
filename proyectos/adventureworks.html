@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Análisis de Ventas – Portfolio Daniel Álvarez Míguez</title>
+  <title>Proyecto – Análisis de Ventas</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
     body {
@@ -22,68 +22,69 @@
 
     header h1 {
       margin: 0;
-      font-size: 2em;
       font-weight: 700;
+      font-size: 2em;
     }
 
     header p {
-      margin-top: 10px;
+      margin-top: 5px;
       font-weight: 400;
       font-size: 1em;
       color: #bdc3c7;
     }
 
-    section {
-      max-width: 1000px;
+    main {
+      max-width: 900px;
       margin: 40px auto;
-      padding: 30px;
-      background: #ffffff;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      padding: 0 20px;
     }
 
     h2 {
-      font-size: 1.6em;
-      margin-top: 0;
-      border-bottom: 2px solid #ddd;
-      padding-bottom: 8px;
+      font-size: 1.8em;
+      font-weight: 700;
+      border-bottom: 2px solid #bdc3c7;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
     }
 
     h3 {
-      margin-top: 25px;
       font-size: 1.3em;
-      color: #34495e;
+      font-weight: 500;
+      margin-top: 25px;
     }
 
     p, li {
-      line-height: 1.6;
+      line-height: 1.7;
+      margin-bottom: 10px;
     }
 
     ul {
-      margin: 10px 0 20px 20px;
+      margin-left: 20px;
     }
 
-    img {
-      width: 100%;
-      border-radius: 8px;
-      margin: 20px 0;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    a {
+      color: #2980b9;
+      text-decoration: none;
     }
 
-    .btn-container {
-      margin-top: 30px;
-      text-align: center;
+    a:hover {
+      color: #1c5980;
+    }
+
+    /* Evitar que el enlace cambie de color al pulsarlo */
+    a:visited, a:active {
+      color: #2980b9;
     }
 
     .btn {
       display: inline-block;
-      padding: 12px 25px;
-      margin: 10px;
+      padding: 10px 20px;
       border-radius: 5px;
       background: #2980b9;
       color: #ffffff;
       text-decoration: none;
       font-weight: 500;
+      margin: 10px 10px 0 0;
       transition: background 0.3s;
     }
 
@@ -96,21 +97,21 @@
       color: #ffffff;
       text-align: center;
       padding: 20px;
-      margin-top: 50px;
+      margin-top: 40px;
       font-size: 0.9em;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Análisis de Ventas – Adventure Works</h1>
-    <p>Proyecto desarrollado con Power BI y SQL</p>
+    <h1>Análisis de Ventas – AdventureWorks</h1>
+    <p>Power BI + SQL</p>
   </header>
 
-  <section>
+  <main>
     <h2>Contexto</h2>
-    <p>Dataset de ventas de retail, incluyendo información de productos, comerciales, canales y registros históricos. 
-    El objetivo es generar insights accionables para decisiones comerciales estratégicas y realizar proyecciones de ventas.</p>
+    <p>Dataset de ventas de retail, incluyendo información de productos, comerciales, canales y registros históricos.  
+    Objetivo: generar insights accionables para decisiones comerciales estratégicas y realizar proyecciones de ventas.</p>
 
     <h2>Objetivos del análisis</h2>
     <ul>
@@ -121,70 +122,41 @@
     </ul>
 
     <h2>Estructura del Dashboard</h2>
-    <h3>Ventas generales</h3>
     <ul>
-      <li>KPI principales: ventas totales, margen, productos top.</li>
-      <li>Gráficos de evolución mensual y por categoría.</li>
-    </ul>
-
-    <h3>Ventas por canal</h3>
-    <ul>
-      <li>Comparativa entre canales: online, tiendas físicas, distribuidores.</li>
-      <li>Identificación de los más rentables.</li>
-    </ul>
-
-    <h3>Ventas por comercial</h3>
-    <ul>
-      <li>Ranking de comerciales según ventas y margen.</li>
-      <li>Identificación de comerciales estratégicos y su cartera.</li>
-    </ul>
-
-    <h3>Proyección de ventas</h3>
-    <ul>
-      <li>Forecast basado en histórico.</li>
-      <li>Gráficos de tendencias y predicciones para el próximo trimestre.</li>
+      <li><strong>Ventas generales:</strong> KPIs, evolución mensual y por categoría.</li>
+      <li><strong>Ventas por canal:</strong> comparativa entre canales y rentabilidad.</li>
+      <li><strong>Ventas por comercial:</strong> ranking y cartera estratégica.</li>
+      <li><strong>Proyección de ventas:</strong> forecast y gráficos de tendencias.</li>
     </ul>
 
     <h2>Técnicas y herramientas</h2>
     <ul>
-      <li><strong>Power BI</strong>: dashboards interactivos, segmentaciones y KPIs.</li>
-      <li><strong>SQL</strong>: extracción de datos, JOINs y agregaciones.</li>
-      <li><strong>DAX</strong>: medidas para cálculos de margen, crecimiento y proyecciones.</li>
-      <li><strong>Power Query</strong>: limpieza y transformación de datos.</li>
+      <li><strong>Power BI:</strong> dashboards interactivos, segmentaciones y KPIs.</li>
+      <li><strong>SQL:</strong> extracción de datos, JOINs y agregaciones.</li>
+      <li><strong>DAX:</strong> cálculos de margen, crecimiento y proyecciones.</li>
+      <li><strong>Power Query:</strong> limpieza y transformación de datos.</li>
     </ul>
 
     <h2>Dataset</h2>
-    <p>Fuente: AdventureWorks 2022 (SQL Server sample database)</p>
-    <p><a href="https://github.com/Microsoft/sql-server-samples/releases/tag/adventureworks" target="_blank">Más información y descarga</a></p>
+    <p>Fuente: <strong>AdventureWorks 2022</strong> (SQL Server sample database)  
+    <a href="https://github.com/Microsoft/sql-server-samples/releases/tag/adventureworks" target="_blank">Más información y descarga</a></p>
 
     <h2>Principales insights</h2>
     <ul>
       <li>El 20% de los productos genera el 60% de las ventas.</li>
-      <li>El canal online crece a más del doble del ritmo que el offline.</li>
+      <li>Canal online crece a más del doble que el offline.</li>
       <li>Cuatro comerciales concentran más del 50% de la cartera de clientes.</li>
-      <li>Según las proyecciones, la empresa cuenta con stock suficiente para 4 semanas de ventas.</li>
+      <li>Stock suficiente para las ventas de las próximas 4 semanas según proyecciones.</li>
     </ul>
-
-    <h2>Ejemplo de visualizaciones</h2>
-    <img src="../img/Informe_Resumen.PNG" alt="Informe Resumen">
-    <img src="../img/Detalle_Por_Canal.PNG" alt="Detalle por Canal">
-    <img src="../img/Detalle_Comerciales.PNG" alt="Detalle Comerciales">
-    <img src="../img/Proyección_Ventas.PNG" alt="Proyección Ventas">
-    <img src="../img/Detalle_ventas_diarias.PNG" alt="Detalle Ventas Diarias">
 
     <div class="btn-container">
       <a class="btn" href="../index.html#projects">Volver a Proyectos</a>
       <a class="btn" href="https://github.com/Dalvarezmiguez/Portfolio-Power-Bi/tree/main" target="_blank">Más detalles en GitHub</a>
     </div>
-  </section>
+  </main>
 
   <footer>
     <p>© 2025 Daniel Álvarez Míguez | Portfolio Data Analytics</p>
-  </footer>
-</body>
-</html>
-
-    <p>&copy; 2025 Daniel Álvarez Míguez</p>
   </footer>
 </body>
 </html>
