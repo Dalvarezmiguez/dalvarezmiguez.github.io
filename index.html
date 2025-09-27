@@ -209,36 +209,39 @@
   </footer>
 
   <script>
-    const tabs = document.querySelectorAll('.tab-btn');
-    const sections = document.querySelectorAll('section');
+    document.addEventListener("DOMContentLoaded", () => {
+      const tabs = document.querySelectorAll('.tab-btn');
+      const sections = document.querySelectorAll('section');
 
-    function activateTab(tabId) {
-      tabs.forEach(btn => btn.classList.remove('active'));
-      sections.forEach(sec => sec.classList.remove('active'));
-      const tab = document.querySelector(`.tab-btn[data-target="${tabId}"]`);
-      const section = document.getElementById(tabId);
-      if(tab && section) {
-        tab.classList.add('active');
-        section.classList.add('active');
+      function activateTab(tabId) {
+        tabs.forEach(btn => btn.classList.remove('active'));
+        sections.forEach(sec => sec.classList.remove('active'));
+        const tab = document.querySelector(`.tab-btn[data-target="${tabId}"]`);
+        const section = document.getElementById(tabId);
+        if(tab && section) {
+          tab.classList.add('active');
+          section.classList.add('active');
+        }
       }
-    }
 
-    // Activar tab al hacer click
-    tabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        activateTab(tab.dataset.target);
-        // Actualizar hash en URL sin recargar
-        history.replaceState(null, null, '#' + tab.dataset.target);
+      // Activar tab al hacer click
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          activateTab(tab.dataset.target);
+          history.replaceState(null, null, '#' + tab.dataset.target);
+        });
       });
-    });
 
-    // Activar tab según hash al cargar la página
-    const hash = window.location.hash.replace('#', '');
-    if(hash) {
-      activateTab(hash);
-    } else {
-      activateTab('about'); // Tab por defecto
-    }
+      // Activar tab según hash al cargar la página
+      const hash = window.location.hash.replace('#', '');
+      if(hash && document.getElementById(hash)) {
+        activateTab(hash);
+        // Hacer scroll al inicio de la sección
+        document.getElementById(hash).scrollIntoView();
+      } else {
+        activateTab('about'); // Tab por defecto
+      }
+    });
   </script>
 </body>
 </html>
