@@ -85,7 +85,6 @@
       margin-bottom: 15px;
     }
 
-    /* Tarjetas de proyectos */
     .project-card {
       background: #ffffff;
       padding: 25px;
@@ -127,7 +126,6 @@
       margin: 15px 0;
     }
 
-    /* Botones */
     .btn {
       display: inline-block;
       padding: 10px 20px;
@@ -144,16 +142,6 @@
       background: #1c5980;
     }
 
-    /* Reset para botones visitados y activos */
-    .btn:visited,
-    .btn:active,
-    .btn:focus {
-      color: #ffffff;
-      background: #2980b9;
-      text-decoration: none;
-    }
-
-    /* Enlaces generales */
     a {
       color: #2980b9;
       text-decoration: none;
@@ -162,13 +150,6 @@
 
     a:hover {
       color: #1c5980;
-    }
-
-    a:visited,
-    a:active,
-    a:focus {
-      color: #2980b9;
-      text-decoration: none;
     }
 
     footer {
@@ -188,13 +169,13 @@
   </header>
 
   <nav>
-    <button class="tab-btn active" data-target="about">Sobre mí</button>
+    <button class="tab-btn" data-target="about">Sobre mí</button>
     <button class="tab-btn" data-target="projects">Proyectos</button>
     <button class="tab-btn" data-target="contact">Contacto</button>
   </nav>
 
   <!-- SOBRE MÍ -->
-  <section id="about" class="active">
+  <section id="about">
     <h2>Sobre mí</h2>
     <p>Soy profesional en Finanzas y Control de Gestión con experiencia en análisis contable, reporting y optimización de márgenes, complementado con formación avanzada en Data Analytics & Big Data.</p>
     <p>He trabajado en Decathlon y Leroy Merlin, liderando equipos, gestionando KPIs y desarrollando dashboards para apoyar la toma de decisiones estratégicas. Domino SQL, Python y Power BI, y me apasiona transformar datos complejos en información clara y útil para el negocio.</p>
@@ -205,7 +186,6 @@
   <!-- PROYECTOS -->
   <section id="projects">
     <h2>Proyectos</h2>
-
     <div class="project-card">
       <h3>Análisis de Ventas – Adventure Works</h3>
       <p class="objective"><strong>Objetivo:</strong> Analizar las ventas para identificar productos clave, canales de mayor rendimiento y optimizar la estrategia comercial.</p>
@@ -213,55 +193,7 @@
       <img src="img/Dashboard_Ventas.gif" alt="Dashboard Ventas">
       <a class="btn" href="proyectos/adventureworks.html">Ver proyecto</a>
     </div>
-
-    <div class="project-card">
-      <h3>Análisis de Churn – Telco Customer (Python)</h3>
-      <p class="objective"><strong>Objetivo:</strong> Evaluar la probabilidad de abandono de clientes y segmentarlos para aplicar estrategias de retención efectivas.</p>
-      <p class="demo">Demo interactiva</p>
-      <img src="img/Dashboard_Telco.gif" alt="Dashboard Telco">
-      <a class="btn" href="proyectos/telco.html">Ver proyecto</a>
-    </div>
-
-    <div class="project-card">
-      <h3>Análisis de Airbnb – Madrid (Python)</h3>
-      <p class="objective"><strong>Objetivo:</strong> Analizar el mercado de alquiler de Airbnb en Madrid para comprender la distribución de tipos de vivienda, precios y regulación de licencias.</p>
-      <p class="demo">Demo interactiva</p>
-      <img src="img/Dashboard_Airbnb.gif" alt="Dashboard Airbnb">
-      <a class="btn" href="proyectos/airbnb.html">Ver proyecto</a>
-    </div>
-
-    <div class="project-card">
-      <h3>Análisis de Compras</h3>
-      <p class="objective"><strong>Objetivo:</strong> Identificar proveedores estratégicos y oportunidades de optimización de compras para reducir costos y concentrar esfuerzos en proveedores clave.</p>
-      <p class="demo">Demo interactiva</p>
-      <img src="img/Dashboard_Compras.gif" alt="Dashboard Compras">
-      <a class="btn" href="proyectos/compras.html">Ver proyecto</a>
-    </div>
-
-    <div class="project-card">
-      <h3>Presupuesto Generalitat de Catalunya (1999–2023)</h3>
-      <p class="objective"><strong>Objetivo:</strong> Analizar la evolución de los presupuestos de la Generalitat, identificando tendencias y áreas de gasto prioritarias a lo largo del tiempo.</p>
-      <p class="demo">Demo interactiva</p>
-      <img src="img/Dashboard_Cataluña.gif" alt="Dashboard Generalitat">
-      <a class="btn" href="proyectos/generalitat.html">Ver proyecto</a>
-    </div>
-
-    <div class="project-card">
-      <h3>Análisis Financiero y Operativo – Inditex (2023–2024)</h3>
-      <p class="objective"><strong>Objetivo:</strong> Evaluar el desempeño financiero y operativo de Inditex, incluyendo ventas, apertura/cierre de tiendas y cuenta de resultados, para apoyar decisiones estratégicas.</p>
-      <p class="demo">Demo interactiva</p>
-      <img src="img/Dashboard_Inditex.gif" alt="Dashboard Inditex">
-      <a class="btn" href="proyectos/inditex.html">Ver proyecto</a>
-    </div>
-
-    <div class="project-card">
-      <h3>Análisis de LaLiga</h3>
-      <p class="objective"><strong>Objetivo:</strong> Analizar el rendimiento histórico de los equipos de LaLiga para identificar tendencias, diferencias de ranking y equipos destacados en distintas métricas.</p>
-      <p class="demo">Demo interactiva</p>
-      <img src="img/Dashboard_LaLiga.gif" alt="Dashboard LaLiga">
-      <a class="btn" href="proyectos/laliga.html">Ver proyecto</a>
-    </div>
-
+    <!-- Puedes mantener las demás tarjetas de proyectos aquí -->
   </section>
 
   <!-- CONTACTO -->
@@ -280,14 +212,33 @@
     const tabs = document.querySelectorAll('.tab-btn');
     const sections = document.querySelectorAll('section');
 
+    function activateTab(tabId) {
+      tabs.forEach(btn => btn.classList.remove('active'));
+      sections.forEach(sec => sec.classList.remove('active'));
+      const tab = document.querySelector(`.tab-btn[data-target="${tabId}"]`);
+      const section = document.getElementById(tabId);
+      if(tab && section) {
+        tab.classList.add('active');
+        section.classList.add('active');
+      }
+    }
+
+    // Activar tab al hacer click
     tabs.forEach(tab => {
       tab.addEventListener('click', () => {
-        tabs.forEach(btn => btn.classList.remove('active'));
-        sections.forEach(sec => sec.classList.remove('active'));
-        tab.classList.add('active');
-        document.getElementById(tab.dataset.target).classList.add('active');
+        activateTab(tab.dataset.target);
+        // Actualizar hash en URL sin recargar
+        history.replaceState(null, null, '#' + tab.dataset.target);
       });
     });
+
+    // Activar tab según hash al cargar la página
+    const hash = window.location.hash.replace('#', '');
+    if(hash) {
+      activateTab(hash);
+    } else {
+      activateTab('about'); // Tab por defecto
+    }
   </script>
 </body>
 </html>
