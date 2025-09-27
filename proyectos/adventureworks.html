@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Análisis de Ventas – AdventureWorks</title>
+  <title>Proyecto – Análisis de Ventas</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
     body {
@@ -71,9 +71,13 @@
       color: #1c5980;
     }
 
+    a:visited, a:active {
+      color: #2980b9;
+    }
+
     .btn {
       display: inline-block;
-      padding: 10px 20px;
+      padding: 12px 25px;
       border-radius: 5px;
       background: #2980b9;
       color: #ffffff;
@@ -81,10 +85,23 @@
       font-weight: 500;
       margin: 10px 10px 0 0;
       transition: background 0.3s;
+      text-align: center;
     }
 
     .btn:hover {
       background: #1c5980;
+      color: #ffffff;
+    }
+
+    .btn-container {
+      margin-top: 20px;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+      margin: 20px 0;
+      border-radius: 5px;
     }
 
     footer {
@@ -108,45 +125,20 @@
     <p>Dataset de ventas de retail, incluyendo información de productos, comerciales, canales y registros históricos.  
     Objetivo: generar insights accionables para decisiones comerciales estratégicas y realizar proyecciones de ventas.</p>
 
-    <h2>Objetivos del análisis</h2>
-    <ul>
-      <li>Analizar la evolución de ventas y márgenes por producto y categoría.</li>
-      <li>Evaluar la performance por canal de venta.</li>
-      <li>Analizar la contribución de cada comercial y su cartera.</li>
-      <li>Realizar proyecciones de ventas basadas en histórico.</li>
-    </ul>
-
-    <h2>Estructura del Dashboard</h2>
-    <ul>
-      <li><strong>Ventas generales:</strong> KPIs, evolución mensual y por categoría.</li>
-      <li><strong>Ventas por canal:</strong> comparativa entre canales y rentabilidad.</li>
-      <li><strong>Ventas por comercial:</strong> ranking y cartera estratégica.</li>
-      <li><strong>Proyección de ventas:</strong> forecast y gráficos de tendencias.</li>
-    </ul>
-
-    <h2>Técnicas y herramientas</h2>
-    <ul>
-      <li><strong>Power BI:</strong> dashboards interactivos, segmentaciones y KPIs.</li>
-      <li><strong>SQL:</strong> extracción de datos, JOINs y agregaciones.</li>
-      <li><strong>DAX:</strong> cálculos de margen, crecimiento y proyecciones.</li>
-      <li><strong>Power Query:</strong> limpieza y transformación de datos.</li>
-    </ul>
-
-    <h2>Dataset</h2>
-    <p>Fuente: <strong>AdventureWorks 2022</strong> (SQL Server sample database)  
-    <a href="https://github.com/Microsoft/sql-server-samples/releases/tag/adventureworks" target="_blank">Más información y descarga</a></p>
-
-    <h2>Principales insights</h2>
-    <ul>
-      <li>El 20% de los productos genera el 60% de las ventas.</li>
-      <li>Canal online crece a más del doble que el offline.</li>
-      <li>Cuatro comerciales concentran más del 50% de la cartera de clientes.</li>
-      <li>Stock suficiente para las ventas de las próximas 4 semanas según proyecciones.</li>
-    </ul>
+    <h2>Principales visualizaciones</h2>
+    <h3>Informe Resumen</h3>
+    <img src="./Img/Informe_Resumen.PNG" alt="Informe Resumen">
+    <h3>Detalle Por Canal</h3>
+    <img src="./Img/Detalle_Por_Canal.PNG" alt="Detalle Por Canal">
+    <h3>Detalle Comerciales</h3>
+    <img src="./Img/Detalle_Comerciales.PNG" alt="Detalle Comerciales">
+    <h3>Proyección Ventas</h3>
+    <img src="./Img/Proyeccion_Ventas.PNG" alt="Proyección Ventas">
+    <h3>Detalle Ventas Diarias</h3>
+    <img src="./Img/Detalle_ventas_diarias.PNG" alt="Detalle Ventas Diarias">
 
     <div class="btn-container">
-      <!-- Volver al portfolio -->
-      <a class="btn" href="../index.html" onclick="window.location='../index.html';">Volver al Portfolio</a>
+      <a class="btn" href="../index.html#projects">Volver a Proyectos</a>
       <a class="btn" href="https://github.com/Dalvarezmiguez/Portfolio-Power-Bi/tree/main" target="_blank">Más detalles en GitHub</a>
     </div>
   </main>
