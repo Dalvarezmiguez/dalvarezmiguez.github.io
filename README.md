@@ -1,47 +1,41 @@
-# Portfolio Web – Dalvarez Miguez
-
-Bienvenido a mi portfolio web de Data Analytics. Aquí recojo todos mis proyectos de Power BI de una manera visual, interactiva y profesional.
-
-🔗 Puedes verlo en vivo en:  
-https://dalvarezmiguez.github.io
 
 ---
 
-## Estructura del sitio
+## 📖 Secciones del portfolio
 
-- `index.html` → Página principal con introducción, CV y resumen de proyectos.  
-- `proyectos/` → Carpeta con páginas individuales para cada proyecto.  
-- `img/` → Carpeta con capturas de dashboards de cada proyecto.  
-- `README.md` → Esta documentación sobre el sitio.
+1. **Sobre mí**
+   - Información personal y profesional.
+   - Experiencia en análisis financiero y reporting.
+   - Enlace para descargar el CV en PDF.
 
----
+2. **Proyectos**
+   - Tarjetas de proyectos con demo interactiva y descripción del objetivo.
+   - Ejemplos:
+     - Análisis de Ventas – Adventure Works
+     - Análisis de Churn – Telco Customer
+     - Análisis de Airbnb – Madrid
+     - Análisis de Compras
+     - Presupuesto Generalitat de Catalunya (1999–2023)
+     - Análisis Financiero y Operativo – Inditex (2023–2024)
+     - Análisis de LaLiga
 
-## Proyectos incluidos
-
-- AdventureWorks  
-- Telecomunicaciones  
-- Fútbol  
-- (Si tienes más proyectos, se muestran aquí)
-
-Cada proyecto tiene su propia página, con descripción, objetivos, capturas, resultados y un enlace directo al código en GitHub.
-
----
-
-## Cómo desplegar
-
-1. Clona este repositorio.  
-2. Añade tus imágenes de dashboards en la carpeta `img/`.  
-3. Revisa y ajusta los textos de cada `.html` si lo deseas.  
-4. Sube todo al repositorio `dalvarezmiguez.github.io`.  
-5. En GitHub → Settings → Pages → selecciona rama `main` / raíz → guarda.  
-6. Espera unos minutos y tu portfolio estará online.
+3. **Contacto**
+   - Email, LinkedIn y GitHub.
 
 ---
 
-## 📬 Contacto
+## 🚀 Funcionalidades principales
 
-- GitHub: [@Dalvarezmiguez](https://github.com/Dalvarezmiguez)  
-- LinkedIn: [Daniel Álvarez Míguez](https://www.linkedin.com/in/danielalvarezmiguez/)  
-- Email: [dalvarezmiguez@gmail.com](mailto:dalvarezmiguez@gmail.com)
+- Navegación por pestañas (Sobre mí / Proyectos / Contacto) con scroll suave.
+- Activación de sección según el hash en la URL.
+- Tarjetas de proyectos con hover animado y enlaces a demos individuales.
+- Botones interactivos para acceder a proyectos y descargar CV.
+- Diseño responsive y moderno.
 
 ---
+
+## 📌 Cómo usar este proyecto
+
+1. Clonar o descargar el repositorio.
+```bash
+git clone https://github.com/Dalvarezmiguez/portfolio.git
