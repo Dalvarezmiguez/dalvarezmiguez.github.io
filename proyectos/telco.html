@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Proyecto – Análisis de Churn Telco</title>
+  <title>Proyecto – Análisis de Churn – Telco Customer</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
     body {
@@ -63,33 +63,60 @@
     }
 
     a {
-      color: #2980b9;
       text-decoration: none;
+      transition: color 0.3s;
+      color: inherit;
     }
 
     a:hover {
       color: #1c5980;
     }
 
-    /* Evitar que el enlace cambie de color al pulsarlo */
-    a:visited, a:active {
-      color: #2980b9;
+    a:visited {
+      color: inherit;
+    }
+
+    /* Botones */
+    .btn, .btn-github {
+      display: inline-block;
+      padding: 12px 25px;
+      border-radius: 5px;
+      font-weight: 500;
+      margin: 10px 10px 0 0;
+      text-align: center;
+      text-decoration: none;
+      transition: background 0.3s, color 0.3s;
     }
 
     .btn {
-      display: inline-block;
-      padding: 10px 20px;
-      border-radius: 5px;
       background: #2980b9;
-      color: #ffffff;
-      text-decoration: none;
-      font-weight: 500;
-      margin: 10px 10px 0 0;
-      transition: background 0.3s;
+      color: #ffffff; 
     }
 
     .btn:hover {
       background: #1c5980;
+      color: #ffffff;
+    }
+
+    .btn-github {
+      background: #bdc3c7;
+      color: #2c3e50; 
+    }
+
+    .btn-github:hover {
+      background: #95a5a6;
+      color: #ffffff;
+    }
+
+    .btn-container {
+      margin-top: 20px;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+      margin: 20px 0;
+      border-radius: 5px;
     }
 
     footer {
@@ -110,30 +137,30 @@
 
   <main>
     <h2>Contexto</h2>
-    <p>Dataset de clientes de una compañía Telco, con información de perfil, servicios contratados, facturación y churn (bajas de clientes).  
+    <p>Dataset de <strong>clientes de una compañía Telco</strong>, con información de perfil, servicios contratados, facturación y churn.  
     Objetivo: predecir qué clientes tienen mayor probabilidad de darse de baja y analizar los factores que influyen en su churn.</p>
 
     <h2>Objetivos del análisis</h2>
     <ul>
       <li>Explorar el dataset y detectar valores nulos o inconsistencias.</li>
       <li>Limpiar y transformar las variables para modelado.</li>
-      <li>Entrenar modelos de Machine Learning (Logistic Regression, Random Forest, XGBoost) para predecir churn.</li>
+      <li>Entrenar modelos de <strong>Machine Learning</strong> (Logistic Regression, Random Forest, XGBoost) para predecir churn.</li>
       <li>Interpretar los factores más importantes que afectan la baja de clientes.</li>
       <li>Analizar el impacto del churn sobre la cartera y la facturación.</li>
-      <li>Segmentar clientes según su riesgo de abandono.</li>
+      <li>Segmentar clientes según su <strong>riesgo de abandono</strong>.</li>
     </ul>
 
     <h2>Estructura del análisis</h2>
     <ul>
-      <li><strong>EDA en Python:</strong> limpieza de datos, detección de outliers, análisis descriptivo y visualización de variables.</li>
-      <li><strong>Modelado:</strong> separación de variables, codificación, escalado, entrenamiento de modelos y evaluación.</li>
-      <li><strong>Interpretabilidad:</strong> importancia de variables con Random Forest y SHAP.</li>
-      <li><strong>Predicciones y análisis final:</strong> probabilidad de churn, segmentación y análisis de impacto.</li>
+      <li><strong>EDA en Python:</strong> limpieza de datos, análisis descriptivo, visualización de variables categóricas y numéricas.</li>
+      <li><strong>Modelado:</strong> separación de variables X e y, codificación y escalado, entrenamiento de modelos, evaluación de accuracy, ROC-AUC y matriz de confusión.</li>
+      <li><strong>Interpretabilidad:</strong> importancia de variables con Random Forest y SHAP para XGBoost.</li>
+      <li><strong>Predicciones y análisis final:</strong> probabilidad de churn, impacto sobre facturación y segmentación de riesgo de abandono.</li>
     </ul>
 
     <h2>Técnicas y herramientas</h2>
     <ul>
-      <li>Python: pandas, numpy, matplotlib, seaborn, scikit-learn, XGBoost, shap</li>
+      <li>Python: pandas, numpy, matplotlib, seaborn, scikit-learn, XGBoost, SHAP</li>
       <li>Machine Learning: clasificación binaria (churn/no churn)</li>
       <li>Interpretabilidad: feature importance y SHAP values</li>
     </ul>
@@ -141,14 +168,29 @@
     <h2>Principales insights</h2>
     <ul>
       <li>Proporción de género: 3.488 mujeres y 3.555 hombres.</li>
-      <li>Predicción de churn: 75,34% de clientes seguirán activos, representando el 84,31% de la facturación.</li>
-      <li>Riesgo de abandono: 65% de clientes con riesgo bajo; clientes con contrato mensual 57,29% riesgo.</li>
-      <li>Variables más importantes: tipo de contrato, facturación, servicios contratados, líneas adicionales.</li>
+      <li>Predicción de churn: 75,34% de clientes seguirán activos (84,31% de facturación). Bajas: 24,66% clientes y 15,69% facturación.</li>
+      <li>Riesgo de abandono: 65% de clientes bajo riesgo, clientes con contrato mensual 57,29% riesgo.</li>
+      <li>Variables más importantes: tipo y duración de contrato, facturación mensual y total, servicios contratados, factura electrónica y líneas adicionales.</li>
     </ul>
+
+    <h2>Visualizaciones sugeridas</h2>
+    <ul>
+      <li>Distribución de género: gráfico de barras.</li>
+      <li>Churn por tipo de contrato: gráfico de columnas apiladas.</li>
+      <li>Top 10 variables importantes: gráfico horizontal con Random Forest o SHAP.</li>
+      <li>Segmentación de riesgo de abandono: gráfico de pastel o barras con bajo/medio/alto riesgo.</li>
+    </ul>
+
+    <h2>Dashboard – Ejemplo de visualizaciones</h2>
+    <h3>Página 1 – Predicción</h3>
+    <img src="../Img/Predicción.PNG" alt="Predicción">
+
+    <h3>Página 2 – Detalle</h3>
+    <img src="../Img/Detalle.PNG" alt="Detalle">
 
     <div class="btn-container">
       <a class="btn" href="../index.html#projects">Volver a Proyectos</a>
-      <a class="btn" href="https://github.com/Dalvarezmiguez/Portfolio-Power-Bi/tree/main" target="_blank">Más detalles en GitHub</a>
+      <a class="btn-github" href="https://github.com/Dalvarezmiguez/Portfolio-Power-Bi/tree/main" target="_blank">Más detalles en GitHub</a>
     </div>
   </main>
 
