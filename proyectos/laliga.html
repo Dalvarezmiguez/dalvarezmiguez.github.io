@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Análisis de LaLiga – Portfolio Daniel Álvarez Míguez</title>
+  <title>Proyecto – Análisis de LaLiga</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
     body {
@@ -22,68 +22,69 @@
 
     header h1 {
       margin: 0;
-      font-size: 2em;
       font-weight: 700;
+      font-size: 2em;
     }
 
     header p {
-      margin-top: 10px;
+      margin-top: 5px;
       font-weight: 400;
       font-size: 1em;
       color: #bdc3c7;
     }
 
-    section {
-      max-width: 1000px;
+    main {
+      max-width: 900px;
       margin: 40px auto;
-      padding: 30px;
-      background: #ffffff;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      padding: 0 20px;
     }
 
     h2 {
-      font-size: 1.6em;
-      margin-top: 0;
-      border-bottom: 2px solid #ddd;
-      padding-bottom: 8px;
+      font-size: 1.8em;
+      font-weight: 700;
+      border-bottom: 2px solid #bdc3c7;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
     }
 
     h3 {
-      margin-top: 25px;
       font-size: 1.3em;
-      color: #34495e;
+      font-weight: 500;
+      margin-top: 25px;
     }
 
     p, li {
-      line-height: 1.6;
+      line-height: 1.7;
+      margin-bottom: 10px;
     }
 
     ul {
-      margin: 10px 0 20px 20px;
+      margin-left: 20px;
     }
 
-    img {
-      width: 100%;
-      border-radius: 8px;
-      margin: 20px 0;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    a {
+      color: #2980b9;
+      text-decoration: none;
     }
 
-    .btn-container {
-      margin-top: 30px;
-      text-align: center;
+    a:hover {
+      color: #1c5980;
+    }
+
+    /* Evitar que el enlace cambie de color al pulsarlo */
+    a:visited, a:active {
+      color: #2980b9;
     }
 
     .btn {
       display: inline-block;
-      padding: 12px 25px;
-      margin: 10px;
+      padding: 10px 20px;
       border-radius: 5px;
       background: #2980b9;
       color: #ffffff;
       text-decoration: none;
       font-weight: 500;
+      margin: 10px 10px 0 0;
       transition: background 0.3s;
     }
 
@@ -96,21 +97,20 @@
       color: #ffffff;
       text-align: center;
       padding: 20px;
-      margin-top: 50px;
+      margin-top: 40px;
       font-size: 0.9em;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Análisis de LaLiga – Power BI</h1>
-    <p>Proyecto desarrollado con Power BI</p>
+    <h1>Análisis de LaLiga – 10 Años</h1>
+    <p>Power BI</p>
   </header>
 
-  <section>
+  <main>
     <h2>Contexto</h2>
     <p>Dataset de las clasificaciones históricas de LaLiga, la primera división española, incluyendo información de los últimos 10 años.  
-    Los datos se obtienen desde <a href="https://www.transfermarkt.es/" target="_blank">Transfermarkt</a>.  
     Objetivo: analizar la evolución de los equipos, sus puntos, goles y posiciones para obtener insights sobre rendimiento histórico y tendencias.</p>
 
     <h2>Objetivos del análisis</h2>
@@ -122,27 +122,11 @@
     </ul>
 
     <h2>Estructura del Dashboard</h2>
-    <h3>Resumen por año</h3>
     <ul>
-      <li>Filtro por temporada.</li>
-      <li>Visualiza el escudo del campeón, el máximo goleador, el equipo menos goleado y los 3 descendidos.</li>
-    </ul>
-
-    <h3>Clasificación histórica por puntos</h3>
-    <ul>
-      <li>Suma de todos los indicadores de los últimos 10 años.</li>
-      <li>Tooltip con gráfico de líneas mostrando la evolución del total de puntos por año.</li>
-    </ul>
-
-    <h3>Clasificación histórica por posición media</h3>
-    <ul>
-      <li>Calcula posición media, goles a favor, goles en contra y puntos promedio en los últimos 10 años.</li>
-      <li>Tooltip con la posición de cada equipo año por año.</li>
-    </ul>
-
-    <h3>Tabla de clasificaciones anuales</h3>
-    <ul>
-      <li>Permite filtrar por temporada y ver la clasificación final de cualquier año, incluyendo la actual.</li>
+      <li><strong>Resumen por año:</strong> filtro por temporada, escudo del campeón, máximo goleador, equipo menos goleado y 3 descendidos.</li>
+      <li><strong>Clasificación histórica por puntos:</strong> suma de indicadores de los últimos 10 años, con gráfico de líneas por año.</li>
+      <li><strong>Clasificación histórica por posición media:</strong> posición media, goles a favor/en contra, puntos promedio y tooltip año por año.</li>
+      <li><strong>Tabla de clasificaciones anuales:</strong> filtrar por temporada y ver la clasificación final.</li>
     </ul>
 
     <h2>Técnicas y herramientas</h2>
@@ -157,25 +141,18 @@
 
     <h2>Principales insights</h2>
     <ul>
-      <li>Barcelona lidera ambas clasificaciones históricas, con 12 puntos por encima del Real Madrid y diferencia de 0,11 en posición media.</li>
-      <li>Villarreal es el equipo menos goleado en la última década, aunque no figura entre los tres primeros en palmarés.</li>
-      <li>Las posiciones de clasificación por puntos y por posición media no siempre coinciden, mostrando la irregularidad de algunos equipos.</li>
-      <li>Equipos como Sporting o Málaga solo han estado 1 y 2 temporadas en primera división en la última década.</li>
-      <li>La evolución de puntos y posiciones permite identificar equipos consistentes frente a equipos con rendimientos fluctuantes.</li>
+      <li>Barcelona lidera ambas clasificaciones históricas, 12 puntos sobre Real Madrid, diferencia de 0,11 en posición media.</li>
+      <li>Villarreal es el equipo menos goleado en la última década.</li>
+      <li>Clasificación histórica por puntos y posición media no siempre coincide.</li>
+      <li>Equipos como Sporting o Málaga solo han estado 1-2 temporadas en primera división en los últimos 10 años.</li>
+      <li>Evolución de puntos y posiciones permite identificar equipos consistentes frente a rendimientos fluctuantes.</li>
     </ul>
-
-    <h2>Ejemplo de visualizaciones</h2>
-    <img src="../img/Palmarés.PNG" alt="Palmarés">
-    <img src="../img/Resumen_por_año.PNG" alt="Resumen por año">
-    <img src="../img/Histórica_por_puntos.PNG" alt="Clasificación histórica por puntos">
-    <img src="../img/Histórica_por_posición_media.PNG" alt="Clasificación histórica por posición media">
-    <img src="../img/Clasificación_anual.PNG" alt="Clasificación anual filtrable">
 
     <div class="btn-container">
       <a class="btn" href="../index.html#projects">Volver a Proyectos</a>
       <a class="btn" href="https://github.com/Dalvarezmiguez/Portfolio-Power-Bi/tree/main" target="_blank">Más detalles en GitHub</a>
     </div>
-  </section>
+  </main>
 
   <footer>
     <p>© 2025 Daniel Álvarez Míguez | Portfolio Data Analytics</p>
