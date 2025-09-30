@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Proyecto – Presupuesto Generalitat de Catalunya</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Roboto', Arial, sans-serif; margin: 0; padding: 0; background: #f8f9fa; color: #2c3e50; }
+    header { background: #1f2a38; color: #fff; padding: 30px 20px; text-align: center; }
+    header h1 { margin: 0; font-weight: 700; font-size: 2em; }
+    header p { margin-top: 5px; font-weight: 400; font-size: 1em; color: #bdc3c7; }
+    main { max-width: 900px; margin: 40px auto; padding: 0 20px; }
+    h2 { font-size: 1.8em; font-weight: 700; border-bottom: 2px solid #bdc3c7; padding-bottom: 10px; margin-bottom: 20px; }
+    h3 { font-size: 1.3em; font-weight: 500; margin-top: 25px; }
+    p, li { line-height: 1.7; margin-bottom: 10px; }
+    ul { margin-left: 20px; }
+    a:not(.btn):not(.btn-github) { text-decoration: none; color: inherit; transition: color 0.3s; }
+    a:not(.btn):not(.btn-github):hover { color: #1c5980; }
+    .btn { display: inline-block; padding: 12px 25px; border-radius: 5px; font-weight: 500; margin: 10px 10px 0 0; text-align: center; text-decoration: none; background: #2980b9; color: #fff; transition: background 0.3s; }
+    .btn:hover { background: #1c5980; }
+    .btn-github { display: inline-block; padding: 12px 25px; border-radius: 5px; font-weight: 500; margin: 10px 10px 0 0; text-align: center; text-decoration: none; background: #7f8c8d; color: #fff; transition: background 0.3s; }
+    .btn-github:hover { background: #606e73; }
+    .btn-container { margin-top: 20px; }
+    img { max-width: 100%; display: block; margin: 20px 0; border-radius: 5px; }
+    #langToggle { position: fixed; top: 20px; right: 20px; background:#2980b9; color:white; border:none; padding:5px 10px; border-radius:5px; cursor:pointer; z-index:2000; }
+    footer { background: #1f2a38; color: #fff; text-align: center; padding: 20px; margin-top: 40px; font-size: 0.9em; }
+  </style>
+</head>
+<body>
+
+<button id="langToggle">EN</button>
+
+<header>
+  <h1 data-es="Análisis del Presupuesto de la Generalitat de Catalunya" data-en="Catalonia Government Budget Analysis">Análisis del Presupuesto de la Generalitat de Catalunya</h1>
+  <p data-es="1999–2023 – Power BI" data-en="1999–2023 – Power BI">1999–2023 – Power BI</p>
+</header>
+
+<main>
+  <h2 data-es="Contexto" data-en="Context">Contexto</h2>
+  <p data-es="Dataset histórico de los presupuestos de la Generalitat de Catalunya desde 1999 hasta 2023, con algunas ausencias de datos. Objetivo: analizar y comparar la evolución de ingresos y gastos, identificar principales variaciones y evaluar la estructura presupuestaria mediante un dashboard interactivo en Power BI."
+     data-en="Historical dataset of the Catalonia government budgets from 1999 to 2023, with some missing data. Goal: analyze and compare income and expenses evolution, identify main variations, and evaluate the budget structure via an interactive Power BI dashboard.">
+    Dataset histórico de los presupuestos de la Generalitat de Catalunya desde 1999 hasta 2023, con algunas ausencias de datos.  
+    Objetivo: analizar y comparar la evolución de ingresos y gastos, identificar principales variaciones y evaluar la estructura presupuestaria mediante un dashboard interactivo en Power BI.
+  </p>
+
+  <h2 data-es="Objetivos del análisis" data-en="Analysis Objectives">Objetivos del análisis</h2>
+  <ul>
+    <li data-es="Analizar la evolución histórica de ingresos y gastos públicos." data-en="Analyze historical evolution of public income and expenses.">Analizar la evolución histórica de ingresos y gastos públicos.</li>
+    <li data-es="Identificar variaciones interanuales (absolutas y porcentuales)." data-en="Identify year-over-year variations (absolute and percentage).">Identificar variaciones interanuales (absolutas y porcentuales).</li>
+    <li data-es="Evaluar la composición del gasto (personal, capital, transferencias, etc.)." data-en="Evaluate expense composition (personnel, capital, transfers, etc.).">Evaluar la composición del gasto (personal, capital, transferencias, etc.).</li>
+    <li data-es="Medir la dependencia de transferencias corrientes y su impacto en la sostenibilidad presupuestaria." data-en="Measure dependence on current transfers and impact on budget sustainability.">Medir la dependencia de transferencias corrientes y su impacto en la sostenibilidad presupuestaria.</li>
+  </ul>
+
+  <h2 data-es="Estructura del Dashboard" data-en="Dashboard Structure">Estructura del Dashboard</h2>
+  <ul>
+    <li data-es="<strong>Resumen financiero:</strong> KPIs de ingresos totales, gastos totales y variación interanual, con gráficos de líneas y barras." data-en="<strong>Financial Summary:</strong> KPIs of total income, total expenses and YoY variation, with line and bar charts.">Resumen financiero: KPIs de ingresos totales, gastos totales y variación interanual, con gráficos de líneas y barras.</li>
+    <li data-es="<strong>Ingresos:</strong> gráficos circulares/anillos por tipo de ingreso y evolución de impuestos y transferencias." data-en="<strong>Income:</strong> pie/donut charts by income type and tax/transfer trends.">Ingresos: gráficos circulares/anillos por tipo de ingreso y evolución de impuestos y transferencias.</li>
+    <li data-es="<strong>Gastos:</strong> treemap y gráficos de cintas para distribución de gasto y evolución de gastos de personal, transferencias e inversión." data-en="<strong>Expenses:</strong> treemap and ribbon charts for expense distribution and evolution of personnel, transfers and investment.">Gastos: treemap y gráficos de cintas para distribución de gasto y evolución de gastos de personal, transferencias e inversión.</li>
+    <li data-es="<strong>Comparativa interanual:</strong> matriz con diferencias absolutas y porcentuales, KPI de crecimiento YoY." data-en="<strong>Year-over-Year Comparison:</strong> matrix with absolute and percentage differences, YoY growth KPIs.">Comparativa interanual: matriz con diferencias absolutas y porcentuales, KPI de crecimiento YoY.</li>
+  </ul>
+
+  <h2 data-es="Técnicas y herramientas" data-en="Techniques & Tools">Técnicas y herramientas</h2>
+  <ul>
+    <li data-es="<strong>Power BI:</strong> dashboard interactivo con segmentaciones por año y tipo de operación." data-en="<strong>Power BI:</strong> interactive dashboard with slicers by year and operation type.">Power BI: dashboard interactivo con segmentaciones por año y tipo de operación.</li>
+    <li data-es="<strong>DAX:</strong> medidas de gastos e ingresos, diferencias interanuales y time intelligence." data-en="<strong>DAX:</strong> measures for expenses and income, YoY differences, and time intelligence.">DAX: medidas de gastos e ingresos, diferencias interanuales y time intelligence.</li>
+    <li data-es="<strong>Power Query:</strong> limpieza, normalización y modelado de datos." data-en="<strong>Power Query:</strong> data cleaning, normalization, and modeling.">Power Query: limpieza, normalización y modelado de datos.</li>
+    <li data-es="<strong>Datos abiertos:</strong> extracción desde portal oficial Idescat." data-en="<strong>Open Data:</strong> extraction from official Idescat portal.">Datos abiertos: extracción desde portal oficial Idescat.</li>
+  </ul>
+
+  <h2 data-es="Dataset" data-en="Dataset">Dataset</h2>
+  <p data-es="Fuente: <a href='https://www.idescat.cat/indicadors/?id=aec&lang=es&n=15638&utm_source' target='_blank'>Idescat – Presupuestos de la Generalitat de Catalunya</a>" data-en="Source: <a href='https://www.idescat.cat/indicadors/?id=aec&lang=es&n=15638&utm_source' target='_blank'>Idescat – Catalonia Government Budgets</a>">Fuente: <a href="https://www.idescat.cat/indicadors/?id=aec&lang=es&n=15638&utm_source" target="_blank">Idescat – Presupuestos de la Generalitat de Catalunya</a></p>
+  <p data-es="Formatos tabular y plano, procesados en Power Query." data-en="Tabular and flat formats, processed in Power Query.">Formatos tabular y plano, procesados en Power Query.</p>
+
+  <h2 data-es="Principales insights" data-en="Main Insights">Principales insights</h2>
+  <ul>
+    <li data-es="Los ingresos crecieron un +5,7% respecto a 2022, impulsados por impuestos directos e indirectos." data-en="Income increased +5.7% vs 2022, driven by direct and indirect taxes.">Los ingresos crecieron un +5,7% respecto a 2022, impulsados por impuestos directos e indirectos.</li>
+    <li data-es="Los gastos de personal aumentaron un +11,8%, reflejando un mayor esfuerzo en recursos humanos." data-en="Personnel expenses rose +11.8%, reflecting higher HR efforts.">Los gastos de personal aumentaron un +11,8%, reflejando un mayor esfuerzo en recursos humanos.</li>
+    <li data-es="Las transferencias de capital cayeron un -33,6%, reduciendo la inversión en infraestructuras." data-en="Capital transfers fell -33.6%, reducing investment in infrastructure.">Las transferencias de capital cayeron un -33,6%, reduciendo la inversión en infraestructuras.</li>
+    <li data-es="La dependencia de transferencias corrientes sigue siendo elevada (≈48% del gasto total)." data-en="Dependence on current transfers remains high (≈48% of total expenses).">La dependencia de transferencias corrientes sigue siendo elevada (≈48% del gasto total).</li>
+  </ul>
+
+  <h2 data-es="Visualizaciones" data-en="Visualizations">Visualizaciones</h2>
+  <h3 data-es="Resumen financiero" data-en="Financial Summary">Resumen financiero</h3>
+  <img src="../img/cataluña.png" alt="Resumen financiero">
+
+  <div class="btn-container">
+    <a class="btn" href="../index.html#projects" id="backToProjects" data-es="Volver a Proyectos" data-en="Back to Projects">Volver a Proyectos</a>
+    <a class="btn-github" href="https://github.com/Dalvarezmiguez/Portfolio-Power-Bi/tree/main" target="_blank" data-es="Más detalles en GitHub" data-en="More details on GitHub">Más detalles en GitHub</a>
+  </div>
+</main>
+
+<footer>
+  <p>© 2025 Daniel Álvarez Míguez | Portfolio Data Analytics</p>
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const langToggle = document.getElementById('langToggle');
+  let currentLang = localStorage.getItem('lang') || "es";
+
+  function applyLang(lang){
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-es]').forEach(el => { el.innerHTML = el.dataset[lang]; });
+    langToggle.textContent = lang === "es" ? "EN" : "ES";
+  }
+  applyLang(currentLang);
+
+  langToggle.addEventListener('click', () => {
+    currentLang = currentLang === "es" ? "en" : "es";
+    localStorage.setItem('lang', currentLang);
+    applyLang(currentLang);
+  });
+
+  const backBtn = document.getElementById('backToProjects');
+  backBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    localStorage.setItem('lang', currentLang);
+    window.location.href = '../index.html#projects';
+  });
+});
+</script>
+
+</body>
+</html>

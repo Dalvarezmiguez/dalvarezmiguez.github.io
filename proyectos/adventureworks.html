@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Proyecto – Análisis de Ventas</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Roboto', Arial, sans-serif; margin:0; padding:0; background:#f8f9fa; color:#2c3e50; }
+    header { background:#1f2a38; color:#fff; padding:30px 20px; text-align:center; }
+    header h1 { margin:0; font-weight:700; font-size:2em; }
+    header p { margin-top:5px; font-weight:400; font-size:1em; color:#bdc3c7; }
+    main { max-width:900px; margin:40px auto; padding:0 20px; }
+    h2 { font-size:1.8em; font-weight:700; border-bottom:2px solid #bdc3c7; padding-bottom:10px; margin-bottom:20px; }
+    h3 { font-size:1.3em; font-weight:500; margin-top:25px; }
+    p, li { line-height:1.7; margin-bottom:10px; }
+    ul { margin-left:20px; }
+    a:not(.btn):not(.btn-github) { text-decoration:none; color:inherit; transition: color 0.3s; }
+    a:not(.btn):not(.btn-github):hover { color:#1c5980; }
+    .btn, .btn-github { display:inline-block; padding:12px 25px; border-radius:5px; font-weight:500; margin:10px 10px 0 0; text-align:center; text-decoration:none; transition: background 0.3s; color:#fff; }
+    .btn { background:#2980b9; }
+    .btn:hover { background:#1c5980; }
+    .btn-github { background:#7f8c8d; }
+    .btn-github:hover { background:#606e73; }
+    .btn-container { margin-top:20px; }
+    img { max-width:100%; display:block; margin:20px 0; border-radius:5px; }
+    #langToggle { position: fixed; top: 20px; right: 20px; background:#2980b9; color:white; border:none; padding:5px 10px; border-radius:5px; cursor:pointer; z-index:2000; }
+    footer { background:#1f2a38; color:#fff; text-align:center; padding:20px; margin-top:40px; font-size:0.9em; }
+  </style>
+</head>
+<body>
+
+<button id="langToggle">EN</button>
+
+<header>
+  <h1 data-es="Análisis de Ventas – AdventureWorks" data-en="Sales Analysis – AdventureWorks">Análisis de Ventas – AdventureWorks</h1>
+  <p data-es="Power BI + SQL" data-en="Power BI + SQL">Power BI + SQL</p>
+</header>
+
+<main>
+  <h2 data-es="Contexto" data-en="Context">Contexto</h2>
+  <p data-es="Dataset de ventas de retail, incluyendo información de productos, comerciales, canales y registros históricos. Objetivo: generar insights accionables para decisiones comerciales estratégicas y realizar proyecciones de ventas."
+     data-en="Retail sales dataset including products, salespeople, channels, and historical records. Goal: generate actionable insights for strategic commercial decisions and sales projections.">
+    Dataset de ventas de retail, incluyendo información de productos, comerciales, canales y registros históricos. Objetivo: generar insights accionables para decisiones comerciales estratégicas y realizar proyecciones de ventas.
+  </p>
+
+  <h2 data-es="Objetivos del análisis" data-en="Analysis Objectives">Objetivos del análisis</h2>
+  <ul>
+    <li data-es="Analizar la evolución de ventas y márgenes por producto y categoría." data-en="Analyze sales and margin evolution by product and category.">Analizar la evolución de ventas y márgenes por producto y categoría.</li>
+    <li data-es="Evaluar la performance por canal de venta." data-en="Evaluate performance by sales channel.">Evaluar la performance por canal de venta.</li>
+    <li data-es="Analizar la contribución de cada comercial y su cartera." data-en="Analyze the contribution of each salesperson and their portfolio.">Analizar la contribución de cada comercial y su cartera.</li>
+    <li data-es="Realizar proyecciones de ventas basadas en histórico." data-en="Perform sales projections based on historical data.">Realizar proyecciones de ventas basadas en histórico.</li>
+  </ul>
+
+  <h2 data-es="Estructura del Dashboard" data-en="Dashboard Structure">Estructura del Dashboard</h2>
+  <ul>
+    <li data-es="<strong>Ventas generales:</strong> KPIs: ventas totales, margen, productos top. Gráficos de evolución mensual y por categoría." data-en="<strong>Overall Sales:</strong> KPIs: total sales, margin, top products. Monthly and category trend charts.">Ventas generales: KPIs: ventas totales, margen, productos top. Gráficos de evolución mensual y por categoría.</li>
+    <li data-es="<strong>Ventas por canal:</strong> Comparativa entre canales (online, tiendas físicas, distribuidores). Identificación de canales más rentables." data-en="<strong>Sales by Channel:</strong> Comparison between channels (online, physical stores, distributors). Identify most profitable channels.">Ventas por canal: Comparativa entre canales (online, tiendas físicas, distribuidores). Identificación de canales más rentables.</li>
+    <li data-es="<strong>Ventas por comercial:</strong> Ranking de comerciales según ventas y margen. Identificación de comerciales estratégicos y su cartera." data-en="<strong>Sales by Salesperson:</strong> Ranking of salespeople by sales and margin. Identify strategic salespeople and their portfolio.">Ventas por comercial: Ranking de comerciales según ventas y margen. Identificación de comerciales estratégicos y su cartera.</li>
+    <li data-es="<strong>Proyección de ventas:</strong> Forecast basado en histórico. Gráficos de tendencias y predicciones para el próximo trimestre." data-en="<strong>Sales Forecast:</strong> Historical-based forecast. Trend charts and predictions for next quarter.">Proyección de ventas: Forecast basado en histórico. Gráficos de tendencias y predicciones para el próximo trimestre.</li>
+  </ul>
+
+  <h2 data-es="Técnicas y herramientas" data-en="Techniques & Tools">Técnicas y herramientas</h2>
+  <ul>
+    <li data-es="<strong>Power BI:</strong> dashboards interactivos, segmentaciones y KPIs." data-en="<strong>Power BI:</strong> Interactive dashboards, slicers, KPIs.">Power BI: dashboards interactivos, segmentaciones y KPIs.</li>
+    <li data-es="<strong>SQL:</strong> extracción de datos, JOINs y agregaciones." data-en="<strong>SQL:</strong> Data extraction, JOINs and aggregations.">SQL: extracción de datos, JOINs y agregaciones.</li>
+    <li data-es="<strong>DAX:</strong> medidas para cálculos de margen, crecimiento y proyecciones." data-en="<strong>DAX:</strong> Measures for margin, growth, and forecast calculations.">DAX: medidas para cálculos de margen, crecimiento y proyecciones.</li>
+    <li data-es="<strong>Power Query:</strong> limpieza y transformación de datos." data-en="<strong>Power Query:</strong> Data cleaning and transformation.">Power Query: limpieza y transformación de datos.</li>
+  </ul>
+
+  <h2 data-es="Dataset" data-en="Dataset">Dataset</h2>
+  <p data-es="Fuente: <strong>AdventureWorks 2022</strong> (SQL Server sample database)" data-en="Source: <strong>AdventureWorks 2022</strong> (SQL Server sample database)">Fuente: <strong>AdventureWorks 2022</strong> (SQL Server sample database)</p>
+  <p><a href="https://github.com/Microsoft/sql-server-samples/releases/tag/adventureworks" target="_blank" data-es="Más información y descarga" data-en="More info & download">Más información y descarga</a></p>
+
+  <h2 data-es="Principales insights" data-en="Main Insights">Principales insights</h2>
+  <ul>
+    <li data-es="El 20% de los productos genera el 60% de las ventas." data-en="20% of products generate 60% of sales.">El 20% de los productos genera el 60% de las ventas.</li>
+    <li data-es="Canal online crece a más del doble que el offline." data-en="Online channel grows more than twice as fast as offline.">Canal online crece a más del doble que el offline.</li>
+    <li data-es="Cuatro comerciales concentran más del 50% de la cartera de clientes." data-en="Four salespeople concentrate more than 50% of the customer portfolio.">Cuatro comerciales concentran más del 50% de la cartera de clientes.</li>
+    <li data-es="Stock suficiente para las ventas de las próximas 4 semanas según proyecciones." data-en="Stock sufficient for sales of next 4 weeks according to projections.">Stock suficiente para las ventas de las próximas 4 semanas según proyecciones.</li>
+  </ul>
+
+  <h2 data-es="Principales visualizaciones" data-en="Main Visualizations">Principales visualizaciones</h2>
+  <h3 data-es="Informe Resumen" data-en="Summary Report">Informe Resumen</h3>
+  <img src="../img/informe_resumen.png" alt="Informe Resumen">
+  <h3 data-es="Detalle Por Canal" data-en="Detail by Channel">Detalle Por Canal</h3>
+  <img src="../img/detalle_por_canal.png" alt="Detalle Por Canal">
+  <h3 data-es="Detalle Comerciales" data-en="Salespeople Detail">Detalle Comerciales</h3>
+  <img src="../img/detalle_comerciales.png" alt="Detalle Comerciales">
+  <h3 data-es="Proyección Ventas" data-en="Sales Forecast">Proyección Ventas</h3>
+  <img src="../img/proyeccion_ventas.png" alt="Proyección Ventas">
+  <h3 data-es="Detalle Ventas Diarias" data-en="Daily Sales Detail">Detalle Ventas Diarias</h3>
+  <img src="../img/detalle_ventas_diarias.png" alt="Detalle Ventas Diarias">
+
+  <div class="btn-container">
+    <a class="btn" href="../index.html#projects" id="backToProjects" data-es="Volver a Proyectos" data-en="Back to Projects">Volver a Proyectos</a>
+    <a class="btn-github" href="https://github.com/Dalvarezmiguez/Portfolio-Power-Bi/tree/main" target="_blank" data-es="Más detalles en GitHub" data-en="More details on GitHub">Más detalles en GitHub</a>
+  </div>
+</main>
+
+<footer>
+  <p>© 2025 Daniel Álvarez Míguez | Portfolio Data Analytics</p>
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const langToggle = document.getElementById('langToggle');
+  let currentLang = localStorage.getItem('lang') || "es";
+
+  function applyLang(lang){
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-es]').forEach(el => { el.innerHTML = el.dataset[lang]; });
+    langToggle.textContent = lang === "es" ? "EN" : "ES";
+  }
+  applyLang(currentLang);
+
+  langToggle.addEventListener('click', () => {
+    currentLang = currentLang === "es" ? "en" : "es";
+    localStorage.setItem('lang', currentLang);
+    applyLang(currentLang);
+  });
+
+  // Botón volver a proyectos
+  const backBtn = document.getElementById('backToProjects');
+  backBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    localStorage.setItem('lang', currentLang);
+    window.location.href = '../index.html#projects';
+  });
+});
+</script>
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3ETQMQ7L5M"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-3ETQMQ7L5M');
+</script>
+
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Proyecto – Análisis de LaLiga</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Roboto', Arial, sans-serif; margin: 0; padding: 0; background: #f8f9fa; color: #2c3e50; }
+    header { background: #1f2a38; color: #fff; padding: 30px 20px; text-align: center; }
+    header h1 { margin: 0; font-weight: 700; font-size: 2em; }
+    header p { margin-top: 5px; font-weight: 400; font-size: 1em; color: #bdc3c7; }
+    main { max-width: 900px; margin: 40px auto; padding: 0 20px; }
+    h2 { font-size: 1.8em; font-weight: 700; border-bottom: 2px solid #bdc3c7; padding-bottom: 10px; margin-bottom: 20px; }
+    h3 { font-size: 1.3em; font-weight: 500; margin-top: 25px; }
+    p, li { line-height: 1.7; margin-bottom: 10px; }
+    ul { margin-left: 20px; }
+    a:not(.btn):not(.btn-github) { text-decoration: none; color: inherit; transition: color 0.3s; }
+    a:not(.btn):not(.btn-github):hover { color: #1c5980; }
+    .btn, .btn-github { display: inline-block; padding: 12px 25px; border-radius: 5px; font-weight: 500; margin: 10px 10px 0 0; text-align: center; text-decoration: none; transition: background 0.3s; color: #fff; }
+    .btn { background: #2980b9; }
+    .btn:hover { background: #1c5980; }
+    .btn-github { background: #7f8c8d; }
+    .btn-github:hover { background: #606e73; }
+    .btn-container { margin-top: 20px; }
+    img { max-width: 100%; display: block; margin: 20px 0; border-radius: 5px; }
+    #langToggle { position: fixed; top: 20px; right: 20px; background:#2980b9; color:white; border:none; padding:5px 10px; border-radius:5px; cursor:pointer; z-index:2000; }
+    footer { background: #1f2a38; color: #fff; text-align: center; padding: 20px; margin-top: 40px; font-size: 0.9em; }
+  </style>
+</head>
+<body>
+
+<!-- Botón de idioma -->
+<button id="langToggle">EN</button>
+
+<header>
+  <h1 data-es="Análisis de LaLiga – Power BI" data-en="LaLiga Analysis – Power BI">Análisis de LaLiga – Power BI</h1>
+  <p data-es="Clasificaciones históricas y rendimiento de equipos" data-en="Historical standings and team performance">Clasificaciones históricas y rendimiento de equipos</p>
+</header>
+
+<main>
+  <h2 data-es="Contexto" data-en="Context">Contexto</h2>
+  <p data-es="Dataset de las clasificaciones históricas de LaLiga, incluyendo información de los últimos 10 años. Objetivo: analizar la evolución de los equipos, sus puntos, goles y posiciones para obtener insights sobre rendimiento histórico y tendencias."
+     data-en="Dataset of historical LaLiga standings, including information from the last 10 years. Goal: analyze team evolution, points, goals and positions to obtain insights on historical performance and trends.">
+    Dataset de las clasificaciones históricas de LaLiga, incluyendo información de los últimos 10 años. Objetivo: analizar la evolución de los equipos, sus puntos, goles y posiciones para obtener insights sobre rendimiento histórico y tendencias.
+  </p>
+
+  <h2 data-es="Objetivos del análisis" data-en="Analysis Objectives">Objetivos del análisis</h2>
+  <ul>
+    <li data-es="Analizar la clasificación histórica de los últimos 10 años en términos de puntos, goles y posición media." data-en="Analyze historical standings of the last 10 years in terms of points, goals and average position.">Analizar la clasificación histórica de los últimos 10 años en términos de puntos, goles y posición media.</li>
+    <li data-es="Identificar los equipos más consistentes y los más irregulares." data-en="Identify the most consistent and the most irregular teams.">Identificar los equipos más consistentes y los más irregulares.</li>
+    <li data-es="Evaluar el rendimiento de los máximos goleadores y los equipos menos goleados." data-en="Evaluate the performance of top scorers and least conceded teams.">Evaluar el rendimiento de los máximos goleadores y los equipos menos goleados.</li>
+    <li data-es="Facilitar la visualización de las clasificaciones anuales y la comparación entre temporadas." data-en="Facilitate visualization of annual standings and season-to-season comparison.">Facilitar la visualización de las clasificaciones anuales y la comparación entre temporadas.</li>
+  </ul>
+
+  <h2 data-es="Estructura del Dashboard" data-en="Dashboard Structure">Estructura del Dashboard</h2>
+  <ul>
+    <li data-es="<strong>Resumen por año:</strong> filtro por temporada, escudo del campeón, máximo goleador, equipo menos goleado y 3 descendidos." data-en="<strong>Yearly Summary:</strong> filter by season, champion badge, top scorer, least conceded team and 3 relegated teams.">Resumen por año: filtro por temporada, escudo del campeón, máximo goleador, equipo menos goleado y 3 descendidos.</li>
+    <li data-es="<strong>Clasificación histórica por puntos:</strong> suma de todos los indicadores de los últimos 10 años, con tooltip de evolución anual." data-en="<strong>Historical ranking by points:</strong> sum of all indicators over the last 10 years, with annual evolution tooltip.">Clasificación histórica por puntos: suma de todos los indicadores de los últimos 10 años, con tooltip de evolución anual.</li>
+    <li data-es="<strong>Clasificación histórica por posición media:</strong> posición media, goles a favor y en contra, puntos promedio y tooltip de evolución anual." data-en="<strong>Historical ranking by average position:</strong> average position, goals for and against, average points and annual evolution tooltip.">Clasificación histórica por posición media: posición media, goles a favor y en contra, puntos promedio y tooltip de evolución anual.</li>
+    <li data-es="<strong>Tabla de clasificaciones anuales:</strong> permite filtrar por temporada y ver la clasificación final de cualquier año." data-en="<strong>Annual standings table:</strong> allows filtering by season and see the final ranking of any year.">Tabla de clasificaciones anuales: permite filtrar por temporada y ver la clasificación final de cualquier año.</li>
+  </ul>
+
+  <h2 data-es="Técnicas y herramientas" data-en="Techniques & Tools">Técnicas y herramientas</h2>
+  <ul>
+    <li data-es="<strong>Power BI:</strong> dashboards interactivos con filtros y tooltips." data-en="<strong>Power BI:</strong> interactive dashboards with filters and tooltips.">Power BI: dashboards interactivos con filtros y tooltips.</li>
+    <li data-es="<strong>DAX:</strong> cálculos de puntos totales, promedio de goles y posición media." data-en="<strong>DAX:</strong> calculations of total points, goals average and average position.">DAX: cálculos de puntos totales, promedio de goles y posición media.</li>
+    <li data-es="<strong>Power Query:</strong> limpieza y transformación de datos." data-en="<strong>Power Query:</strong> data cleaning and transformation.">Power Query: limpieza y transformación de datos.</li>
+  </ul>
+
+  <h2 data-es="Dataset" data-en="Dataset">Dataset</h2>
+  <p data-es='Fuente: <a href="https://www.transfermarkt.es/" target="_blank">Transfermarkt - LaLiga</a>' data-en='Source: <a href="https://www.transfermarkt.es/" target="_blank">Transfermarkt - LaLiga</a>'>Fuente: <a href="https://www.transfermarkt.es/" target="_blank">Transfermarkt - LaLiga</a></p>
+  <p data-es="Incluye clasificaciones, goles a favor, goles en contra, puntos y posiciones de los últimos 10 años." data-en="Includes standings, goals for, goals against, points and positions for the last 10 years.">Incluye clasificaciones, goles a favor, goles en contra, puntos y posiciones de los últimos 10 años.</p>
+
+  <h2 data-es="Principales insights" data-en="Main Insights">Principales insights</h2>
+  <ul>
+    <li data-es="<strong>Barcelona</strong> lidera ambas clasificaciones históricas, con 12 puntos sobre el Real Madrid y diferencia de 0,11 en posición media." data-en="<strong>Barcelona</strong> leads both historical rankings, 12 points ahead of Real Madrid and 0.11 difference in average position.">Barcelona lidera ambas clasificaciones históricas, con 12 puntos sobre el Real Madrid y diferencia de 0,11 en posición media.</li>
+    <li data-es="El Villarreal es el equipo menos goleado en la última década." data-en="Villarreal is the least conceded team in the last decade.">El Villarreal es el equipo menos goleado en la última década.</li>
+    <li data-es="Posiciones de clasificación histórica por puntos y posición media no siempre coinciden, mostrando irregularidad de algunos equipos." data-en="Historical ranking by points and average position do not always match, showing irregularity of some teams.">Posiciones de clasificación histórica por puntos y posición media no siempre coinciden, mostrando irregularidad de algunos equipos.</li>
+    <li data-es="Equipos como <strong>el Sporting de Gijón</strong> y el <strong>Málaga</strong> solo han estado 1 y 2 temporadas en primera división en la última década." data-en="Teams like <strong>Sporting de Gijón</strong> and <strong>Málaga</strong> have only played 1 and 2 seasons in LaLiga in the last decade.">Equipos como <strong>Sporting</strong> o <strong>Málaga</strong> solo han estado 1 o 2 temporadas en primera división en la última década.</li>
+    <li data-es="Evolución de puntos y posiciones permite identificar equipos consistentes frente a equipos con rendimientos fluctuantes." data-en="Points and position evolution allows identifying consistent teams versus teams with fluctuating performance.">Evolución de puntos y posiciones permite identificar equipos consistentes frente a equipos con rendimientos fluctuantes.</li>
+  </ul>
+
+  <h2 data-es="Visualizaciones" data-en="Visualizations">Visualizaciones</h2>
+  <h3 data-es="Página 1 – Palmarés" data-en="Page 1 – Honours">Página 1 – Palmarés</h3>
+  <img src="../img/palmares.png" alt="Palmarés">
+
+  <h3 data-es="Página 2 – Resumen por año" data-en="Page 2 – Yearly Summary">Página 2 – Resumen por año</h3>
+  <img src="../img/resumen_por_año.png" alt="Resumen por año">
+
+  <h3 data-es="Página 3 – Clasificación histórica por puntos" data-en="Page 3 – Historical by Points">Página 3 – Clasificación histórica por puntos</h3>
+  <img src="../img/historica_por_puntos.png" alt="Histórica por puntos">
+
+  <h3 data-es="Página 4 – Clasificación histórica por posición media" data-en="Page 4 – Historical by Avg Position">Página 4 – Clasificación histórica por posición media</h3>
+  <img src="../img/historica_por_posicion_media.png" alt="Histórica por posición media">
+
+  <h3 data-es="Página 5 – Clasificación anual filtrable" data-en="Page 5 – Filterable Annual Standings">Página 5 – Clasificación anual filtrable</h3>
+  <img src="../img/clasificacion_anual.png" alt="Clasificación anual">
+
+  <div class="btn-container">
+    <a class="btn" href="../index.html#projects" id="backToProjects" data-es="Volver a Proyectos" data-en="Back to Projects">Volver a Proyectos</a>
+    <a class="btn-github" href="https://github.com/Dalvarezmiguez/Portfolio-Power-Bi/tree/main" target="_blank" data-es="Más detalles en GitHub" data-en="More details on GitHub">Más detalles en GitHub</a>
+  </div>
+</main>
+
+<footer>
+  <p>© 2025 Daniel Álvarez Míguez | Portfolio Data Analytics</p>
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const langToggle = document.getElementById('langToggle');
+  let currentLang = localStorage.getItem('lang') || "es";
+
+  function applyLang(lang){
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-es]').forEach(el => { el.innerHTML = el.dataset[lang]; });
+    langToggle.textContent = lang === "es" ? "EN" : "ES";
+  }
+  applyLang(currentLang);
+
+  langToggle.addEventListener('click', () => {
+    currentLang = currentLang === "es" ? "en" : "es";
+    localStorage.setItem('lang', currentLang);
+    applyLang(currentLang);
+  });
+
+  const backBtn = document.getElementById('backToProjects');
+  backBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    localStorage.setItem('lang', currentLang);
+    window.location.href = '../index.html#projects';
+  });
+});
+</script>
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3ETQMQ7L5M"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-3ETQMQ7L5M');
+</script>
+
+</body>
+</html>

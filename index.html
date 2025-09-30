@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Portfolio Data Analytics – Daniel Álvarez Míguez</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* General */
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f8f9fa;
+  color: #2c3e50;
+  scroll-behavior: smooth;
+}
+
+/* HEADER */
+header {
+  background: #1f2a38;
+  color: #ffffff;
+  padding: 20px 0;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  display: none;
+  min-height: 100px;
+}
+header h1 { margin: 0; font-weight: 700; font-size: 2em; }
+header p { margin-top: 5px; font-weight: 500; font-size: 1.2em; color: #bdc3c7; }
+
+/* NAV */
+nav {
+  background: #2c3e50;
+  display: none;
+  justify-content: center;
+  border-bottom: 2px solid #1f2a38;
+  position: sticky;
+  top: 100px;
+  z-index: 1000;
+}
+nav button {
+  background: none;
+  border: none;
+  color: #ecf0f1;
+  padding: 15px 30px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.3s, border-bottom 0.3s;
+}
+nav button.active { border-bottom: 3px solid #2980b9; color: #2980b9; }
+nav button:hover { color: #2980b9; }
+
+/* HERO */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0d1b2a, #1b263b);
+  color: #fff;
+  padding: 2rem;
+  opacity: 1;
+  transition: opacity 0.7s ease, transform 0.7s ease;
+  position: relative;
+}
+.hero.hidden { display: none !important; }
+.hero h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+.hero h1 span { color: #4cc9f0; }
+.hero h2 { font-size: 1.5rem; font-weight: 400; margin-bottom: 1rem; color: #adb5bd; }
+.hero p { font-size: 1.2rem; margin-bottom: 2rem; line-height: 1.6; }
+
+/* BOTONES */
+.btn, 
+button.btn, 
+a.btn {
+  all: unset;
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background: #2980b9;
+  color: #ffffff !important;
+  font-weight: 500;
+  font-family: inherit;
+  text-align: center;
+  margin: 10px 10px 0 0;
+  transition: background 0.3s, color 0.3s, transform 0.2s;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn:hover,
+button.btn:hover,
+a.btn:hover {
+  background: #1c5980;
+  transform: scale(1.05);
+}
+
+/* SECCIONES */
+section {
+  display: none;
+  padding: 50px 20px;
+  max-width: 900px;
+  margin: auto;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+section.active { display: block; opacity: 1; transform: translateY(0); }
+h2 { font-weight: 700; font-size: 1.8em; margin-bottom: 20px; border-bottom: 2px solid #bdc3c7; padding-bottom: 10px; }
+p { line-height: 1.7; margin-bottom: 15px; }
+
+/* TARJETAS DE PROYECTOS */
+.project-card {
+  background: #ffffff;
+  padding: 25px;
+  margin: 25px 0;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: transform 0.4s ease, box-shadow 0.4s ease, opacity 0.7s ease;
+}
+.project-card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+.project-card h3 { margin-top: 0; font-size: 1.4em; font-weight: 500; color: #34495e; }
+.project-card p.objective { font-style: italic; margin-bottom: 10px; }
+.project-card .demo { font-weight: 500; font-style: normal; color: #2980b9; margin-bottom: 15px; }
+.project-card img { width: 100%; max-height: 400px; object-fit: contain; border-radius: 8px; margin: 15px 0; }
+
+/* CONTACTO */
+#contact a, #contact a:visited { color: #2980b9; text-decoration: none; transition: color 0.3s; }
+#contact a:hover { color: #1c5980; }
+
+/* FOOTER */
+footer {
+  background: #1f2a38;
+  color: #ffffff;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  font-size: 0.9em;
+}
+
+/* BOTÓN IDIOMA FIJO */
+#langToggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background:#2980b9;
+  color:white;
+  border:none;
+  padding:5px 10px;
+  border-radius:5px;
+  cursor:pointer;
+  z-index:2000;
+}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+  nav button { padding: 10px 15px; font-size: 14px; }
+  .hero h1 { font-size: 2rem; }
+  .hero h2 { font-size: 1.2rem; }
+  header p { font-size: 1em; }
+}
+</style>
+</head>
+<body>
+
+<!-- BOTÓN DE IDIOMA FIJO -->
+<button id="langToggle">EN</button>
+
+<!-- HERO -->
+<section class="hero" id="hero" style="display:flex;">
+  <div class="hero-content">
+    <h1 data-es="Hola, soy <span>Daniel Álvarez Míguez</span>" data-en="Hi, I'm <span>Daniel Álvarez Míguez</span>">Hola, soy <span>Daniel Álvarez Míguez</span></h1>
+    <h2 data-es="Data Analyst | Power BI | SQL | Python" data-en="Data Analyst | Power BI | SQL | Python">Data Analyst | Power BI | SQL | Python</h2>
+    <p data-es="Apasionado por convertir datos en decisiones estratégicas. Experiencia en análisis financiero, ventas y Big Data." data-en="Passionate about turning data into strategic decisions. Experience in financial analysis, sales, and Big Data.">
+      Apasionado por convertir datos en decisiones estratégicas. Experiencia en análisis financiero, ventas y Big Data.
+    </p>
+    <button class="btn" id="heroBtn" data-es="Ver Proyectos" data-en="See Projects">Ver Proyectos</button>
+  </div>
+</section>
+
+<!-- HEADER -->
+<header>
+<h1>Portfolio Data Analytics</h1>
+<p>Daniel Álvarez Míguez – Power BI | SQL | Python</p>
+</header>
+
+<!-- NAV -->
+<nav>
+<button class="tab-btn" data-target="about" data-es="Sobre mí" data-en="About Me">Sobre mí</button>
+<button class="tab-btn" data-target="projects" data-es="Proyectos" data-en="Projects">Proyectos</button>
+<button class="tab-btn" data-target="contact" data-es="Contacto" data-en="Contact">Contacto</button>
+</nav>
+
+<!-- SOBRE MÍ -->
+<section id="about" style="max-width:900px; margin:auto; text-align:left;">
+  <!-- Foto centrada -->
+  <div style="text-align:center; margin-bottom:20px;">
+    <img src="img/dani.png" alt="Daniel Álvarez Míguez" 
+         style="width:140px; height:140px; object-fit:cover; border-radius:50%; border:3px solid #2980b9;">
+  </div>
+
+  <!-- Título centrado -->
+  <h2 style="text-align:center;" data-es="Sobre mí" data-en="About Me">Sobre mí</h2>
+
+  <!-- Texto alineado a la izquierda -->
+<p data-es="Soy un profesional con una trayectoria que combina finanzas, control de gestión y análisis de datos. A lo largo de mi carrera he trabajado tanto en el ámbito contable como en la gestión de equipos y proyectos comerciales, siempre con un enfoque claro: aprovechar la información para tomar mejores decisiones."
+   data-en="I am a professional with a career that combines finance, management control, and data analysis. Throughout my career, I have worked in both accounting and in managing teams and commercial projects, always with a clear focus: leveraging information to make better decisions.">
+  Soy un profesional con una trayectoria que combina finanzas, control de gestión y análisis de datos. A lo largo de mi carrera he trabajado tanto en el ámbito contable como en la gestión de equipos y proyectos comerciales, siempre con un enfoque claro: aprovechar la información para tomar mejores decisiones.
+</p>
+
+<p data-es="Mi experiencia me ha permitido impulsar resultados tangibles, desde la optimización de márgenes y costes hasta el crecimiento sostenido de ventas mediante una gestión eficiente y basada en indicadores clave. Esto me ha dado una visión global del negocio, donde lo financiero y lo operativo se conectan con el análisis y la estrategia."
+   data-en="My experience has enabled me to drive tangible results, from optimizing margins and costs to achieving sustained sales growth through efficient, KPI-based management. This has given me a global view of the business, where finance and operations are connected with analysis and strategy.">
+  Mi experiencia me ha permitido impulsar resultados tangibles, desde la optimización de márgenes y costes hasta el crecimiento sostenido de ventas mediante una gestión eficiente y basada en indicadores clave. Esto me ha dado una visión global del negocio, donde lo financiero y lo operativo se conectan con el análisis y la estrategia.
+</p>
+
+<p data-es="En los últimos años he profundizado en el mundo del Data Analytics & Big Data, formándome en SQL, Power BI y Python. Disfruto creando dashboards claros e interactivos, automatizando procesos y traduciendo datos complejos en información comprensible que genere valor real."
+   data-en="In recent years, I have delved into the world of Data Analytics & Big Data, training in SQL, Power BI, and Python. I enjoy creating clear, interactive dashboards, automating processes, and translating complex data into understandable information that delivers real value.">
+  En los últimos años he profundizado en el mundo del Data Analytics & Big Data, formándome en SQL, Power BI y Python. Disfruto creando dashboards claros e interactivos, automatizando procesos y traduciendo datos complejos en información comprensible que genere valor real.
+</p>
+
+<p data-es="Lo que me diferencia es la capacidad de unir visión financiera, mentalidad analítica y experiencia en gestión de personas. Creo firmemente que los datos no solo cuentan lo que ocurre, sino que bien interpretados son el motor para anticiparse, innovar y hacer crecer cualquier organización."
+   data-en="What sets me apart is my ability to combine financial vision, analytical mindset, and experience in people management. I firmly believe that data not only tells us what is happening but, when properly interpreted, becomes the engine to anticipate, innovate, and drive any organization forward.">
+  Lo que me diferencia es la capacidad de unir visión financiera, mentalidad analítica y experiencia en gestión de personas. Creo firmemente que los datos no solo cuentan lo que ocurre, sino que bien interpretados son el motor para anticiparse, innovar y hacer crecer cualquier organización.
+</p>
+
+  <p><a class="btn" id="downloadCV" href="cv/Daniel_Alvarez_Miguez_ES.pdf" download data-es="Descargar CV (PDF)" data-en="Download CV (PDF)">Descargar CV (PDF)</a></p>
+</section>
+
+<!-- PROYECTOS -->
+<section id="projects">
+<h2 data-es="Proyectos" data-en="Projects">Proyectos</h2>
+
+<!-- Proyecto 1 -->
+<div class="project-card">
+  <h3 data-es="Análisis de Ventas – Adventure Works" data-en="Sales Analysis – Adventure Works"></h3>
+  <p class="objective" 
+     data-es="<strong>Objetivo:</strong> Analizar ventas para identificar productos clave y optimizar la estrategia comercial." 
+     data-en="<strong>Objective:</strong> Analyze sales to identify key products and optimize the commercial strategy."></p>
+  <p class="tools" 
+     data-es="<strong>Tecnologías utilizadas:</strong> Power BI (dashboards, segmentaciones, KPIs), SQL (extracción, JOINs, agregaciones), DAX (cálculos de margen, crecimiento, proyecciones), Power Query (limpieza y transformación de datos)." 
+     data-en="<strong>Technologies used:</strong> Power BI (dashboards, slicers, KPIs), SQL (data extraction, JOINs, aggregations), DAX (margin, growth, projection calculations), Power Query (data cleaning and transformation)."></p>
+  <p class="demo" data-es="Demo interactiva" data-en="Interactive demo"></p>
+  <img src="img/Dashboard_Ventas.gif" alt="Dashboard Ventas">
+  <a class="btn" href="proyectos/adventureworks.html" data-es="Ver proyecto" data-en="View project"></a>
+</div>
+
+<!-- Proyecto 2 -->
+<div class="project-card">
+  <h3 data-es="Análisis de Churn – Telco Customer (Python)" data-en="Churn Analysis – Telco Customer (Python)"></h3>
+  <p class="objective" 
+     data-es="<strong>Objetivo:</strong> Evaluar probabilidad de abandono y segmentar clientes para retención." 
+     data-en="<strong>Objective:</strong> Assess churn probability and segment clients for retention."></p>
+  <p class="tools" 
+     data-es="<strong>Tecnologías utilizadas:</strong> Python (pandas, numpy, matplotlib, seaborn, scikit-learn, XGBoost, SHAP), Machine Learning (clasificación binaria churn/no churn), Interpretabilidad (feature importance, SHAP values)." 
+     data-en="<strong>Technologies used:</strong> Python (pandas, numpy, matplotlib, seaborn, scikit-learn, XGBoost, SHAP), Machine Learning (binary classification churn/no churn), Interpretability (feature importance, SHAP values)."></p>
+  <p class="demo" data-es="Demo interactiva" data-en="Interactive demo"></p>
+  <img src="img/Dashboard_Telco.gif" alt="Dashboard Telco">
+  <a class="btn" href="proyectos/telco.html" data-es="Ver proyecto" data-en="View project"></a>
+</div>
+
+<!-- Proyecto 3 -->
+<div class="project-card">
+  <h3 data-es="Análisis de Airbnb – Madrid (Python)" data-en="Airbnb Analysis – Madrid (Python)"></h3>
+  <p class="objective" 
+     data-es="<strong>Objetivo:</strong> Analizar mercado Airbnb en Madrid, distribución de tipos de vivienda, precios y regulación." 
+     data-en="<strong>Objective:</strong> Analyze Airbnb market in Madrid, housing types distribution, prices, and regulation."></p>
+  <p class="tools" 
+     data-es="<strong>Tecnologías utilizadas:</strong> Python (pandas, numpy, matplotlib, seaborn), Power BI (dashboards interactivos, segmentaciones, KPIs), Power Query (integración y modelado de datos)." 
+     data-en="<strong>Technologies used:</strong> Python (pandas, numpy, matplotlib, seaborn), Power BI (interactive dashboards, slicers, KPIs), Power Query (data integration and modeling)."></p>
+  <p class="demo" data-es="Demo interactiva" data-en="Interactive demo"></p>
+  <img src="img/Dashboard_Airbnb.gif" alt="Dashboard Airbnb">
+  <a class="btn" href="proyectos/airbnb.html" data-es="Ver proyecto" data-en="View project"></a>
+</div>
+
+<!-- Proyecto 4 -->
+<div class="project-card">
+  <h3 data-es="Análisis de Compras" data-en="Purchases Analysis"></h3>
+  <p class="objective" 
+     data-es="<strong>Objetivo:</strong> Identificar proveedores estratégicos y oportunidades de optimización de compras." 
+     data-en="<strong>Objective:</strong> Identify strategic suppliers and purchase optimization opportunities."></p>
+  <p class="tools" 
+     data-es="<strong>Tecnologías utilizadas:</strong> Power BI (dashboards interactivos, segmentaciones, KPIs), DAX (medidas de gasto total, promedio por proveedor, porcentaje de contribución), Power Query (limpieza y transformación de datos), SQL (extracción con JOINs y agregaciones)." 
+     data-en="<strong>Technologies used:</strong> Power BI (interactive dashboards, slicers, KPIs), DAX (total spend, average per supplier, contribution percentage), Power Query (data cleaning and transformation), SQL (extraction with JOINs and aggregations)."></p>
+  <p class="demo" data-es="Demo interactiva" data-en="Interactive demo"></p>
+  <img src="img/Dashboard_Compras.gif" alt="Dashboard Compras">
+  <a class="btn" href="proyectos/compras.html" data-es="Ver proyecto" data-en="View project"></a>
+</div>
+
+<!-- Proyecto 5 -->
+<div class="project-card">
+  <h3 data-es="Presupuesto Generalitat de Catalunya (1999–2023)" data-en="Catalonia Government Budget (1999–2023)"></h3>
+  <p class="objective" 
+     data-es="<strong>Objetivo:</strong> Analizar evolución de presupuestos y áreas prioritarias de gasto." 
+     data-en="<strong>Objective:</strong> Analyze budget evolution and priority spending areas."></p>
+  <p class="tools" 
+     data-es="<strong>Tecnologías utilizadas:</strong> Power BI (dashboard interactivo con segmentaciones por año y tipo de operación), DAX (medidas de gastos e ingresos, diferencias interanuales, time intelligence), Power Query (limpieza, normalización, modelado de datos), Datos abiertos (extracción desde portal oficial Idescat)." 
+     data-en="<strong>Technologies used:</strong> Power BI (interactive dashboard with year and operation type slicers), DAX (expenses and income measures, year-over-year differences, time intelligence), Power Query (data cleaning, normalization, modeling), Open Data (extraction from official Idescat portal)."></p>
+  <p class="demo" data-es="Demo interactiva" data-en="Interactive demo"></p>
+  <img src="img/Dashboard_Cataluña.gif" alt="Dashboard Generalitat">
+  <a class="btn" href="proyectos/generalitat.html" data-es="Ver proyecto" data-en="View project"></a>
+</div>
+
+<!-- Proyecto 6 -->
+<div class="project-card">
+  <h3 data-es="Análisis Financiero y Operativo – Inditex (2023–2024)" data-en="Financial and Operational Analysis – Inditex (2023–2024)"></h3>
+  <p class="objective" 
+     data-es="<strong>Objetivo:</strong> Evaluar desempeño financiero y operativo de Inditex." 
+     data-en="<strong>Objective:</strong> Evaluate Inditex financial and operational performance."></p>
+  <p class="tools" 
+     data-es="<strong>Tecnologías utilizadas:</strong> Power BI (dashboard interactivo), DAX (medidas de ventas totales, resultado antes de impuestos, variación de tiendas, crecimiento interanual), Power Query (extracción y transformación de datos desde PDFs oficiales), Datos financieros y operativos (integrados en un modelo analítico único)." 
+     data-en="<strong>Technologies used:</strong> Power BI (interactive dashboard), DAX (total sales, profit before tax, store variation, year-over-year growth), Power Query (data extraction and transformation from official PDFs), Financial and operational data (combined in a single analytical model)."></p>
+  <p class="demo" data-es="Demo interactiva" data-en="Interactive demo"></p>
+  <img src="img/Dashboard_Inditex.gif" alt="Dashboard Inditex">
+  <a class="btn" href="proyectos/inditex.html" data-es="Ver proyecto" data-en="View project"></a>
+</div>
+
+<!-- Proyecto 7 -->
+<div class="project-card">
+  <h3 data-es="Análisis de LaLiga" data-en="LaLiga Analysis"></h3>
+  <p class="objective" 
+     data-es="<strong>Objetivo:</strong> Analizar rendimiento histórico de equipos de LaLiga para identificar tendencias y equipos destacados." 
+     data-en="<strong>Objective:</strong> Analyze historical performance of LaLiga teams to identify trends and outstanding teams."></p>
+  <p class="tools" 
+     data-es="<strong>Tecnologías utilizadas:</strong> Power BI (dashboards interactivos con filtros y tooltips), DAX (cálculos de puntos totales, promedio de goles, posición media), Power Query (limpieza y transformación de datos)." 
+     data-en="<strong>Technologies used:</strong> Power BI (interactive dashboards with filters and tooltips), DAX (total points, goals average, average position calculations), Power Query (data cleaning and transformation)."></p>
+  <p class="demo" data-es="Demo interactiva" data-en="Interactive demo"></p>
+  <img src="img/Dashboard_LaLiga.gif" alt="Dashboard LaLiga">
+  <a class="btn" href="proyectos/laliga.html" data-es="Ver proyecto" data-en="View project"></a>
+</div>
+
+</section>
+
+<!-- CONTACTO -->
+<section id="contact">
+<h2 data-es="Contacto" data-en="Contact">Contacto</h2>
+<p>Email: <a href="mailto:dalvarezmiguez@gmail.com">dalvarezmiguez@gmail.com</a></p>
+<p>LinkedIn: <a href="https://www.linkedin.com/in/danielalvarezmiguez/" target="_blank">Perfil LinkedIn</a></p>
+<p>GitHub: <a href="https://github.com/Dalvarezmiguez" target="_blank">Repositorio GitHub</a></p>
+</section>
+
+<footer>
+<p>© 2025 Daniel Álvarez Míguez | Portfolio Data Analytics</p>
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const hero = document.getElementById('hero');
+  const heroBtn = document.getElementById('heroBtn');
+  const header = document.querySelector('header');
+  const nav = document.querySelector('nav');
+  const tabs = document.querySelectorAll('.tab-btn');
+  const sections = document.querySelectorAll('section');
+  const projects = document.querySelectorAll('.project-card');
+  const langToggle = document.getElementById('langToggle');
+  const downloadBtn = document.getElementById('downloadCV');
+
+  // Idioma por defecto: español, salvo preferencia guardada
+  let currentLang = localStorage.getItem('lang') || "es";
+
+  function applyLang() {
+    document.documentElement.lang = currentLang;
+    document.querySelectorAll('[data-es]').forEach(el => el.innerHTML = el.dataset[currentLang]);
+    langToggle.textContent = currentLang === "es" ? "EN" : "ES";
+    downloadBtn.href = currentLang === "es" 
+      ? "cv/Daniel_Alvarez_Miguez_ES.pdf" 
+      : "cv/Daniel_Alvarez_Miguez_EN.pdf";
+  }
+
+  applyLang();
+
+  hero.style.display = 'flex';
+  header.style.display = 'none';
+  nav.style.display = 'none';
+
+  function showProjectsOnScroll() {
+    projects.forEach(proj => {
+      const rect = proj.getBoundingClientRect();
+      if(rect.top < window.innerHeight - 100) proj.classList.add('show');
+    });
+  }
+
+  function activateTab(tabId){
+    sections.forEach(sec => sec.classList.remove('active'));
+    tabs.forEach(btn => btn.classList.remove('active'));
+    const section = document.getElementById(tabId);
+    const tab = document.querySelector(`.tab-btn[data-target="${tabId}"]`);
+    if(section && tab){
+      section.classList.add('active');
+      tab.classList.add('active');
+      if(tabId === "projects"){
+        projects.forEach(p => p.classList.remove('show'));
+        setTimeout(showProjectsOnScroll, 100);
+        setTimeout(showProjectsOnScroll, 500);
+      }
+      window.scrollTo({ top: section.offsetTop - header.offsetHeight - nav.offsetHeight, behavior:'smooth' });
+    }
+  }
+
+  heroBtn.addEventListener('click', () => {
+    hero.style.display = 'none';
+    hero.classList.add('hidden');
+    header.style.display = 'block';
+    nav.style.display = 'flex';
+    activateTab('about');
+  });
+
+  tabs.forEach(btn => btn.addEventListener('click', () => activateTab(btn.dataset.target)));
+
+  window.addEventListener('scroll', showProjectsOnScroll);
+
+  // Botón idioma
+  langToggle.addEventListener('click', () => {
+    currentLang = currentLang === "es" ? "en" : "es";
+    localStorage.setItem('lang', currentLang);
+    applyLang();
+  });
+
+  // Detectar hash al cargar
+  if(window.location.hash){
+    const hash = window.location.hash.substring(1);
+    const validSections = Array.from(sections).map(s => s.id);
+    if(validSections.includes(hash)){
+      hero.style.display = 'none';
+      hero.classList.add('hidden');
+      header.style.display = 'block';
+      nav.style.display = 'flex';
+      activateTab(hash);
+    }
+  }
+});
+</script>
+
+<!-- Google Analytics (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3ETQMQ7L5M"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-3ETQMQ7L5M');
+</script>
+
+</body>
+</html>
