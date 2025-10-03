@@ -77,7 +77,6 @@
   </ul>
 
   <h2 data-es="Principales insights" data-en="Main Insights">Principales insights</h2>
-
   <div class="stats" data-es="Estadísticas principales" data-en="Key statistics">
     <strong data-es="Estadísticas principales" data-en="Key statistics">Estadísticas principales</strong>
     <ul>
@@ -101,8 +100,9 @@
   <p data-es="Accede al dashboard interactivo en Tableau Public/Cloud para explorar filtros por aerolínea, aeropuerto y mes." data-en="Open the interactive dashboard in Tableau Public/Cloud to explore filters by carrier, airport and month.">
     Accede al dashboard interactivo en Tableau Public/Cloud para explorar filtros por aerolínea, aeropuerto y mes.
   </p>
-  <p><a class="btn" href="https://public.tableau.com/views/Proyecto_Vuelos_17594980949080/Informe?:language=es-ES&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" target="_blank" data-es="Ir al dashboard" data-en="Open dashboard">Ir al dashboard</a>
-     <a class="btn-github" href="https://github.com/Dalvarezmiguez/Portfolio-Power-Bi/tree/main" target="_blank" data-es="Código en GitHub" data-en="Code on GitHub">Código en GitHub</a>
+  <p>
+    <a class="btn" href="https://public.tableau.com/views/Proyecto_Vuelos_17594980949080/Informe?:language=es-ES&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" target="_blank" data-es="Ir al dashboard" data-en="Open dashboard">Ir al dashboard</a>
+    <a class="btn-github" href="https://github.com/Dalvarezmiguez/Portfolio-Power-Bi/tree/main" target="_blank" data-es="Código en GitHub" data-en="Code on GitHub">Código en GitHub</a>
   </p>
 
   <h2 data-es="Ejemplos de visualizaciones" data-en="Example Visualizations">Ejemplos de visualizaciones</h2>
@@ -130,11 +130,11 @@ document.addEventListener("DOMContentLoaded", () => {
   function applyLang(lang){
     document.documentElement.lang = lang;
     document.querySelectorAll('[data-es]').forEach(el => {
-      const text = el.dataset[lang];
-      if (typeof text !== 'undefined') el.innerHTML = text;
+      if(el.dataset[lang]) el.innerHTML = el.dataset[lang];
     });
     langToggle.textContent = lang === "es" ? "EN" : "ES";
   }
+
   applyLang(currentLang);
 
   langToggle.addEventListener('click', () => {
@@ -154,7 +154,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 
-<!-- Google Analytics (mantener o quitar según preferencias) -->
+<!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-3ETQMQ7L5M"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
