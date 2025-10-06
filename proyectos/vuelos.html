@@ -32,54 +32,67 @@
 <button id="langToggle">EN</button>
 
 <header>
-  <h1 data-es="Análisis de Vuelos – Retrasos y Patrones" data-en="Flight Analysis – Delays and Patterns">Análisis de Vuelos – Retrasos y Patrones</h1>
-  <p data-es="Power BI + Python" data-en="Power BI + Python">Power BI + Python</p>
+  <h1 data-es="Proyecto Vuelos – Análisis de Retrasos y Cancelaciones de Vuelos" data-en="Flight Project – Delays and Cancellations Analysis">Proyecto Vuelos – Análisis de Retrasos y Cancelaciones de Vuelos</h1>
+  <p data-es="R + Tableau Cloud" data-en="R + Tableau Cloud">R + Tableau Cloud</p>
 </header>
 
 <main>
   <h2 data-es="Contexto" data-en="Context">Contexto</h2>
-  <p data-es="Proyecto de análisis de vuelos comerciales con foco en la identificación de retrasos, aerolíneas con mayor incidencia y aeropuertos más congestionados. Se busca detectar patrones y optimizar rutas utilizando herramientas de análisis y visualización."
-     data-en="Commercial flight analysis focused on identifying delays, airlines with the highest incidence, and the most congested airports. The goal is to detect patterns and optimize routes using analytics and visualization tools.">
-    Proyecto de análisis de vuelos comerciales con foco en la identificación de retrasos, aerolíneas con mayor incidencia y aeropuertos más congestionados. Se busca detectar patrones y optimizar rutas utilizando herramientas de análisis y visualización.
+  <p data-es="Dataset de <strong>vuelos comerciales en 2024</strong>, con información de aerolíneas, aeropuertos, retrasos, cancelaciones y motivos asociados. Objetivo: analizar los patrones de retrasos y cancelaciones, identificar aerolíneas y aeropuertos más afectados y explorar factores que impactan la eficiencia de los vuelos."
+     data-en="Commercial flight dataset from <strong>2024</strong>, including airlines, airports, delays, cancellations, and related causes. Goal: analyze patterns of delays and cancellations, identify the most affected airlines and airports, and explore factors impacting flight efficiency.">
+    Dataset de <strong>vuelos comerciales en 2024</strong>, con información de aerolíneas, aeropuertos, retrasos, cancelaciones y motivos asociados. Objetivo: analizar los patrones de retrasos y cancelaciones, identificar aerolíneas y aeropuertos más afectados y explorar factores que impactan la eficiencia de los vuelos.
   </p>
 
   <h2 data-es="Objetivos del análisis" data-en="Analysis Objectives">Objetivos del análisis</h2>
   <ul>
-    <li data-es="Analizar los retrasos por aerolínea, aeropuerto y horario." data-en="Analyze delays by airline, airport, and time of day.">Analizar los retrasos por aerolínea, aeropuerto y horario.</li>
-    <li data-es="Identificar patrones temporales y causas principales." data-en="Identify temporal patterns and main causes.">Identificar patrones temporales y causas principales.</li>
-    <li data-es="Evaluar la puntualidad general del sistema de vuelos." data-en="Evaluate the overall punctuality of the flight system.">Evaluar la puntualidad general del sistema de vuelos.</li>
-    <li data-es="Generar visualizaciones interactivas con Power BI." data-en="Generate interactive visualizations with Power BI.">Generar visualizaciones interactivas con Power BI.</li>
+    <li data-es="Limpiar y transformar un dataset de más de 7 millones de filas usando R y <code>fread</code> para mayor velocidad." data-en="Clean and transform a dataset of over 7 million rows using R and <code>fread</code> for better performance.">Limpiar y transformar un dataset de más de 7 millones de filas usando R y <code>fread</code> para mayor velocidad.</li>
+    <li data-es="Analizar retrasos y cancelaciones por aerolínea, aeropuerto y mes." data-en="Analyze delays and cancellations by airline, airport, and month.">Analizar retrasos y cancelaciones por aerolínea, aeropuerto y mes.</li>
+    <li data-es="Identificar las causas principales de cancelaciones y retrasos." data-en="Identify main causes of cancellations and delays.">Identificar las causas principales de cancelaciones y retrasos.</li>
+    <li data-es="Evaluar la eficiencia de aeropuertos y aerolíneas." data-en="Evaluate efficiency of airports and airlines.">Evaluar la eficiencia de aeropuertos y aerolíneas.</li>
+    <li data-es="Publicar insights en un dashboard interactivo en Tableau Cloud." data-en="Publish insights on an interactive dashboard in Tableau Cloud.">Publicar insights en un dashboard interactivo en Tableau Cloud.</li>
   </ul>
 
-  <h2 data-es="Estructura del Dashboard" data-en="Dashboard Structure">Estructura del Dashboard</h2>
+  <h2 data-es="Estructura del análisis" data-en="Analysis Structure">Estructura del análisis</h2>
   <ul>
-    <li data-es="<strong>Retrasos por Aerolínea:</strong> Distribución y porcentaje total de vuelos retrasados." data-en="<strong>Delays by Airline:</strong> Distribution and total percentage of delayed flights.">Retrasos por Aerolínea: Distribución y porcentaje total de vuelos retrasados.</li>
-    <li data-es="<strong>Retrasos por Aeropuerto:</strong> Ranking de aeropuertos con mayor volumen de incidencias." data-en="<strong>Delays by Airport:</strong> Ranking of airports with the highest number of incidents.">Retrasos por Aeropuerto: Ranking de aeropuertos con mayor volumen de incidencias.</li>
-    <li data-es="<strong>Tendencias Horarias:</strong> Comparativa entre franjas del día." data-en="<strong>Hourly Trends:</strong> Comparison between time slots throughout the day.">Tendencias Horarias: Comparativa entre franjas del día.</li>
-    <li data-es="<strong>Estacionalidad:</strong> Análisis mensual y anual de patrones de retraso." data-en="<strong>Seasonality:</strong> Monthly and yearly analysis of delay patterns.">Estacionalidad: Análisis mensual y anual de patrones de retraso.</li>
+    <li data-es="Limpieza y transformación en R: lectura con <code>fread</code>, tratamiento de nulos e inconsistencias, creación de variables agregadas." data-en="Cleaning and transformation in R: reading with <code>fread</code>, handling nulls/inconsistencies, creation of aggregated variables.">Limpieza y transformación en R: lectura con <code>fread</code>, tratamiento de nulos e inconsistencias, creación de variables agregadas.</li>
+    <li data-es="Análisis descriptivo: distribución por aerolíneas y aeropuertos, retrasos por motivo, tasas de cancelación." data-en="Descriptive analysis: distribution by airlines and airports, delays by reason, cancellation rates.">Análisis descriptivo: distribución por aerolíneas y aeropuertos, retrasos por motivo, tasas de cancelación.</li>
+    <li data-es="Visualización: preparación de extracts y vistas para Tableau, construcción del dashboard interactivo." data-en="Visualization: preparing extracts and views for Tableau, building the interactive dashboard.">Visualización: preparación de extracts y vistas para Tableau, construcción del dashboard interactivo.</li>
   </ul>
 
   <h2 data-es="Técnicas y herramientas" data-en="Techniques & Tools">Técnicas y herramientas</h2>
   <ul>
-    <li data-es="<strong>Python:</strong> Limpieza, modelado y detección de valores atípicos (pandas, matplotlib, seaborn)." data-en="<strong>Python:</strong> Cleaning, modeling, and outlier detection (pandas, matplotlib, seaborn).">Python: Limpieza, modelado y detección de valores atípicos (pandas, matplotlib, seaborn).</li>
-    <li data-es="<strong>Power BI:</strong> Creación de dashboards interactivos y análisis visual." data-en="<strong>Power BI:</strong> Interactive dashboards and visual analysis.">Power BI: Creación de dashboards interactivos y análisis visual.</li>
-    <li data-es="<strong>Excel:</strong> Limpieza inicial de datos y validación de fuentes." data-en="<strong>Excel:</strong> Initial data cleaning and validation.">Excel: Limpieza inicial de datos y validación de fuentes.</li>
+    <li data-es="<strong>R:</strong> data.table (fread), dplyr, lubridate, ggplot2" data-en="<strong>R:</strong> data.table (fread), dplyr, lubridate, ggplot2">R: data.table (fread), dplyr, lubridate, ggplot2</li>
+    <li data-es="<strong>Visualización:</strong> Tableau Cloud" data-en="<strong>Visualization:</strong> Tableau Cloud">Visualización: Tableau Cloud</li>
+    <li data-es="<strong>Análisis:</strong> agregaciones por aerolínea, aeropuerto, motivo y mes" data-en="<strong>Analysis:</strong> aggregations by airline, airport, reason, and month">Análisis: agregaciones por aerolínea, aeropuerto, motivo y mes</li>
   </ul>
 
   <h2 data-es="Dataset" data-en="Dataset">Dataset</h2>
-  <p data-es="Fuente: <strong>US Bureau of Transportation Statistics</strong> (On-Time Performance Data)" data-en="Source: <strong>US Bureau of Transportation Statistics</strong> (On-Time Performance Data)">Fuente: <strong>US Bureau of Transportation Statistics</strong> (On-Time Performance Data)</p>
-  <p><a href="https://www.transtats.bts.gov/" target="_blank" data-es="Más información y descarga" data-en="More info & download">Más información y descarga</a></p>
+  <p data-es="Fuente: <strong>Kaggle</strong>" data-en="Source: <strong>Kaggle</strong>">Fuente: <strong>Kaggle</strong></p>
+  <p><a href="https://www.kaggle.com/datasets/hrishitpatil/flight-data-2024" target="_blank" data-es="Descargar el dataset" data-en="Download dataset">Descargar el dataset</a></p>
 
   <h2 data-es="Principales insights" data-en="Main Insights">Principales insights</h2>
   <ul>
-    <li data-es="El 65% de los retrasos se concentra en 4 aerolíneas principales." data-en="65% of delays are concentrated in 4 main airlines.">El 65% de los retrasos se concentra en 4 aerolíneas principales.</li>
-    <li data-es="Los vuelos de la tarde presentan un 20% más de demoras que los matutinos." data-en="Afternoon flights show 20% more delays than morning ones.">Los vuelos de la tarde presentan un 20% más de demoras que los matutinos.</li>
-    <li data-es="El aeropuerto de Atlanta registra el mayor número de incidencias anuales." data-en="Atlanta airport reports the highest number of annual incidents.">El aeropuerto de Atlanta registra el mayor número de incidencias anuales.</li>
+    <li data-es="American Airlines: 15.050 vuelos cancelados." data-en="American Airlines: 15,050 cancelled flights.">American Airlines: 15.050 vuelos cancelados.</li>
+    <li data-es="Frontier Airlines: mayor tasa de cancelación, 2,32%." data-en="Frontier Airlines: highest cancellation rate, 2.32%.">Frontier Airlines: mayor tasa de cancelación, 2,32%.</li>
+    <li data-es="Southwest Airlines: 1.419.419 vuelos en el año; más retrasos relacionados con avión y compañía (199.913 y 169.751)." data-en="Southwest Airlines: 1,419,419 flights in the year; most delays related to aircraft and company (199,913 and 169,751).">Southwest Airlines: 1.419.419 vuelos en el año; más retrasos relacionados con avión y compañía (199.913 y 169.751).</li>
+    <li data-es="Aeropuerto de Texas: más retrasos y tiempo en pista elevado." data-en="Texas airport: highest delays and runway time.">Aeropuerto de Texas: más retrasos y tiempo en pista elevado.</li>
+    <li data-es="55,48% de las cancelaciones provocadas por causas meteorológicas." data-en="55.48% of cancellations caused by weather conditions.">55,48% de las cancelaciones provocadas por causas meteorológicas.</li>
   </ul>
 
-  <h2 data-es="Principales visualizaciones" data-en="Main Visualizations">Principales visualizaciones</h2>
-  <h3 data-es="Dashboard General" data-en="Main Dashboard">Dashboard General</h3>
-  <img src="../img/vuelos_dashboard.png" alt="Dashboard de análisis de vuelos en Power BI">
+  <h2 data-es="Visualizaciones sugeridas" data-en="Suggested Visualizations">Visualizaciones sugeridas</h2>
+  <ul>
+    <li data-es="Vuelos y cancelaciones por aerolínea: gráfico de barras comparativo." data-en="Flights and cancellations by airline: comparative bar chart.">Vuelos y cancelaciones por aerolínea: gráfico de barras comparativo.</li>
+    <li data-es="Retrasos por motivo: gráfico apilado (avión, compañía, meteorología)." data-en="Delays by reason: stacked chart (aircraft, company, weather).">Retrasos por motivo: gráfico apilado (avión, compañía, meteorología).</li>
+    <li data-es="Eficiencia de aeropuertos: gráfico de burbujas (tiempo medio en pista) y barras apiladas con retrasos totales." data-en="Airport efficiency: bubble chart (average runway time) and stacked bars for total delays.">Eficiencia de aeropuertos: gráfico de burbujas (tiempo medio en pista) y barras apiladas con retrasos totales.</li>
+    <li data-es="Tendencia mensual de vuelos: gráfico de líneas por mes." data-en="Monthly flight trend: line chart by month.">Tendencia mensual de vuelos: gráfico de líneas por mes.</li>
+  </ul>
+
+  <h2 data-es="Dashboard – Tableau Cloud" data-en="Dashboard – Tableau Cloud">Dashboard – Tableau Cloud</h2>
+  <p data-es="Accede al dashboard interactivo en Tableau Public/Cloud para explorar filtros por aerolínea, aeropuerto y mes."
+     data-en="Access the interactive dashboard in Tableau Public/Cloud to explore filters by airline, airport, and month.">
+    Accede al dashboard interactivo en Tableau Public/Cloud para explorar filtros por aerolínea, aeropuerto y mes.
+  </p>
+  <p><a href="https://public.tableau.com/views/Proyecto_Vuelos_17594980949080/Informe?:language=es-ES&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" target="_blank" data-es="Ir al dashboard" data-en="Go to dashboard">Ir al dashboard</a></p>
 
   <div class="btn-container">
     <a class="btn" href="../index.html#projects" id="backToProjects" data-es="Volver a Proyectos" data-en="Back to Projects">Volver a Proyectos</a>
