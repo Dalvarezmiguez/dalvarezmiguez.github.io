@@ -6,14 +6,15 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
-    body { font-family: 'Roboto', Arial, sans-serif; margin:0; padding:0; background:#f8f9fa; color:#2c3e50; }
+    /* ESTILO igual al proyecto AdventureWorks, con font-size forzado */
+    body { font-family: 'Roboto', Arial, sans-serif; font-size: 16px; margin:0; padding:0; background:#f8f9fa; color:#2c3e50; line-height:1.7; }
     header { background:#1f2a38; color:#fff; padding:30px 20px; text-align:center; }
     header h1 { margin:0; font-weight:700; font-size:2em; }
     header p { margin-top:5px; font-weight:400; font-size:1em; color:#bdc3c7; }
     main { max-width:900px; margin:40px auto; padding:0 20px; }
     h2 { font-size:1.8em; font-weight:700; border-bottom:2px solid #bdc3c7; padding-bottom:10px; margin-bottom:20px; }
     h3 { font-size:1.3em; font-weight:500; margin-top:25px; }
-    p, li { line-height:1.7; margin-bottom:10px; }
+    p, li { font-size:1em; line-height:1.7; margin-bottom:10px; }
     ul { margin-left:20px; }
     a:not(.btn):not(.btn-github) { text-decoration:none; color:inherit; transition: color 0.3s; }
     a:not(.btn):not(.btn-github):hover { color:#1c5980; }
@@ -74,13 +75,16 @@
   <p><a href="https://www.kaggle.com/datasets/hrishitpatil/flight-data-2024" target="_blank" data-es="Descargar el dataset" data-en="Download dataset">Descargar el dataset</a></p>
 
   <h2 data-es="Principales insights" data-en="Main Insights">Principales insights</h2>
-  <ul>
-    <li data-es="American Airlines: 15.050 vuelos cancelados." data-en="American Airlines: 15,050 cancelled flights.">American Airlines: 15.050 vuelos cancelados.</li>
-    <li data-es="Frontier Airlines: mayor tasa de cancelación (2,32%)." data-en="Frontier Airlines: highest cancellation rate (2.32%).">Frontier Airlines: mayor tasa de cancelación (2,32%).</li>
-    <li data-es="Southwest Airlines: 1.419.419 vuelos; más retrasos por avión y compañía (199.913 y 169.751)." data-en="Southwest Airlines: 1,419,419 flights; most delays due to aircraft and carrier (199,913 and 169,751).">Southwest Airlines: 1.419.419 vuelos; más retrasos por avión y compañía (199.913 y 169.751).</li>
-    <li data-es="Aeropuerto de Texas: más retrasos y tiempo en pista elevado." data-en="Texas airport: highest delays and elevated taxi times.">Aeropuerto de Texas: más retrasos y tiempo en pista elevado.</li>
-    <li data-es="55,48% de las cancelaciones provocadas por meteorología." data-en="55.48% of cancellations caused by weather.">55,48% de las cancelaciones provocadas por meteorología.</li>
-  </ul>
+  <div class="stats">
+    <strong data-es="Estadísticas principales" data-en="Key statistics">Estadísticas principales</strong>
+    <ul>
+      <li data-es="American Airlines: 15.050 vuelos cancelados." data-en="American Airlines: 15,050 cancelled flights.">American Airlines: 15.050 vuelos cancelados.</li>
+      <li data-es="Frontier Airlines: mayor tasa de cancelación, 2,32%." data-en="Frontier Airlines: highest cancellation rate, 2.32%.">Frontier Airlines: mayor tasa de cancelación, 2,32%.</li>
+      <li data-es="Southwest Airlines: 1.419.419 vuelos en el año; más retrasos relacionados con avión y compañía (199.913 y 169.751)." data-en="Southwest Airlines: 1,419,419 flights in the year; highest delays related to aircraft and carrier (199,913 and 169,751).">Southwest Airlines: 1.419.419 vuelos en el año; más retrasos relacionados con avión y compañía (199.913 y 169.751).</li>
+      <li data-es="Aeropuerto de Texas: más retrasos y tiempo en pista elevado." data-en="Texas airport: highest delays and elevated on-ground times.">Aeropuerto de Texas: más retrasos y tiempo en pista elevado.</li>
+      <li data-es="55,48% de las cancelaciones provocadas por causas meteorológicas." data-en="55.48% of cancellations caused by weather.">55,48% de las cancelaciones provocadas por causas meteorológicas.</li>
+    </ul>
+  </div>
 
   <h2 data-es="Visualizaciones sugeridas" data-en="Suggested Visualizations">Visualizaciones sugeridas</h2>
   <ul>
@@ -94,7 +98,9 @@
   <p data-es="Accede al dashboard interactivo en Tableau Public/Cloud para explorar filtros por aerolínea, aeropuerto y mes." data-en="Access the interactive dashboard on Tableau Public/Cloud to explore filters by airline, airport, and month.">
     Accede al dashboard interactivo en Tableau Public/Cloud para explorar filtros por aerolínea, aeropuerto y mes.
   </p>
-  <p><a class="btn" href="https://public.tableau.com/views/Proyecto_Vuelos_17594980949080/Informe?:language=es-ES&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" target="_blank" data-es="Ir al dashboard" data-en="Open dashboard">Ir al dashboard</a></p>
+  <p>
+    <a class="btn" href="https://public.tableau.com/views/Proyecto_Vuelos_17594980949080/Informe?:language=es-ES&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" target="_blank" data-es="Ir al dashboard" data-en="Open dashboard">Ir al dashboard</a>
+  </p>
 
   <h2 data-es="Ejemplo de visualización" data-en="Example Visualization">Ejemplo de visualización</h2>
   <img src="../img/proyecto_aviones.png" alt="Informe – Proyecto Vuelos">
@@ -119,7 +125,6 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll('[data-es]').forEach(el => { el.innerHTML = el.dataset[lang]; });
     langToggle.textContent = lang === "es" ? "EN" : "ES";
   }
-
   applyLang(currentLang);
 
   langToggle.addEventListener('click', () => {
@@ -128,6 +133,7 @@ document.addEventListener("DOMContentLoaded", () => {
     applyLang(currentLang);
   });
 
+  // Botón volver a proyectos
   const backBtn = document.getElementById('backToProjects');
   backBtn.addEventListener('click', (e) => {
     e.preventDefault();
