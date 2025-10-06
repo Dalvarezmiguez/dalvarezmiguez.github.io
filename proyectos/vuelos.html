@@ -52,7 +52,7 @@
     <li data-es="Publicar insights en un dashboard interactivo en Tableau Cloud." data-en="Publish insights on an interactive dashboard in Tableau Cloud.">Publicar insights en un dashboard interactivo en Tableau Cloud.</li>
   </ul>
 
-  <h2 data-es="Estructura del análisis" data-en="Analysis Structure">Estructura del análisis</h2>
+  <h2 data-es="Estructura del Dashboard" data-en="Dashboard Structure">Estructura del Dashboard</h2>
   <ul>
     <li data-es="Limpieza y transformación en R: lectura con <code>fread</code>, tratamiento de nulos e inconsistencias, creación de variables agregadas." data-en="Cleaning and transformation in R: reading with <code>fread</code>, handling nulls/inconsistencies, creation of aggregated variables.">Limpieza y transformación en R: lectura con <code>fread</code>, tratamiento de nulos e inconsistencias, creación de variables agregadas.</li>
     <li data-es="Análisis descriptivo: distribución por aerolíneas y aeropuertos, retrasos por motivo, tasas de cancelación." data-en="Descriptive analysis: distribution by airlines and airports, delays by reason, cancellation rates.">Análisis descriptivo: distribución por aerolíneas y aeropuertos, retrasos por motivo, tasas de cancelación.</li>
@@ -79,20 +79,13 @@
     <li data-es="55,48% de las cancelaciones provocadas por causas meteorológicas." data-en="55.48% of cancellations caused by weather conditions.">55,48% de las cancelaciones provocadas por causas meteorológicas.</li>
   </ul>
 
-  <h2 data-es="Visualizaciones sugeridas" data-en="Suggested Visualizations">Visualizaciones sugeridas</h2>
-  <ul>
-    <li data-es="Vuelos y cancelaciones por aerolínea: gráfico de barras comparativo." data-en="Flights and cancellations by airline: comparative bar chart.">Vuelos y cancelaciones por aerolínea: gráfico de barras comparativo.</li>
-    <li data-es="Retrasos por motivo: gráfico apilado (avión, compañía, meteorología)." data-en="Delays by reason: stacked chart (aircraft, company, weather).">Retrasos por motivo: gráfico apilado (avión, compañía, meteorología).</li>
-    <li data-es="Eficiencia de aeropuertos: gráfico de burbujas (tiempo medio en pista) y barras apiladas con retrasos totales." data-en="Airport efficiency: bubble chart (average runway time) and stacked bars for total delays.">Eficiencia de aeropuertos: gráfico de burbujas (tiempo medio en pista) y barras apiladas con retrasos totales.</li>
-    <li data-es="Tendencia mensual de vuelos: gráfico de líneas por mes." data-en="Monthly flight trend: line chart by month.">Tendencia mensual de vuelos: gráfico de líneas por mes.</li>
-  </ul>
+  <h2 data-es="Principales visualizaciones" data-en="Main Visualizations">Principales visualizaciones</h2>
+  <h3 data-es="Dashboard Proyecto Vuelos" data-en="Flights Dashboard">Dashboard Proyecto Vuelos</h3>
+  <img src="../img/proyecto_aviones.png" alt="Dashboard Proyecto Vuelos">
 
-  <h2 data-es="Dashboard – Tableau Cloud" data-en="Dashboard – Tableau Cloud">Dashboard – Tableau Cloud</h2>
-  <p data-es="Accede al dashboard interactivo en Tableau Public/Cloud para explorar filtros por aerolínea, aeropuerto y mes."
-     data-en="Access the interactive dashboard in Tableau Public/Cloud to explore filters by airline, airport, and month.">
-    Accede al dashboard interactivo en Tableau Public/Cloud para explorar filtros por aerolínea, aeropuerto y mes.
-  </p>
-  <p><a href="https://public.tableau.com/views/Proyecto_Vuelos_17594980949080/Informe?:language=es-ES&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" target="_blank" data-es="Ir al dashboard" data-en="Go to dashboard">Ir al dashboard</a></p>
+  <div class="btn-container">
+    <a class="btn" href="https://public.tableau.com/views/Proyecto_Vuelos_17594980949080/Informe?:language=es-ES&:display_count=n" target="_blank" data-es="Ir al dashboard" data-en="Go to dashboard">Ir al dashboard</a>
+  </div>
 
   <div class="btn-container">
     <a class="btn" href="../index.html#projects" id="backToProjects" data-es="Volver a Proyectos" data-en="Back to Projects">Volver a Proyectos</a>
@@ -122,7 +115,6 @@ document.addEventListener("DOMContentLoaded", () => {
     applyLang(currentLang);
   });
 
-  // Botón volver a proyectos
   const backBtn = document.getElementById('backToProjects');
   backBtn.addEventListener('click', (e) => {
     e.preventDefault();
@@ -142,4 +134,4 @@ gtag('config', 'G-3ETQMQ7L5M');
 </script>
 
 </body>
-</html>
+      </html>
