@@ -2,20 +2,15 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Proyecto Vuelos – Análisis de Retrasos y Cancelaciones de Vuelos (R y Tableau)</title>
+  <title>Proyecto – Análisis de Vuelos (R + Tableau)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
     body { font-family: 'Roboto', Arial, sans-serif; margin:0; padding:0; background:#f8f9fa; color:#2c3e50; }
     header { background:#1f2a38; color:#fff; padding:30px 20px; text-align:center; }
     header h1 { margin:0; font-weight:700; font-size:2em; }
-    header p {
-  margin-top:5px;
-  font-weight:400;
-  font-size:1em;
-  color:#bdc3c7;
-}
-    main { max-width:960px; margin:40px auto; padding:0 20px; }
+    header p { margin-top:5px; font-weight:400; font-size:1em; color:#bdc3c7; }
+    main { max-width:900px; margin:40px auto; padding:0 20px; }
     h2 { font-size:1.8em; font-weight:700; border-bottom:2px solid #bdc3c7; padding-bottom:10px; margin-bottom:20px; }
     h3 { font-size:1.3em; font-weight:500; margin-top:25px; }
     p, li { line-height:1.7; margin-bottom:10px; }
@@ -29,15 +24,8 @@
     .btn-github:hover { background:#606e73; }
     .btn-container { margin-top:20px; }
     img { max-width:100%; display:block; margin:20px 0; border-radius:5px; }
-    #langToggle { position: fixed; top: 20px; right: 20px; background:#2980b9; color:white; border:none; padding:6px 12px; border-radius:5px; cursor:pointer; z-index:2000; font-weight:600; }
+    #langToggle { position: fixed; top: 20px; right: 20px; background:#2980b9; color:white; border:none; padding:5px 10px; border-radius:5px; cursor:pointer; z-index:2000; }
     footer { background:#1f2a38; color:#fff; text-align:center; padding:20px; margin-top:40px; font-size:0.9em; }
-    .meta {
-  color: #2980b9; /* mismo azul que el botón principal */
-  font-weight: 500;
-  font-size: 1em;
-  margin-top: 8px;
-}
-
     .stats { background:#ffffff; padding:16px; border-radius:8px; box-shadow:0 1px 3px rgba(0,0,0,0.06); margin:12px 0; }
     code { background:#eef3f7; padding:2px 6px; border-radius:4px; font-family:monospace; }
   </style>
@@ -47,78 +35,69 @@
 <button id="langToggle">EN</button>
 
 <header>
-  <h1 data-es="Análisis de Vuelos – Aeropuertos y Retrasos" data-en="Flight Analysis – Airports & Delays">Análisis de Vuelos – Aeropuertos y Retrasos</h1>
+  <h1 data-es="Análisis de Vuelos – Retrasos y Cancelaciones" data-en="Flight Analysis – Delays & Cancellations">Análisis de Vuelos – Retrasos y Cancelaciones</h1>
   <p data-es="R + Tableau Cloud" data-en="R + Tableau Cloud">R + Tableau Cloud</p>
 </header>
 
 <main>
   <h2 data-es="Contexto" data-en="Context">Contexto</h2>
   <p data-es="Dataset de <strong>vuelos comerciales en 2024</strong>, con información de aerolíneas, aeropuertos, retrasos, cancelaciones y motivos asociados. Objetivo: analizar los patrones de retrasos y cancelaciones, identificar aerolíneas y aeropuertos más afectados y explorar factores que impactan la eficiencia de los vuelos."
-     data-en="Dataset of <strong>commercial flights in 2024</strong>, including carriers, airports, delays, cancellations and associated reasons. Goal: analyse delay and cancellation patterns, identify affected carriers and airports, and explore operational efficiency drivers.">
+     data-en="Dataset of <strong>commercial flights in 2024</strong>, including airlines, airports, delays, cancellations, and associated causes. Goal: analyze delay and cancellation patterns, identify most affected airlines and airports, and explore flight efficiency factors.">
     Dataset de <strong>vuelos comerciales en 2024</strong>, con información de aerolíneas, aeropuertos, retrasos, cancelaciones y motivos asociados. Objetivo: analizar los patrones de retrasos y cancelaciones, identificar aerolíneas y aeropuertos más afectados y explorar factores que impactan la eficiencia de los vuelos.
   </p>
 
   <h2 data-es="Objetivos del análisis" data-en="Analysis Objectives">Objetivos del análisis</h2>
   <ul>
-    <li data-es="Limpiar y transformar un dataset de más de 7 millones de filas usando R y <code>fread</code> para mayor velocidad." data-en="Clean and transform a dataset of over 7 million rows using R and <code>fread</code> for speed.">Limpiar y transformar un dataset de más de 7 millones de filas usando R y <code>fread</code> para mayor velocidad.</li>
-    <li data-es="Analizar retrasos y cancelaciones por aerolínea, aeropuerto y mes." data-en="Analyze delays and cancellations by carrier, airport and month.">Analizar retrasos y cancelaciones por aerolínea, aeropuerto y mes.</li>
+    <li data-es="Limpiar y transformar un dataset de más de 7 millones de filas usando R y <code>fread</code> para optimizar la lectura." data-en="Clean and transform a dataset of over 7 million rows using R and <code>fread</code> for optimized reading.">Limpiar y transformar un dataset de más de 7 millones de filas usando R y <code>fread</code> para optimizar la lectura.</li>
+    <li data-es="Analizar retrasos y cancelaciones por aerolínea, aeropuerto y mes." data-en="Analyze delays and cancellations by airline, airport, and month.">Analizar retrasos y cancelaciones por aerolínea, aeropuerto y mes.</li>
     <li data-es="Identificar las causas principales de cancelaciones y retrasos." data-en="Identify main causes of cancellations and delays.">Identificar las causas principales de cancelaciones y retrasos.</li>
-    <li data-es="Evaluar la eficiencia de aeropuertos y aerolíneas." data-en="Evaluate airport and carrier efficiency.">Evaluar la eficiencia de aeropuertos y aerolíneas.</li>
-    <li data-es="Publicar insights en un dashboard interactivo en Tableau Cloud." data-en="Publish insights to an interactive dashboard on Tableau Cloud.">Publicar insights en un dashboard interactivo en Tableau Cloud.</li>
+    <li data-es="Evaluar la eficiencia de aeropuertos y aerolíneas." data-en="Evaluate the efficiency of airports and airlines.">Evaluar la eficiencia de aeropuertos y aerolíneas.</li>
+    <li data-es="Publicar insights en un dashboard interactivo en Tableau Cloud." data-en="Publish insights in an interactive dashboard on Tableau Cloud.">Publicar insights en un dashboard interactivo en Tableau Cloud.</li>
   </ul>
 
   <h2 data-es="Estructura del análisis" data-en="Analysis Structure">Estructura del análisis</h2>
   <ul>
-    <li data-es="Limpieza y transformación en R: lectura con <code>fread</code>, tratamiento de nulos e inconsistencias, creación de variables agregadas." data-en="Cleaning & transformation in R: read with <code>fread</code>, handle missing values and inconsistencies, create aggregated variables.">Limpieza y transformación en R: lectura con <code>fread</code>, tratamiento de nulos e inconsistencias, creación de variables agregadas.</li>
-    <li data-es="Análisis descriptivo: distribución por aerolíneas y aeropuertos, retrasos por motivo, tasas de cancelación." data-en="Descriptive analysis: distribution by carriers and airports, delays by reason, cancellation rates.">Análisis descriptivo: distribución por aerolíneas y aeropuertos, retrasos por motivo, tasas de cancelación.</li>
-    <li data-es="Visualización: preparación de extracts y vistas para Tableau, construcción del dashboard interactivo." data-en="Visualization: prepare extracts and views for Tableau, build interactive dashboard.">Visualización: preparación de extracts y vistas para Tableau, construcción del dashboard interactivo.</li>
+    <li data-es="Limpieza y transformación en R: lectura con <code>fread</code>, tratamiento de nulos e inconsistencias, creación de variables agregadas." data-en="Cleaning and transformation in R: reading with <code>fread</code>, handling nulls and inconsistencies, creating aggregated variables.">Limpieza y transformación en R: lectura con <code>fread</code>, tratamiento de nulos e inconsistencias, creación de variables agregadas.</li>
+    <li data-es="Análisis descriptivo: distribución por aerolíneas y aeropuertos, retrasos por motivo, tasas de cancelación." data-en="Descriptive analysis: distribution by airlines and airports, delays by reason, cancellation rates.">Análisis descriptivo: distribución por aerolíneas y aeropuertos, retrasos por motivo, tasas de cancelación.</li>
+    <li data-es="Visualización: preparación de extracts y vistas para Tableau, construcción del dashboard interactivo." data-en="Visualization: preparation of extracts and views for Tableau, building the interactive dashboard.">Visualización: preparación de extracts y vistas para Tableau, construcción del dashboard interactivo.</li>
   </ul>
 
   <h2 data-es="Técnicas y herramientas" data-en="Techniques & Tools">Técnicas y herramientas</h2>
   <ul>
     <li data-es="R: data.table (fread), dplyr, lubridate, ggplot2" data-en="R: data.table (fread), dplyr, lubridate, ggplot2">R: data.table (fread), dplyr, lubridate, ggplot2</li>
     <li data-es="Visualización: Tableau Cloud" data-en="Visualization: Tableau Cloud">Visualización: Tableau Cloud</li>
-    <li data-es="Análisis: agregaciones por aerolínea, aeropuerto, motivo y mes" data-en="Analysis: aggregations by carrier, airport, reason and month">Análisis: agregaciones por aerolínea, aeropuerto, motivo y mes</li>
+    <li data-es="Análisis: agregaciones por aerolínea, aeropuerto, motivo y mes" data-en="Analysis: aggregations by airline, airport, reason, and month">Análisis: agregaciones por aerolínea, aeropuerto, motivo y mes</li>
   </ul>
 
   <h2 data-es="Dataset" data-en="Dataset">Dataset</h2>
-  <ul>
-    <li data-es="Fuente: Kaggle" data-en="Source: Kaggle">Fuente: Kaggle</li>
-    <li><a href="https://www.kaggle.com/datasets/hrishitpatil/flight-data-2024" target="_blank" data-es="Descargar el dataset" data-en="Download the dataset">Descargar el dataset</a></li>
-  </ul>
+  <p data-es="Fuente: <strong>Kaggle – Flight Data 2024</strong>" data-en="Source: <strong>Kaggle – Flight Data 2024</strong>">Fuente: <strong>Kaggle – Flight Data 2024</strong></p>
+  <p><a href="https://www.kaggle.com/datasets/hrishitpatil/flight-data-2024" target="_blank" data-es="Descargar el dataset" data-en="Download dataset">Descargar el dataset</a></p>
 
   <h2 data-es="Principales insights" data-en="Main Insights">Principales insights</h2>
-<div class="stats">
-  <strong data-es="Estadísticas principales" data-en="Key statistics">Estadísticas principales</strong>
   <ul>
     <li data-es="American Airlines: 15.050 vuelos cancelados." data-en="American Airlines: 15,050 cancelled flights.">American Airlines: 15.050 vuelos cancelados.</li>
-    <li data-es="Frontier Airlines: mayor tasa de cancelación, 2,32%." data-en="Frontier Airlines: highest cancellation rate, 2.32%.">Frontier Airlines: mayor tasa de cancelación, 2,32%.</li>
-    <li data-es="Southwest Airlines: 1.419.419 vuelos en el año; más retrasos relacionados con avión y compañía (199.913 y 169.751)." data-en="Southwest Airlines: 1,419,419 flights in the year; highest delays related to aircraft and carrier (199,913 and 169,751).">Southwest Airlines: 1.419.419 vuelos en el año; más retrasos relacionados con avión y compañía (199.913 y 169.751).</li>
-    <li data-es="Aeropuerto de Texas: más retrasos y tiempo en pista elevado." data-en="Texas airport: highest delays and elevated on-ground times.">Aeropuerto de Texas: más retrasos y tiempo en pista elevado.</li>
-    <li data-es="55,48% de las cancelaciones provocadas por causas meteorológicas." data-en="55.48% of cancellations caused by weather.">55,48% de las cancelaciones provocadas por causas meteorológicas.</li>
+    <li data-es="Frontier Airlines: mayor tasa de cancelación (2,32%)." data-en="Frontier Airlines: highest cancellation rate (2.32%).">Frontier Airlines: mayor tasa de cancelación (2,32%).</li>
+    <li data-es="Southwest Airlines: 1.419.419 vuelos; más retrasos por avión y compañía (199.913 y 169.751)." data-en="Southwest Airlines: 1,419,419 flights; most delays due to aircraft and carrier (199,913 and 169,751).">Southwest Airlines: 1.419.419 vuelos; más retrasos por avión y compañía (199.913 y 169.751).</li>
+    <li data-es="Aeropuerto de Texas: más retrasos y tiempo en pista elevado." data-en="Texas airport: highest delays and elevated taxi times.">Aeropuerto de Texas: más retrasos y tiempo en pista elevado.</li>
+    <li data-es="55,48% de las cancelaciones provocadas por meteorología." data-en="55.48% of cancellations caused by weather.">55,48% de las cancelaciones provocadas por meteorología.</li>
   </ul>
-</div>
-
 
   <h2 data-es="Visualizaciones sugeridas" data-en="Suggested Visualizations">Visualizaciones sugeridas</h2>
   <ul>
-    <li data-es="Vuelos y cancelaciones por aerolínea: gráfico de barras comparativo." data-en="Flights and cancellations by carrier: comparative bar chart.">Vuelos y cancelaciones por aerolínea: gráfico de barras comparativo.</li>
+    <li data-es="Vuelos y cancelaciones por aerolínea: gráfico de barras comparativo." data-en="Flights and cancellations by airline: comparative bar chart.">Vuelos y cancelaciones por aerolínea: gráfico de barras comparativo.</li>
     <li data-es="Retrasos por motivo: gráfico apilado (avión, compañía, meteorología)." data-en="Delays by reason: stacked chart (aircraft, carrier, weather).">Retrasos por motivo: gráfico apilado (avión, compañía, meteorología).</li>
-    <li data-es="Eficiencia de aeropuertos: gráfico de burbujas (tiempo medio en pista) y barras apiladas con retrasos totales." data-en="Airport efficiency: bubble chart (mean on-ground time) and stacked bars for total delays.">Eficiencia de aeropuertos: gráfico de burbujas (tiempo medio en pista) y barras apiladas con retrasos totales.</li>
+    <li data-es="Eficiencia de aeropuertos: gráfico de burbujas (tiempo medio en pista) y barras apiladas de retrasos totales." data-en="Airport efficiency: bubble chart (average taxi time) and stacked bars for total delays.">Eficiencia de aeropuertos: gráfico de burbujas (tiempo medio en pista) y barras apiladas de retrasos totales.</li>
     <li data-es="Tendencia mensual de vuelos: gráfico de líneas por mes." data-en="Monthly flight trend: line chart by month.">Tendencia mensual de vuelos: gráfico de líneas por mes.</li>
   </ul>
 
   <h2 data-es="Dashboard – Tableau Cloud" data-en="Dashboard – Tableau Cloud">Dashboard – Tableau Cloud</h2>
-  <p data-es="Accede al dashboard interactivo en Tableau Public/Cloud para explorar filtros por aerolínea, aeropuerto y mes." data-en="Open the interactive dashboard in Tableau Public/Cloud to explore filters by carrier, airport and month.">
+  <p data-es="Accede al dashboard interactivo en Tableau Public/Cloud para explorar filtros por aerolínea, aeropuerto y mes." data-en="Access the interactive dashboard on Tableau Public/Cloud to explore filters by airline, airport, and month.">
     Accede al dashboard interactivo en Tableau Public/Cloud para explorar filtros por aerolínea, aeropuerto y mes.
   </p>
-  <p>
-    <a class="btn" href="https://public.tableau.com/views/Proyecto_Vuelos_17594980949080/Informe?:language=es-ES&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" target="_blank" data-es="Ir al dashboard" data-en="Open dashboard">Ir al dashboard</a>
-  </p>
+  <p><a class="btn" href="https://public.tableau.com/views/Proyecto_Vuelos_17594980949080/Informe?:language=es-ES&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" target="_blank" data-es="Ir al dashboard" data-en="Open dashboard">Ir al dashboard</a></p>
 
-  <h2 data-es="Ejemplos de visualizaciones" data-en="Example Visualizations">Ejemplos de visualizaciones</h2>
-  <h3 data-es="Página 1 – Informe" data-en="Page 1 – Report">Página 1 – Informe</h3>
-  <img src="../img/proyecto_aviones.png" alt="Informe - Proyecto Vuelos">
+  <h2 data-es="Ejemplo de visualización" data-en="Example Visualization">Ejemplo de visualización</h2>
+  <img src="../img/proyecto_aviones.png" alt="Informe – Proyecto Vuelos">
 
   <div class="btn-container">
     <a class="btn" href="../index.html#projects" id="backToProjects" data-es="Volver a Proyectos" data-en="Back to Projects">Volver a Proyectos</a>
@@ -137,9 +116,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function applyLang(lang){
     document.documentElement.lang = lang;
-    document.querySelectorAll('[data-es]').forEach(el => {
-      if(el.dataset[lang]) el.innerHTML = el.dataset[lang];
-    });
+    document.querySelectorAll('[data-es]').forEach(el => { el.innerHTML = el.dataset[lang]; });
     langToggle.textContent = lang === "es" ? "EN" : "ES";
   }
 
@@ -152,13 +129,11 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   const backBtn = document.getElementById('backToProjects');
-  if (backBtn) {
-    backBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      localStorage.setItem('lang', currentLang);
-      window.location.href = '../index.html#projects';
-    });
-  }
+  backBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    localStorage.setItem('lang', currentLang);
+    window.location.href = '../index.html#projects';
+  });
 });
 </script>
 
